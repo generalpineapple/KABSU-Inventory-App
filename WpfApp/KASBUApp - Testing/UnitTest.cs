@@ -8,10 +8,11 @@ namespace KASBUApp___Testing
         [SetUp]
         public void Setup()
         {
+
         }
 
         [Test]
-        public void Test1()
+        public void Test()
         {
             Assert.Pass();
         }
