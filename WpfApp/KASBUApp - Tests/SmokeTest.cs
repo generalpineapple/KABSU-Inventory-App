@@ -9,7 +9,7 @@ using WpfApp;
 
 namespace KASBUApp___Testing
 {
-    [TestFixture]
+    [TestFixture, Apartment(System.Threading.ApartmentState.STA)]
     public class SmokeTest
     {
 
@@ -17,7 +17,7 @@ namespace KASBUApp___Testing
         public static RecordWindow recordWindow;
         public static SearchWindow searchWindow;
 
-        [SetUp, STAThread]
+        [SetUp]
         public void Setup()
         {
             mainWindow = new MainWindow();
@@ -25,7 +25,7 @@ namespace KASBUApp___Testing
             searchWindow = new SearchWindow();
         }
 
-        [Test, STAThread]
+        [Test]
         public void InitalizeMainWindowTest()
         {
             //Setup();
@@ -33,7 +33,7 @@ namespace KASBUApp___Testing
             Assert.IsInstanceOf( System.Type.GetType("Window"), mainWindow);
         }
         
-        [Test, STAThread]
+        [Test]
         public void InitialRecordWindowTest()
         {
             //Setup();
