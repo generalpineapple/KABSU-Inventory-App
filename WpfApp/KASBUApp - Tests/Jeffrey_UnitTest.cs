@@ -33,13 +33,27 @@ namespace KASBUApp___Testing
             mainWindow = new MainWindow();
             mainWindow.Show();
             mainWindow.UxModifyRecord_Click(null, null);
+            Form form = null;
             foreach (Form f in Application.OpenForms)
             {
                 if(f.Name == "searchWindow")
                 {
-                    Assert.Pass();
+                    form = f;
+                    break;
                 }
             }
+            if (form == null)
+            {
+                Assert.Fail();
+            }
+            foreach (Control c in form.Controls)
+            {
+                if (c.Name == "uxSearch")
+                {
+                    (Button)(c).PerformClick()
+                }
+            }
+
         }
 
     }
