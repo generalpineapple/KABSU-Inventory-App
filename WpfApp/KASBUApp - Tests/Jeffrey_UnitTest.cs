@@ -1,29 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 using NUnit.Framework;
+using WpfApp;
 
 namespace KASBUApp___Testing
 {
-    [TestFixture]
+    [TestFixture, Apartment(System.Threading.ApartmentState.STA)]
     class Jeffrey_UnitTest
     {
-        [SetUp]
-        public static void SetUp()
-        {
+        public static MainWindow mainWindow;
+        //public static RecordWindow recordWindow;
+        //public static SearchWindow searchWindow;
 
+        [SetUp]
+        public void setUp()
+        {
+            //recordWindow = new RecordWindow();
+            //searchWindow = new SearchWindow();
         }
 
         [TearDown]
-        public static void TearDown()
+        public void TearDown()
         {
 
         }
 
         [Test]
-        public void Test()
+        public void Unit_Test_7()
         {
-            Assert.Pass();
+            mainWindow = new MainWindow();
+            mainWindow.Show();
+            mainWindow.UxModifyRecord_Click(null, null);
+            foreach (Form f in Application.OpenForms)
+            {
+                if(f.Name == "searchWindow")
+                {
+                    Assert.Pass();
+                }
+            }
         }
 
     }

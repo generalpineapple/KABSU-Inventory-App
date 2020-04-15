@@ -44,7 +44,7 @@ namespace WpfApp
         /// </summary>
         /// <param name="sender">object containing sender information</param>
         /// <param name="e">EventArgs associated with button click</param>
-        private void UxModifyRecord_Click(object sender, RoutedEventArgs e)
+        public void UxModifyRecord_Click(object sender, RoutedEventArgs e)
         {
             searchWindow = new SearchWindow();
             searchWindow.Show();
