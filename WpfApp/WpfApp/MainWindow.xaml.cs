@@ -33,7 +33,7 @@ namespace WpfApp
         /// </summary>
         /// <param name="sender">object containing sender information</param>
         /// <param name="e">EventArgs associated with button click</param>
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Button_Click(object sender, RoutedEventArgs e)
         {
             recordWindow = new RecordWindow();
             recordWindow.Show();
