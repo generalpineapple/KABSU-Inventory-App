@@ -86,7 +86,8 @@ namespace WpfApp
                     break;
             }
         }
-        private List<SearchResult> CalculateResultList()
+
+        public List<SearchResult> CalculateResultList()
         {
             SetTerm(uxSearchTerm1.Text, uxSearchContents1.Text);
             SetTerm(uxSearchTerm2.Text, uxSearchContents2.Text);

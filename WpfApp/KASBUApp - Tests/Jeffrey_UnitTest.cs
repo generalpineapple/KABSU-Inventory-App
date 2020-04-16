@@ -27,6 +27,7 @@ namespace KASBUApp___Testing
 
         }
 
+        /*
         [Test]
         public void Unit_Test_7()
         {
@@ -50,11 +51,12 @@ namespace KASBUApp___Testing
             {
                 if (c.Name == "uxSearch")
                 {
-                    (Button)(c).PerformClick()
+                    (Button)(c).PerformClick();
                 }
             }
 
         }
+        */
 
     }
 }

@@ -170,7 +170,6 @@ C:\Users\mcquajac000\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xu
 C:\Users\mcquajac000\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Google.Protobuf.xml
 C:\Users\mcquajac000\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\MySql.Data.xml
 C:\Users\mcquajac000\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Renci.SshNet.xml
-C:\Users\mcquajac000\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.abstractions.xml
 C:\Users\mcquajac000\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.assert.xml
 C:\Users\mcquajac000\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.core.xml
 C:\Users\mcquajac000\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.execution.desktop.xml
@@ -282,3 +281,6 @@ C:\Users\JPMartin288\Source\Repos\KABSU-Inventory-App2\WpfApp\WpfApp\obj\Debug\W
 C:\Users\JPMartin288\Source\Repos\KABSU-Inventory-App2\WpfApp\WpfApp\bin\Debug\xunit.runner.visualstudio.testadapter.dll
 C:\Users\JPMartin288\Source\Repos\KABSU-Inventory-App2\WpfApp\WpfApp\bin\Debug\xunit.runner.reporters.net452.dll
 C:\Users\JPMartin288\Source\Repos\KABSU-Inventory-App2\WpfApp\WpfApp\bin\Debug\xunit.runner.utility.net452.dll
+C:\Users\mcquajac000\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\mcquajac000\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.reporters.net452.dll
+C:\Users\mcquajac000\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.utility.net452.dll

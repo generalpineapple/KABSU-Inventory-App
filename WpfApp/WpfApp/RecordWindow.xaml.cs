@@ -41,6 +41,7 @@ namespace WpfApp
         private bool isOldRecord;
         private NoteWindow noteWindow;
         private AdditionalInfoWindow infoWindow;
+        
         public RecordWindow()
         {
             newRecord = true;
