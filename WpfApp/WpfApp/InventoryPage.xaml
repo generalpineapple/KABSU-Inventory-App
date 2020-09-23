@@ -5,71 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="Inventory Page" Height="1550" Width="950" Loaded="InventoryPage_Load">
-    <Grid ShowGridLines="True" Margin="0,0,0.4,1.2">
-        <Grid x:Name="uxTopGrid1" HorizontalAlignment="Center" VerticalAlignment="Top" Width="800" Margin="10,50,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="125" />
-                <ColumnDefinition Width="300" />
-                <ColumnDefinition Width="125" />
-                <ColumnDefinition Width="125" />
-                <ColumnDefinition Width="125" />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="45" />
-                <RowDefinition Height="450" />
-                <RowDefinition Height="450" />
-                <RowDefinition Height="450" />
-            </Grid.RowDefinitions>
-            <Border Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="2"></Border>
-            <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="2"></Border>
-            <Border Grid.Column="2" Grid.Row="0" BorderBrush="Black" BorderThickness="2"></Border>
-            <Border Grid.Column="3" Grid.Row="0" BorderBrush="Black" BorderThickness="2"></Border>
-            <Border Grid.Column="4" Grid.Row="0" BorderBrush="Black" BorderThickness="2"></Border>
-            <Label Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Item</Label>
-            <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Description</Label>
-            <Label Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Qty</Label>
-            <Label Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Rate</Label>
-            <Label Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Amount</Label>
-            <TextBox x:Name="uxToFromLeft1" Grid.Row="1" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft2" Grid.Row="2" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft3" Grid.Row="3" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft4" Grid.Row="1" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft5" Grid.Row="1" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft6" Grid.Row="1" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft7" Grid.Row="1" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft8" Grid.Row="2" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft9" Grid.Row="2" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft10" Grid.Row="2" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft11" Grid.Row="2" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft12" Grid.Row="3" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft13" Grid.Row="3" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft14" Grid.Row="3" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft15" Grid.Row="3" Grid.Column="4" FontSize="14"/>
-        </Grid>
-        <Grid x:Name="uxMorphGrid" HorizontalAlignment="Right" Height="50" VerticalAlignment="Top" Width="450" Margin="10,0,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="130" />
-                <ColumnDefinition Width="120"/>
-                <ColumnDefinition Width="125"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="45" />
-                <RowDefinition Height="21" />
-            </Grid.RowDefinitions>
-            <Border Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="2"></Border>
-            <Border Grid.Column="1" Grid.Row="0" BorderBrush="Black" BorderThickness="2"></Border>
-            <Border Grid.Column="2" Grid.Row="0" BorderBrush="Black" BorderThickness="2"></Border>
-            <Label Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="P.O. No." FontSize="14"/>
-            <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Terms</Label>
-            <Label Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Project" FontSize="14"/>
-            <TextBox x:Name="uxMorphDate" Grid.Row="2" Grid.Column="0" FontSize="14" TextChanged="MorphChanged"/>
-            <TextBox x:Name="uxVigor" Grid.Row="2" Grid.Column="1" FontSize="14" TextChanged="MorphChanged"/>
-            <TextBox x:Name="uxMot" Grid.Row="2" Grid.Column="2" FontSize="14" TextChanged="MorphChanged"/>
-            <TextBox x:Name="uxMorph" Grid.Row="2" Grid.Column="3" FontSize="14" TextChanged="MorphChanged"/>
-            <TextBox x:Name="uxMorphCode" Grid.Row="2" Grid.Column="4" FontSize="14" TextChanged="MorphChanged"/>
-            <TextBox x:Name="uxMorphUnits" Grid.Row="2" Grid.Column="5" FontSize="14" TextChanged="MorphChanged"/>
-        </Grid>
-        <Button x:Name="uxNotesButton" Content="Notes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="1416,112,0,0" Height="37" Click="UxNotesButton_Click"/>
+        Title="Inventory Page" Height="1550" Width="950" ResizeMode="CanMinimize">
+
+    <Grid>
+        <DataGrid x:Name="uxInventoryPage1" ItemsSource="{Binding InventoryPage}" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="right" VerticalAlignment="Top" Width="144" Margin="0,10,14,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="PoNumColumn" Header="P.O. No." Binding="{Binding Item}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="TermsColumn" Header="Terms" Binding="{Binding Description}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="ProjectColumn" Header="Project" Binding="{Binding Qty}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="uxInventoryPage" ItemsSource="{Binding InventoryPage}" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="left" VerticalAlignment="Top" Width="910" Margin="20,50,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="ItemColumn" Header="Item" Binding="{Binding Item}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="DescriptionColumn" Header="Description" Binding="{Binding Description}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="QtyColumn" Header="Qty" Binding="{Binding Qty}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="RateColumn" Header="Rate" Binding="{Binding Rate}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="AmountColumn" Header="Column" Binding="{Binding Column}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

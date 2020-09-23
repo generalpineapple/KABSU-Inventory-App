@@ -28,6 +28,9 @@ namespace WpfApp
         private string state = "*";
         private SearchResults searchResults;
         private SearchTerm searchTerm;
+
+        InventoryPage inventoryPage;
+
         SearchWindowResults windowResults;
         public SearchWindow()
         {
@@ -57,6 +60,12 @@ namespace WpfApp
                 unitSum += Convert.ToInt32(sr.Units);
             }
             MessageBox.Show("Sum of Units: " + unitSum);
+        }
+        private void UxInventoryList_Click(object sender, RoutedEventArgs e)
+        {
+            inventoryPage = new InventoryPage(CalculateResultList());
+            inventoryPage.ShowDialog();
+            this.Close();
         }
 
         void SetTerm(string term, string contents)

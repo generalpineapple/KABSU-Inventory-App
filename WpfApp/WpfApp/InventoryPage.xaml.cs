@@ -49,7 +49,18 @@ namespace WpfApp
             searchResult = new SearchResult();
             InitializeComponent();
             notes = "";
-            Closing += RecordWindow_Closing;
+           // Closing += RecordWindow_Closing;
+        }
+
+        public InventoryPage(List<SearchResult> results)
+        {
+            InitializeComponent();
+            uxInventoryPage.ItemsSource = results;
+            ItemColumn.Width = 50;
+            DescriptionColumn.Width = 200;
+            QtyColumn.Width = 50;
+            RateColumn.Width = 50;
+            AmountColumn.Width = 50;
         }
 
         public InventoryPage(SearchResult search)
@@ -71,12 +82,12 @@ namespace WpfApp
             isMorph = false;
             isOldMorph = false;
             populating = false;
-            Closing += RecordWindow_Closing;
-            recordList = RetrieveRecords(searchResult.Code);
-            morph = RetrieveMorph(searchResult.Code);
+            //Closing += RecordWindow_Closing;
+            //recordList = RetrieveRecords(searchResult.Code);
+            //morph = RetrieveMorph(searchResult.Code);
         }
 
-        private void RecordWindow_Closing(object sender, CancelEventArgs e)
+        /*private void RecordWindow_Closing(object sender, CancelEventArgs e)
         {
             CollectAdditionalInfo();
 
@@ -97,7 +108,7 @@ namespace WpfApp
                 }
                 if (tb.Text != "" && (tb.Parent != uxBottomGrid && tb.Parent != uxTopGrid1 && tb.Parent != uxTopGrid2))
                     isMorph = true;
-            }*/
+            }
             recordList = new List<Record>();
             for (int i = 0; textCount > 0; i++)
             {
@@ -451,7 +462,7 @@ namespace WpfApp
             infoWindow = new AdditionalInfoWindow(info);
             infoWindow.Check += value => info = value;
             infoWindow.ShowDialog();
-        }
+        } */
     }
 
 }
