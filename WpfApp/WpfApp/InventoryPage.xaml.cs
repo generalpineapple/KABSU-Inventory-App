@@ -52,15 +52,15 @@ namespace WpfApp
            // Closing += RecordWindow_Closing;
         }
 
-        public InventoryPage(List<SearchResult> results)
+        public InventoryPage(List<string> results)
         {
             InitializeComponent();
             uxInventoryPage.ItemsSource = results;
-            ItemColumn.Width = 50;
+            //ItemColumn.Width = 50;
             DescriptionColumn.Width = 200;
-            QtyColumn.Width = 50;
-            RateColumn.Width = 50;
-            AmountColumn.Width = 50;
+           // QtyColumn.Width = 50;
+            //RateColumn.Width = 50;
+            //AmountColumn.Width = 50;
         }
 
         public InventoryPage(SearchResult search)

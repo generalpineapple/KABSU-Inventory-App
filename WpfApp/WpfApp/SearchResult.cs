@@ -226,8 +226,9 @@ namespace WpfApp
         /// <param name="state">The state where the owner resides</param>
         /// <param name="country">The country where the owner resides</param>
         /// <param name="species">The species of the animal</param>
-        public SearchResult(string item, List<string> description, int quantity, int rate, int amount, string canNum, string code, string collDate, string units, string animalName, string breed, string regNum, string owner, string town, string state, string country, string species)
+        public SearchResult(string item, int quantity, int rate, int amount, string canNum, string code, string collDate, string units, string animalName, string breed, string regNum, string owner, string town, string state, string country, string species)
         {
+            List<string> description = new List<string>();
             description.Add(units);
             description.Add(animalName);
             description.Add(breed);
