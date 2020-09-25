@@ -1,0 +1,20 @@
+﻿<Window x:Class="WpfApp.PackingSlip"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="Search Results" Height="1000" Width="600" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="uxSearchResults" ItemsSource="{Binding SearchResult}" AutoGenerateColumns="False" IsReadOnly="false" HorizontalAlignment="Left" Height="537" VerticalAlignment="Top" Width="982" MaxWidth="982" Margin="10,10,0,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="ValidColumn" Header="INV" Binding="{Binding INV}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

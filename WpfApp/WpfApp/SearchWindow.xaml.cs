@@ -28,6 +28,9 @@ namespace WpfApp
         private string state = "*";
         private SearchResults searchResults;
         private SearchTerm searchTerm;
+
+        InventoryPage inventoryPage;
+
         SearchWindowResults windowResults;
         public SearchWindow()
         {
@@ -57,6 +60,12 @@ namespace WpfApp
                 unitSum += Convert.ToInt32(sr.Units);
             }
             MessageBox.Show("Sum of Units: " + unitSum);
+        }
+        private void UxInventoryList_Click(object sender, RoutedEventArgs e)
+        {
+            inventoryPage = new InventoryPage(CalculateInventoryList());
+            inventoryPage.ShowDialog();
+            this.Close();
         }
 
         void SetTerm(string term, string contents)
@@ -99,6 +108,30 @@ namespace WpfApp
             searchResults = new SearchResults();
             List<SearchResult> results = searchResults.retrieveData(searchTerm);
             return results;
+        }
+
+        public List<string> CalculateInventoryList()
+        {
+            SetTerm(uxSearchTerm1.Text, uxSearchContents1.Text);
+            SetTerm(uxSearchTerm2.Text, uxSearchContents2.Text);
+            SetTerm(uxSearchTerm3.Text, uxSearchContents3.Text);
+            SetTerm(uxSearchTerm4.Text, uxSearchContents4.Text);
+
+            searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
+            searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
+            searchResults = new SearchResults();
+            List<SearchResult> results = searchResults.retrieveData(searchTerm);
+            List<string> description = new List<string>();
+            //description.Add("");
+            foreach (SearchResult s in results)
+            {
+                description.Add(s.ToString());
+            }
+            //description.Add("");
+            //description.Add("");
+            //description.Add("");
+            
+            return description;
         }
     }
 }

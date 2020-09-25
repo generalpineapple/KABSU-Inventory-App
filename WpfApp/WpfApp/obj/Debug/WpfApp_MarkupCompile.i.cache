@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\App.xaml
-6-1574899032
+8-725090674
 
-20285746059
-82753276171
-AdditionalInfoWindow.xaml;MainWindow.xaml;NoteWindow.xaml;RecordWindow.xaml;SearchWindow.xaml;SearchWindowResults.xaml;
+22746987767
+145-85454511
+AdditionalInfoWindow.xaml;InventoryPage.xaml;MainWindow.xaml;NoteWindow.xaml;PackingSlip.xaml;RecordWindow.xaml;SearchWindow.xaml;SearchWindowResults.xaml;
 
 True
 

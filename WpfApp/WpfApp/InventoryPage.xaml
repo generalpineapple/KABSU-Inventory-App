@@ -1,0 +1,32 @@
+﻿<Window x:Name="InventoryPage1" x:Class="WpfApp.InventoryPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="Inventory Page" Height="1550" Width="950" ResizeMode="CanMinimize">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="927*"/>
+            <ColumnDefinition Width="17*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="uxInventoryPage1" ItemsSource="{Binding InventoryPage}" AutoGenerateColumns="False" IsReadOnly="False" HorizontalAlignment="right" VerticalAlignment="Top" Width="144" Margin="0,10,14,0" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="PoNumColumn" Header="P.O. No." Binding="{Binding Item}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="TermsColumn" Header="Terms" Binding="{Binding Description}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="ProjectColumn" Header="Project" Binding="{Binding Qty}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="uxInventoryPage" ItemsSource="{Binding InventoryPage}" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="left" VerticalAlignment="Top" Width="910" Margin="20,50,0,0" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="ItemColumn" Header="Item" Binding="{Binding Item}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="DescriptionColumn" Header="Description" Binding="{Binding Description}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="QtyColumn" Header="Qty" Binding="{Binding Qty}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="RateColumn" Header="Rate" Binding="{Binding Rate}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="AmountColumn" Header="Column" Binding="{Binding Column}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

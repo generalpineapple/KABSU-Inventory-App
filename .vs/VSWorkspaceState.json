@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\WpfApp"
+    "\\Database Files",
+    "\\Database Files\\Database Insertion Files",
+    "\\Database Files\\Database Retrieve Files",
+    "\\Database Files\\Database Setup Files",
+    "\\Documents",
+    "\\WpfApp",
+    "\\WpfApp\\WpfApp"
   ],
   "PreviewInSolutionExplorer": false
 }

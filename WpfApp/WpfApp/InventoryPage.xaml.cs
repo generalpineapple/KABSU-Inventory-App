@@ -20,7 +20,7 @@ namespace WpfApp
     /// <summary>
     /// Interaction logic for RecordWindow.xaml
     /// </summary>
-    public partial class RecordWindow : Window
+    public partial class InventoryPage : Window
     {
         SearchResult searchResult;
         private string notes;
@@ -42,17 +42,28 @@ namespace WpfApp
         private NoteWindow noteWindow;
         private AdditionalInfoWindow infoWindow;
 
-        public RecordWindow()
+        public InventoryPage()
         {
             newRecord = true;
             isOldRecord = false;
             searchResult = new SearchResult();
             InitializeComponent();
             notes = "";
-            Closing += RecordWindow_Closing;
+           // Closing += RecordWindow_Closing;
         }
 
-        public RecordWindow(SearchResult search)
+        public InventoryPage(List<string> results)
+        {
+            InitializeComponent();
+            uxInventoryPage.ItemsSource = results;
+            //ItemColumn.Width = 50;
+            DescriptionColumn.Width = 200;
+           // QtyColumn.Width = 50;
+            //RateColumn.Width = 50;
+            //AmountColumn.Width = 50;
+        }
+
+        public InventoryPage(SearchResult search)
         {
             newRecord = false;
             searchResult = search;
@@ -61,22 +72,22 @@ namespace WpfApp
             oldCity = searchResult.Town;
             oldState = searchResult.State;
             InitializeComponent();
-            uxCode.Text = searchResult.Code;
-            uxBreed.Text = searchResult.Breed;
-            uxAnimalName.Text = searchResult.AnimalName;
-            uxRegNum.Text = searchResult.RegNum;
-            uxOwner.Text = searchResult.Owner;
-            uxCanNum.Text = searchResult.CanNum;
+            //uxCode.Text = searchResult.Code;
+            //uxBreed.Text = searchResult.Breed;
+            //uxAnimalName.Text = searchResult.AnimalName;
+            //uxRegNum.Text = searchResult.RegNum;
+            //uxOwner.Text = searchResult.Owner;
+            //uxCanNum.Text = searchResult.CanNum;
             notes = "";
             isMorph = false;
             isOldMorph = false;
             populating = false;
-            Closing += RecordWindow_Closing;
-            recordList = RetrieveRecords(searchResult.Code);
-            morph = RetrieveMorph(searchResult.Code);
+            //Closing += RecordWindow_Closing;
+            //recordList = RetrieveRecords(searchResult.Code);
+            //morph = RetrieveMorph(searchResult.Code);
         }
 
-        private void RecordWindow_Closing(object sender, CancelEventArgs e)
+        /*private void RecordWindow_Closing(object sender, CancelEventArgs e)
         {
             CollectAdditionalInfo();
 
@@ -87,7 +98,7 @@ namespace WpfApp
             List<string> morphList = new List<string>();
             int textCount = 0;
             int recordCount = 0;
-            foreach (TextBox tb in FindVisualChildren<TextBox>(this))
+            /*foreach (TextBox tb in FindVisualChildren<TextBox>(this))
             {
                 list.Add(tb.Text);
                 if (tb.Text != "" && (tb.Parent != uxBottomGrid && tb.Parent != uxMorphGrid))
@@ -238,18 +249,18 @@ namespace WpfApp
                             command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
-                            command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
-                            command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
+                            //command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
+                            //command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
                             command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
                             command.Parameters.AddWithValue("@NumUnits", uxMorphUnits.Text);
                             command.Parameters.AddWithValue("@City", info.City);
                             command.Parameters.AddWithValue("@State", info.State);
                             command.Parameters.AddWithValue("@Country", info.Country);
-                            command.Parameters.AddWithValue("@Owner", uxOwner.Text);
-                            command.Parameters.AddWithValue("@AnimalName", uxAnimalName.Text);
-                            command.Parameters.AddWithValue("@Breed", uxBreed.Text);
+                            //command.Parameters.AddWithValue("@Owner", uxOwner.Text);
+                            //command.Parameters.AddWithValue("@AnimalName", uxAnimalName.Text);
+                            //command.Parameters.AddWithValue("@Breed", uxBreed.Text);
                             command.Parameters.AddWithValue("@Species", info.Species);
-                            command.Parameters.AddWithValue("@RegNum", uxRegNum.Text);
+                            //command.Parameters.AddWithValue("@RegNum", uxRegNum.Text);
 
                             connection.Open();
                             int k = command.ExecuteNonQuery();
@@ -275,9 +286,9 @@ namespace WpfApp
                             command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@SValid", info.Valid.ToString().ToUpper());
-                            command.Parameters.AddWithValue("@SCanNum", uxCanNum.Text);
+                            //command.Parameters.AddWithValue("@SCanNum", uxCanNum.Text);
                             command.Parameters.AddWithValue("@OldAnimalID", oldCode);
-                            command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
+                            //command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
                             command.Parameters.AddWithValue("@SCollDate", uxMorphDate.Text);
                             command.Parameters.AddWithValue("@SNumUnits", uxMorphUnits.Text);
                             command.Parameters.AddWithValue("@PCity", info.City);
@@ -285,12 +296,12 @@ namespace WpfApp
                             command.Parameters.AddWithValue("@PState", info.State);
                             command.Parameters.AddWithValue("@OldState", oldState);
                             command.Parameters.AddWithValue("@PCountry", info.Country);
-                            command.Parameters.AddWithValue("@POwner", uxOwner.Text);
+                            //command.Parameters.AddWithValue("@POwner", uxOwner.Text);
                             command.Parameters.AddWithValue("@OldOwner", oldOwner);
-                            command.Parameters.AddWithValue("@AAnimalName", uxAnimalName.Text);
-                            command.Parameters.AddWithValue("@ABreed", uxBreed.Text);
+                            //command.Parameters.AddWithValue("@AAnimalName", uxAnimalName.Text);
+                            //command.Parameters.AddWithValue("@ABreed", uxBreed.Text);
                             command.Parameters.AddWithValue("@ASpecies", info.Species);
-                            command.Parameters.AddWithValue("@ARegNum", uxRegNum.Text);
+                            //command.Parameters.AddWithValue("@ARegNum", uxRegNum.Text);
 
                             connection.Open();
                             int k = command.ExecuteNonQuery();
@@ -387,7 +398,7 @@ namespace WpfApp
             }
         }
 
-        private void RecordWindow_Load(object sender, RoutedEventArgs e)
+        private void InventoryPage_Load(object sender, RoutedEventArgs e)
         {
             int textCount = 0;
 
@@ -451,7 +462,7 @@ namespace WpfApp
             infoWindow = new AdditionalInfoWindow(info);
             infoWindow.Check += value => info = value;
             infoWindow.ShowDialog();
-        }
+        } */
     }
 
 }

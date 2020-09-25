@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\
+=======
+C:\Users\bhartman24\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\
+>>>>>>> 8bb3457ea6edd5fd262896e74f870508e6de43b7
 WpfApp
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\App.xaml
 6-1574899032
 
 19-682181002
 82753276171
 AdditionalInfoWindow.xaml;MainWindow.xaml;NoteWindow.xaml;RecordWindow.xaml;SearchWindow.xaml;SearchWindowResults.xaml;
+=======
+C:\Users\bhartman24\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\App.xaml
+72015802979
 
-False
+20-1439638071
+145-558803861
+AdditionalInfoWindow.xaml;InventoryPage.xaml;MainWindow.xaml;NoteWindow.xaml;RecordWindow.xaml;SearchWindow.xaml;SearchWindowResults.xaml;
+>>>>>>> 8bb3457ea6edd5fd262896e74f870508e6de43b7
+
+True
 

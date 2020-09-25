@@ -210,6 +210,32 @@ namespace WpfApp
             this.Species = species;
         }
 
+        /// <summary>
+        /// A constructor for SearchResult for the inventory list
+        /// </summary>
+        /// <param name="valid">String representation of a boolean stating whether or not this entry has been verified for accuracy</param>
+        /// <param name="canNum">String representing the can where the sample is stored</param>
+        /// <param name="code">String representing the identification code of the sample</param>
+        /// <param name="collDate">String representing the date when a sample was collected (may be a string which is given to a third-party to obtain that date)</param>
+        /// <param name="units">The number of straws available for a sample</param>
+        /// <param name="animalName">The name of the animal</param>
+        /// <param name="breed">The breed of the animal</param>
+        /// <param name="regNum">The registration number of the animal</param>
+        /// <param name="owner">The owner of the sample</param>
+        /// <param name="town">The town where the owner resides</param>
+        /// <param name="state">The state where the owner resides</param>
+        /// <param name="country">The country where the owner resides</param>
+        /// <param name="species">The species of the animal</param>
+        public SearchResult(string item, int quantity, int rate, int amount, string canNum, string code, string collDate, string units, string animalName, string breed, string regNum, string owner, string town, string state, string country, string species)
+        {
+            List<string> description = new List<string>();
+            description.Add(units);
+            description.Add(animalName);
+            description.Add(breed);
+            description.Add(regNum);
+            description.Add(owner);
+        }
+
         public SearchResult()
         {
         }
