@@ -94,7 +94,7 @@ namespace WpfApp
             SetTerm(uxSearchTerm3.Text, uxSearchContents3.Text);
             SetTerm(uxSearchTerm4.Text, uxSearchContents4.Text);
 
-            searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
+            //searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
             searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
             searchResults = new SearchResults();
             List<SearchResult> results = searchResults.retrieveData(searchTerm);
