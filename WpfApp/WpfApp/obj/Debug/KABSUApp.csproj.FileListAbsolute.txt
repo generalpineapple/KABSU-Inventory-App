@@ -328,9 +328,6 @@ C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\WpfApp.pdb
 C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.runner.visualstudio.testadapter.dll
 C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.runner.reporters.net452.dll
 C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.runner.utility.net452.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.visualstudio.testadapter.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.reporters.net452.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.utility.net452.dll
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.abstractions.dll
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\WpfApp.exe.config
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\WpfApp.exe
@@ -374,3 +371,4 @@ C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\Wpf
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\WpfApp.pdb
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\InventoryPage.g.cs
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\InventoryPage.baml
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.abstractions.xml
