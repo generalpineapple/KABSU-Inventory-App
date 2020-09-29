@@ -62,7 +62,7 @@ namespace WpfApp
                                reader.GetString(reader.GetOrdinal("Species")));
                             resultList.Add(searchResult);
                         }
-
+                        connection.Close();
                         return resultList;
                     }
                 }

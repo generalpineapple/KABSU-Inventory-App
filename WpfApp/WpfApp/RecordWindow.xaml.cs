@@ -41,7 +41,7 @@ namespace WpfApp
         private bool isOldRecord;
         private NoteWindow noteWindow;
         private AdditionalInfoWindow infoWindow;
-
+        
         public RecordWindow()
         {
             newRecord = true;
@@ -87,7 +87,7 @@ namespace WpfApp
             List<string> morphList = new List<string>();
             int textCount = 0;
             int recordCount = 0;
-            foreach (TextBox tb in FindVisualChildren<TextBox>(this))
+            foreach(TextBox tb in FindVisualChildren<TextBox>(this))
             {
                 list.Add(tb.Text);
                 if (tb.Text != "" && (tb.Parent != uxBottomGrid && tb.Parent != uxMorphGrid))
@@ -144,7 +144,7 @@ namespace WpfApp
         }
         private void StoreRecords()
         {
-            if (recordList != null)
+            if (recordList.Count == 0)
             {
                 string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
                 try
@@ -184,7 +184,7 @@ namespace WpfApp
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to connect to database.");
+                    MessageBox.Show("Unable to connect to database01.");
                 }
             }
         }
@@ -203,11 +203,51 @@ namespace WpfApp
 
                             command.Parameters.AddWithValue("@Notes", morph.Notes);
                             command.Parameters.AddWithValue("@Date", uxMorphDate.Text);
-                            command.Parameters.AddWithValue("@Vigor", Convert.ToInt32(morph.Vigor));
-                            command.Parameters.AddWithValue("@Mot", Convert.ToInt32(morph.Mot));
-                            command.Parameters.AddWithValue("@Morph", Convert.ToInt32(morph.Morphology));
-                            command.Parameters.AddWithValue("@Code", Convert.ToInt32(morph.Code));
-                            command.Parameters.AddWithValue("@Units", Convert.ToInt32(uxMorphUnits.Text));
+                            if(morph.Vigor == "")
+                            {
+                                command.Parameters.AddWithValue("@Vigor", 0);
+                            }
+                            else
+                            {
+                                command.Parameters.AddWithValue("@Vigor", Convert.ToInt32(morph.Vigor));
+                            }
+
+                            if (morph.Vigor == "")
+                            {
+                                command.Parameters.AddWithValue("@Mot", 0);
+                            }
+                            else
+                            {
+                                command.Parameters.AddWithValue("@Mot", Convert.ToInt32(morph.Mot));
+                            }
+
+                            if (morph.Vigor == "")
+                            {
+                                command.Parameters.AddWithValue("@Morph", 0);
+                            }
+                            else
+                            {
+                                command.Parameters.AddWithValue("@Morph", Convert.ToInt32(morph.Morphology));
+                            }
+
+                            if (morph.Vigor == "")
+                            {
+                                command.Parameters.AddWithValue("@Code", 0);
+                            }
+                            else
+                            {
+                                command.Parameters.AddWithValue("@Code", Convert.ToInt32(morph.Code));
+                            }
+
+                            if (morph.Vigor == "")
+                            {
+                                command.Parameters.AddWithValue("@Units", 0);
+                            }
+                            else
+                            {
+                                command.Parameters.AddWithValue("@Units", Convert.ToInt32(uxMorphUnits.Text));
+                            }
+
                             command.Parameters.AddWithValue("@ID", morph.Id);
 
                             connection.Open();
@@ -219,7 +259,7 @@ namespace WpfApp
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to connect to database.");
+                    MessageBox.Show("Unable to connect to database02.");
                 }
             }
         }
@@ -260,7 +300,7 @@ namespace WpfApp
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to connect to database.");
+                    MessageBox.Show("Unable to connect to database03.");
                 }
             }
             else
@@ -293,7 +333,7 @@ namespace WpfApp
                             command.Parameters.AddWithValue("@ARegNum", uxRegNum.Text);
 
                             connection.Open();
-                            int k = command.ExecuteNonQuery();
+                            int k = command.ExecuteNonQuery();//useful part(upload to database)
                             connection.Close();
                         }
 
@@ -301,7 +341,7 @@ namespace WpfApp
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to connect to database.");
+                    MessageBox.Show("Unable to connect to database04.");
                 }
             }
         }
@@ -318,9 +358,10 @@ namespace WpfApp
                         command.CommandType = CommandType.StoredProcedure;
 
                         command.Parameters.AddWithValue("@AnimalID", id);
-                        connection.Open();
 
+                        connection.Open();
                         var reader = command.ExecuteReader();
+                        
 
                         recordList = new List<Record>();
                         Record record;
@@ -334,13 +375,14 @@ namespace WpfApp
                                reader.GetInt32(reader.GetOrdinal("Balance")).ToString(), id);
                             recordList.Add(record);
                         }
+                        connection.Close();
                         return recordList;
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to connect to database.");
+                MessageBox.Show("Unable to connect to database05.");
                 return new List<Record>();
             }
         }
@@ -382,7 +424,7 @@ namespace WpfApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Unable to connect to database.");
+                MessageBox.Show("Unable to connect to database06.");
                 return new Morph();
             }
         }

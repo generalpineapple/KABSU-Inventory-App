@@ -284,10 +284,73 @@ C:\Users\JPMartin288\Source\Repos\KABSU-Inventory-App2\WpfApp\WpfApp\bin\Debug\x
 C:\Users\mcquajac000\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.visualstudio.testadapter.dll
 C:\Users\mcquajac000\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.reporters.net452.dll
 C:\Users\mcquajac000\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.utility.net452.dll
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\WpfApp.exe.config
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\WpfApp.exe
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\WpfApp.pdb
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\Google.Protobuf.dll
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\MySql.Data.dll
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\Renci.SshNet.dll
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.abstractions.dll
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.assert.dll
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.core.dll
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.execution.desktop.dll
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\Google.Protobuf.xml
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\MySql.Data.xml
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\Renci.SshNet.xml
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.assert.xml
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.core.xml
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.execution.desktop.xml
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\KABSUApp.csprojAssemblyReference.cache
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\AdditionalInfoWindow.g.cs
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\MainWindow.g.cs
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\NoteWindow.g.cs
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\RecordWindow.g.cs
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\SearchWindow.g.cs
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\SearchWindowResults.g.cs
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\App.g.cs
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\WpfApp_MarkupCompile.cache
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\WpfApp_MarkupCompile.lref
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\AdditionalInfoWindow.baml
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\MainWindow.baml
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\NoteWindow.baml
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\RecordWindow.baml
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\SearchWindow.baml
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\SearchWindowResults.baml
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\WpfApp.g.resources
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\WpfApp.Properties.Resources.resources
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\KABSUApp.csproj.GenerateResource.cache
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\KABSUApp.csproj.CoreCompileInputs.cache
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\KABSUApp.csproj.CopyComplete
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\WpfApp.exe
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\obj\Debug\WpfApp.pdb
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.runner.reporters.net452.dll
+C:\Users\Yijun\Desktop\CIS 642\WpfApp\WpfApp\bin\Debug\xunit.runner.utility.net452.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.reporters.net452.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.utility.net452.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.abstractions.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\WpfApp.exe.config
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\WpfApp.exe
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\WpfApp.pdb
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Google.Protobuf.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Microsoft.VisualStudio.CodeCoverage.Shim.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\MySql.Data.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Renci.SshNet.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.assert.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.core.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.execution.desktop.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Google.Protobuf.xml
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\MySql.Data.xml
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Renci.SshNet.xml
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.assert.xml
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.core.xml
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.execution.desktop.xml
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\KABSUApp.csprojAssemblyReference.cache
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\WpfApp.exe.config
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\AdditionalInfoWindow.g.cs
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\InventoryPage.g.cs
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\MainWindow.g.cs
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\NoteWindow.g.cs
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\RecordWindow.g.cs
@@ -296,138 +359,7 @@ C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\Sea
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\App.g.cs
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\WpfApp_MarkupCompile.cache
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\WpfApp_MarkupCompile.lref
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.abstractions.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\WpfApp.exe.config
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\WpfApp.exe
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\WpfApp.pdb
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Microsoft.Win32.Primitives.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\netstandard.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.AppContext.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Collections.Concurrent.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Collections.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Collections.NonGeneric.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Collections.Specialized.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.ComponentModel.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.ComponentModel.EventBasedAsync.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.ComponentModel.Primitives.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.ComponentModel.TypeConverter.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Console.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Data.Common.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Diagnostics.Contracts.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Diagnostics.Debug.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Diagnostics.FileVersionInfo.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Diagnostics.Process.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Diagnostics.StackTrace.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Diagnostics.Tools.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Diagnostics.TraceSource.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Diagnostics.Tracing.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Drawing.Primitives.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Dynamic.Runtime.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Globalization.Calendars.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Globalization.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Globalization.Extensions.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.IO.Compression.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.IO.Compression.ZipFile.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.IO.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.IO.FileSystem.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.IO.FileSystem.DriveInfo.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.IO.FileSystem.Primitives.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.IO.FileSystem.Watcher.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.IO.IsolatedStorage.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.IO.MemoryMappedFiles.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.IO.Pipes.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.IO.UnmanagedMemoryStream.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Linq.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Linq.Expressions.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Linq.Parallel.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Linq.Queryable.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Net.Http.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Net.NameResolution.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Net.NetworkInformation.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Net.Ping.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Net.Primitives.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Net.Requests.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Net.Security.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Net.Sockets.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Net.WebHeaderCollection.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Net.WebSockets.Client.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Net.WebSockets.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.ObjectModel.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Reflection.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Reflection.Extensions.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Reflection.Primitives.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Resources.Reader.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Resources.ResourceManager.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Resources.Writer.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.Extensions.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.Handles.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.InteropServices.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.Numerics.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.Serialization.Formatters.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.Serialization.Json.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.Serialization.Primitives.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.Serialization.Xml.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Security.Claims.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Security.Cryptography.Algorithms.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Security.Cryptography.Csp.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Security.Cryptography.Encoding.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Security.Cryptography.Primitives.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Security.Principal.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Security.SecureString.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Text.Encoding.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Text.Encoding.Extensions.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Text.RegularExpressions.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Threading.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Threading.Overlapped.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Threading.Tasks.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Threading.Tasks.Parallel.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Threading.Thread.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Threading.ThreadPool.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Threading.Timer.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.ValueTuple.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Xml.ReaderWriter.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Xml.XDocument.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Xml.XmlDocument.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Xml.XmlSerializer.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Xml.XPath.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Xml.XPath.XDocument.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\BouncyCastle.Crypto.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Google.Protobuf.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\K4os.Compression.LZ4.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\K4os.Compression.LZ4.Streams.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\K4os.Hash.xxHash.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Microsoft.VisualStudio.CodeCoverage.Shim.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\MySql.Data.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Renci.SshNet.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Buffers.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Memory.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Numerics.Vectors.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Ubiety.Dns.Core.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.assert.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.core.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.execution.desktop.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Zstandard.Net.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Google.Protobuf.xml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\K4os.Compression.LZ4.xml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\K4os.Compression.LZ4.Streams.xml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\K4os.Hash.xxHash.xml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\MySql.Data.xml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Renci.SshNet.xml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Buffers.xml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Memory.xml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Numerics.Vectors.xml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.assert.xml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.core.xml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.execution.desktop.xml
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\AdditionalInfoWindow.baml
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\InventoryPage.baml
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\MainWindow.baml
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\NoteWindow.baml
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\RecordWindow.baml
@@ -440,4 +372,5 @@ C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\KAB
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\KABSUApp.csproj.CopyComplete
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\WpfApp.exe
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\WpfApp.pdb
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.abstractions.xml
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\InventoryPage.g.cs
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\InventoryPage.baml
