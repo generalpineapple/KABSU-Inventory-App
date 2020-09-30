@@ -52,7 +52,7 @@ namespace WpfApp
 
         private void UxInventoryList_Click(object sender, RoutedEventArgs e)
         {
-            inventoryPage = new InventoryPage(CalculateInventoryList());
+            //inventoryPage = new InventoryPage(CalculateInventoryList());
             inventoryPage.ShowDialog();
             this.Close();
         }
