@@ -52,8 +52,8 @@ namespace WpfApp
 
         private void UxInventoryList_Click(object sender, RoutedEventArgs e)
         {
-            //inventoryPage = new InventoryPage(CalculateInventoryList());
-            inventoryPage.ShowDialog();
+            windowResults = new SearchWindowResults(CalculateInventoryList());
+            windowResults.ShowDialog();
             this.Close();
         }
 
@@ -110,7 +110,7 @@ namespace WpfApp
             return results;
         }
 
-        public List<string> CalculateInventoryList()
+        /*public List<string> CalculateInventoryList()
         {
             SetTerm(uxSearchTerm1.Text, uxSearchContents1.Text);
             SetTerm(uxSearchTerm2.Text, uxSearchContents2.Text);
@@ -127,6 +127,25 @@ namespace WpfApp
                 description.Add(s.ToString());
             }
             return description;
+        }*/
+
+        public List<SearchResult> CalculateInventoryList()
+        {
+            SetTerm(uxSearchTerm1.Text, uxSearchContents1.Text);
+            SetTerm(uxSearchTerm2.Text, uxSearchContents2.Text);
+            SetTerm(uxSearchTerm3.Text, uxSearchContents3.Text);
+            SetTerm(uxSearchTerm4.Text, uxSearchContents4.Text);
+
+            searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
+            searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
+            searchResults = new SearchResults();
+            List<SearchResult> results = searchResults.retrieveData(searchTerm);
+            List<string> description = new List<string>();
+            foreach (SearchResult s in results)
+            {
+                description.Add(s.ToString());
+            }
+            return results;
         }
     }
 }

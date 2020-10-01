@@ -32,20 +32,20 @@ namespace WpfApp
         private static int ID_INDEX = 321;
         private static int ROW_SPACING = 32;
         private static int MORPH_ID = 326;
-        private List<Record> recordList;
+        private List<InventoryRecord> recordList;
         private Morph morph;
         private bool isMorph;
         private bool isOldMorph;
         private bool populating;
-        private bool newRecord;
-        private bool isOldRecord;
+        private bool newPage;
+        private bool isOldPage;
         private NoteWindow noteWindow;
         private AdditionalInfoWindow infoWindow;
 
         public InventoryPage()
         {
-            newRecord = true;
-            isOldRecord = false;
+            newPage = true;
+            isOldPage = false;
             searchResult = new SearchResult();
             InitializeComponent();
             notes = "";
@@ -54,7 +54,7 @@ namespace WpfApp
 
         public InventoryPage(SearchResult search)
         {
-            newRecord = false;
+            newPage = false;
             searchResult = search;
             oldCode = searchResult.Code;
             oldOwner = searchResult.Owner;
@@ -87,23 +87,23 @@ namespace WpfApp
             List<string> morphList = new List<string>();
             int textCount = 0;
             int recordCount = 0;
-            /*foreach (TextBox tb in FindVisualChildren<TextBox>(this))
+            foreach (TextBox tb in FindVisualChildren<TextBox>(this))
             {
                 list.Add(tb.Text);
-                if (tb.Text != "" && (tb.Parent != uxBottomGrid && tb.Parent != uxMorphGrid))
+                if (tb.Text != "" && (tb.Parent != uxBottomGrid && tb.Parent != uxTopGrid1))
                 {
                     textCount++;
                     recordCount++;
                 }
-                if (tb.Text != "" && (tb.Parent != uxBottomGrid && tb.Parent != uxTopGrid1 && tb.Parent != uxTopGrid2))
+                if (tb.Text != "" && (tb.Parent != uxBottomGrid && tb.Parent != uxTopGrid1))
                     isMorph = true;
-            } */
-            recordList = new List<Record>();
+            } 
+            recordList = new List<InventoryRecord>();
             for (int i = 0; textCount > 0; i++)
             {
                 if (list[i] != "" || list[i + ROW_SPACING] != "" || list[i + (ROW_SPACING * 2)] != "" || list[i + (ROW_SPACING * 3)] != "" || list[i + (ROW_SPACING * 4)] != "")
                 {
-                    recordList.Add(new Record(list[i], list[i + ROW_SPACING], list[i + (ROW_SPACING * 2)], list[i + (ROW_SPACING * 3)], list[i + (ROW_SPACING * 4)], list[ID_INDEX]));
+                    recordList.Add(new InventoryRecord(list[i], list[i + ROW_SPACING], list[i + (ROW_SPACING * 2)], list[i + (ROW_SPACING * 3)], list[i + (ROW_SPACING * 4)], list[ID_INDEX]));
                     if (list[i] != "")
                         textCount--;
                     if (list[i + ROW_SPACING] != "")
@@ -160,18 +160,18 @@ namespace WpfApp
                             int k = command.ExecuteNonQuery();
                             connection.Close();
                         }
-                        foreach (Record r in recordList)
+                        foreach (InventoryRecord r in recordList)
                         {
 
                             using (var command = new MySqlCommand("kabsu.StoreData", connection))
                             {
                                 command.CommandType = CommandType.StoredProcedure;
 
-                                command.Parameters.AddWithValue("@ToFrom", r.ToFrom);
-                                command.Parameters.AddWithValue("@Date", r.Date);
-                                command.Parameters.AddWithValue("@Received", Convert.ToInt32(r.Rec));
-                                command.Parameters.AddWithValue("@Shipped", Convert.ToInt32(r.Ship));
-                                command.Parameters.AddWithValue("@Balance", Convert.ToInt32(r.Balance));
+                                command.Parameters.AddWithValue("@Item", r.Item);
+                                command.Parameters.AddWithValue("@Description", r.Description);
+                                command.Parameters.AddWithValue("@Qty", Convert.ToInt32(r.Qty));
+                                command.Parameters.AddWithValue("@Rate", Convert.ToInt32(r.Rate));
+                                command.Parameters.AddWithValue("@Amount", Convert.ToInt32(r.Amount));
                                 command.Parameters.AddWithValue("@AnimalID", r.AnimalId);
 
                                 connection.Open();
@@ -266,7 +266,7 @@ namespace WpfApp
 
         private void StoreParent()
         {
-            if (newRecord == true)
+            if (newPage == true)
             {
                 string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
                 try
@@ -346,14 +346,14 @@ namespace WpfApp
             }
         }
 
-        private List<Record> RetrieveRecords(string id)
+        private List<InventoryRecord> RetrieveRecords(string id)
         {
             string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
             try
             {
                 using (var connection = new MySqlConnection(connectionString))
                 {
-                    using (var command = new MySqlCommand("kabsu.RetrieveRecords", connection))
+                    using (var command = new MySqlCommand("kabsu.RetrieveInventoryRecords", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
@@ -363,16 +363,16 @@ namespace WpfApp
                         var reader = command.ExecuteReader();
 
 
-                        recordList = new List<Record>();
-                        Record record;
+                        recordList = new List<InventoryRecord>();
+                        InventoryRecord record;
                         while (reader.Read())
                         {
-                            record = new Record(
-                               reader.GetString(reader.GetOrdinal("ToFrom")),
-                               reader.GetString(reader.GetOrdinal("Date")),
-                               reader.GetInt32(reader.GetOrdinal("NumReceived")).ToString(),
-                               reader.GetInt32(reader.GetOrdinal("NumShipped")).ToString(),
-                               reader.GetInt32(reader.GetOrdinal("Balance")).ToString(), id);
+                            record = new InventoryRecord(
+                               reader.GetString(reader.GetOrdinal("Item")).ToString(),
+                               reader.GetString(reader.GetOrdinal("Description")).ToString(),
+                               reader.GetInt32(reader.GetOrdinal("Qty")).ToString(),
+                               reader.GetInt32(reader.GetOrdinal("Rate")).ToString(),
+                               reader.GetInt32(reader.GetOrdinal("Amount")).ToString(), id);
                             recordList.Add(record);
                         }
                         connection.Close();
@@ -383,7 +383,7 @@ namespace WpfApp
             catch (Exception ex)
             {
                 MessageBox.Show("Unable to connect to database05.");
-                return new List<Record>();
+                return new List<InventoryRecord>();
             }
         }
 
@@ -438,13 +438,13 @@ namespace WpfApp
 
             if (recordList != null)
             {
-                foreach (Record r in recordList)
+                foreach (InventoryRecord r in recordList)
                 {
-                    textBoxes[textCount].Text = r.ToFrom;
-                    textBoxes[textCount + ROW_SPACING].Text = r.Date;
-                    textBoxes[textCount + (ROW_SPACING * 2)].Text = r.Rec;
-                    textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Ship;
-                    textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance;
+                    textBoxes[textCount].Text = r.Item;
+                    textBoxes[textCount + ROW_SPACING].Text = r.Description;
+                    textBoxes[textCount + (ROW_SPACING * 2)].Text = r.Qty;
+                    textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Rate;
+                    textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Amount;
 
                     textCount++;
 
@@ -461,7 +461,7 @@ namespace WpfApp
                 textBoxes[MORPH_ID + 4].Text = morph.Code;
                 textBoxes[MORPH_ID + 5].Text = morph.Units;
             }
-            /*if (searchResult.Units != null)
+           /* if (searchResult.Units != null)
             {
                 uxMorphUnits.Text = searchResult.Units;
             }
@@ -486,7 +486,7 @@ namespace WpfApp
         }
         private void CollectAdditionalInfo()
         {
-            if (newRecord == true)
+            if (newPage == true)
                 info = new AdditionalInfo();
             else
                 info = new AdditionalInfo(searchResult.Species, searchResult.Town, searchResult.State, searchResult.Country, Convert.ToBoolean(searchResult.INV.ToLower()));
