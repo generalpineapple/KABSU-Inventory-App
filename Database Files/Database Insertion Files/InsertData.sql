@@ -17,8 +17,13 @@ IN Species VARCHAR(16),
 IN RegNum VARCHAR(32),
 IN PersonID INT)
 BEGIN 
-INSERT kabsu.animal(AnimalID, Name, Breed, Species, RegNum, PersonID)
-VALUES(AnimalID, Name, Breed, Species, RegNum, PersonID);
+IF NOT EXISTS (SELECT * FROM kabsu.animal a
+				WHERE Name = a.Name = Name
+				AND a.RegNum = RegNum )
+	BEGIN
+	INSERT kabsu.animal(AnimalID, Name, Breed, Species, RegNum, PersonID)
+	VALUES(AnimalID, Name, Breed, Species, RegNum, PersonID);
+	END
 END
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `InsertSample`(
