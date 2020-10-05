@@ -102,6 +102,9 @@
     </Compile>
     <Compile Include="InsertData.cs" />
     <Compile Include="DataLoad.cs" />
+    <Compile Include="InventoryPage.xaml.cs">
+      <DependentUpon>InventoryPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Morph.cs" />
     <Compile Include="NoteWindow.xaml.cs">
       <DependentUpon>NoteWindow.xaml</DependentUpon>
@@ -121,6 +124,10 @@
       <DependentUpon>SearchWindowResults.xaml</DependentUpon>
     </Compile>
     <Page Include="AdditionalInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InventoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

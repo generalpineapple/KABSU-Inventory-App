@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="Search" Height="168.977" Width="435.464" ResizeMode="CanMinimize">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="103*"/>
+            <ColumnDefinition Width="40*"/>
+        </Grid.ColumnDefinitions>
         <TextBox x:Name="uxSearchContents1" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="10,11,0,0" FontSize="14"/>
         <TextBox x:Name="uxSearchContents2" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="10,39,0,0" FontSize="14"/>
         <TextBox x:Name="uxSearchContents3" HorizontalAlignment="Left" Height="24" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="10,67,0,0" FontSize="14"/>
@@ -52,7 +56,7 @@
             <ComboBoxItem Content="State"/>
         </ComboBox>
         <Button x:Name="uxSearch" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="284,94,0,0" Click="UxSearch_Click"  FontSize="14" Grid.ColumnSpan="2" Height="25"/>
-        <Button x:Name="uxUnitSum" Content="Sum of Units" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="284,64,0,0" Click="UxUnitSum_Click"  FontSize="14" Height="25"/>
-
+        <Button x:Name="uxUnitSum" Content="Sum of Units" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="284,64,0,0" Click="UxUnitSum_Click"  FontSize="14" Height="25" Grid.ColumnSpan="2"/>
+        <Button x:Name="uxInventoryList" Content="Inventory List" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="284,34,0,0" Click="UxInventoryList_Click"  FontSize="14" Height="25" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

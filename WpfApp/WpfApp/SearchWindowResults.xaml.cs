@@ -20,6 +20,8 @@ namespace WpfApp
     public partial class SearchWindowResults : Window
     {
         private RecordWindow recordWindow;
+
+        private InventoryPage inventoryPage;
         public SearchWindowResults(List<SearchResult> results)
         {
             InitializeComponent();
@@ -45,5 +47,12 @@ namespace WpfApp
             recordWindow.ShowDialog();
         }
 
+        private void Row_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DataGridRow row = sender as DataGridRow;
+            SearchResult search = (SearchResult)row.Item;
+            inventoryPage = new InventoryPage(search);
+            inventoryPage.ShowDialog();
+        }
     }
 }
