@@ -32,20 +32,21 @@ namespace WpfApp
         private static int ID_INDEX = 321;
         private static int ROW_SPACING = 32;
         private static int MORPH_ID = 326;
-        private List<InventoryRecord> recordList;
+        private List<InventoryRecord> inventoryrecordList;
+        private List<Record> recordList;
         private Morph morph;
         private bool isMorph;
         private bool isOldMorph;
         private bool populating;
-        private bool newPage;
-        private bool isOldPage;
+        private bool newRecord;
+        private bool isOldRecord;
         private NoteWindow noteWindow;
         private AdditionalInfoWindow infoWindow;
 
         public InventoryPage()
         {
-            newPage = true;
-            isOldPage = false;
+            newRecord = true;
+            isOldRecord = false;
             searchResult = new SearchResult();
             InitializeComponent();
             notes = "";
@@ -54,19 +55,18 @@ namespace WpfApp
 
         public InventoryPage(SearchResult search)
         {
-            newPage = false;
+            newRecord = false;
             searchResult = search;
             oldCode = searchResult.Code;
             oldOwner = searchResult.Owner;
             oldCity = searchResult.Town;
             oldState = searchResult.State;
             InitializeComponent();
-            /*uxCode.Text = searchResult.Code;
-            uxBreed.Text = searchResult.Breed;
-            uxAnimalName.Text = searchResult.AnimalName;
-            uxRegNum.Text = searchResult.RegNum;
-            uxOwner.Text = searchResult.Owner;
-            uxCanNum.Text = searchResult.CanNum; */
+            uxDescription.Text = searchResult.Code;
+            uxDescription.Text += searchResult.Breed;
+            uxDescription.Text += searchResult.AnimalName;
+            uxDescription.Text += searchResult.RegNum;
+            uxDescription.Text += searchResult.Owner;
             notes = "";
             isMorph = false;
             isOldMorph = false;
@@ -90,7 +90,7 @@ namespace WpfApp
             foreach (TextBox tb in FindVisualChildren<TextBox>(this))
             {
                 list.Add(tb.Text);
-                if (tb.Text != "" && (tb.Parent != uxBottomGrid && tb.Parent != uxTopGrid1))
+                if (tb.Text != "" && (tb.Parent != uxBottomGrid))
                 {
                     textCount++;
                     recordCount++;
@@ -98,12 +98,12 @@ namespace WpfApp
                 if (tb.Text != "" && (tb.Parent != uxBottomGrid && tb.Parent != uxTopGrid1))
                     isMorph = true;
             } 
-            recordList = new List<InventoryRecord>();
+            inventoryrecordList = new List<InventoryRecord>();
             for (int i = 0; textCount > 0; i++)
             {
                 if (list[i] != "" || list[i + ROW_SPACING] != "" || list[i + (ROW_SPACING * 2)] != "" || list[i + (ROW_SPACING * 3)] != "" || list[i + (ROW_SPACING * 4)] != "")
                 {
-                    recordList.Add(new InventoryRecord(list[i], list[i + ROW_SPACING], list[i + (ROW_SPACING * 2)], list[i + (ROW_SPACING * 3)], list[i + (ROW_SPACING * 4)], list[ID_INDEX]));
+                    inventoryrecordList.Add(new InventoryRecord(list[i], list[i + ROW_SPACING], list[i + (ROW_SPACING * 2)], list[i + (ROW_SPACING * 3)], list[i + (ROW_SPACING * 4)], list[ID_INDEX]));
                     if (list[i] != "")
                         textCount--;
                     if (list[i + ROW_SPACING] != "")
@@ -160,7 +160,7 @@ namespace WpfApp
                             int k = command.ExecuteNonQuery();
                             connection.Close();
                         }
-                        foreach (InventoryRecord r in recordList)
+                        foreach (InventoryRecord r in inventoryrecordList)
                         {
 
                             using (var command = new MySqlCommand("kabsu.StoreData", connection))
@@ -266,7 +266,7 @@ namespace WpfApp
 
         private void StoreParent()
         {
-            if (newPage == true)
+            if (newRecord == true)
             {
                 string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
                 try
@@ -321,12 +321,12 @@ namespace WpfApp
                             //command.Parameters.AddWithValue("@SCollDate", uxMorphDate.Text);
                             //command.Parameters.AddWithValue("@SNumUnits", uxMorphUnits.Text);
                             command.Parameters.AddWithValue("@PCity", info.City);
-                            command.Parameters.AddWithValue("@OldCity", oldCity);
+                            command.Parameters.AddWithValue("@oldQty", oldCity);
                             command.Parameters.AddWithValue("@PState", info.State);
-                            command.Parameters.AddWithValue("@OldState", oldState);
+                            command.Parameters.AddWithValue("@oldRate", oldState);
                             command.Parameters.AddWithValue("@PCountry", info.Country);
                             //command.Parameters.AddWithValue("@POwner", uxOwner.Text);
-                            command.Parameters.AddWithValue("@OldOwner", oldOwner);
+                            command.Parameters.AddWithValue("@oldDescription", oldOwner);
                             //command.Parameters.AddWithValue("@AAnimalName", uxAnimalName.Text);
                             //command.Parameters.AddWithValue("@ABreed", uxBreed.Text);
                             command.Parameters.AddWithValue("@ASpecies", info.Species);
@@ -346,14 +346,14 @@ namespace WpfApp
             }
         }
 
-        private List<InventoryRecord> RetrieveRecords(string id)
+        private List<Record> RetrieveRecords(string id)
         {
             string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
             try
             {
                 using (var connection = new MySqlConnection(connectionString))
                 {
-                    using (var command = new MySqlCommand("kabsu.RetrieveInventoryRecords", connection))
+                    using (var command = new MySqlCommand("kabsu.RetrieveRecords", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
@@ -363,16 +363,16 @@ namespace WpfApp
                         var reader = command.ExecuteReader();
 
 
-                        recordList = new List<InventoryRecord>();
-                        InventoryRecord record;
+                        recordList = new List<Record>();
+                        Record record;
                         while (reader.Read())
                         {
-                            record = new InventoryRecord(
-                               reader.GetString(reader.GetOrdinal("Item")).ToString(),
-                               reader.GetString(reader.GetOrdinal("Description")).ToString(),
-                               reader.GetInt32(reader.GetOrdinal("Qty")).ToString(),
-                               reader.GetInt32(reader.GetOrdinal("Rate")).ToString(),
-                               reader.GetInt32(reader.GetOrdinal("Amount")).ToString(), id);
+                            record = new Record(
+                               reader.GetString(reader.GetOrdinal("ToFrom")),
+                               reader.GetString(reader.GetOrdinal("Date")),
+                               reader.GetInt32(reader.GetOrdinal("NumReceived")).ToString(),
+                               reader.GetInt32(reader.GetOrdinal("NumShipped")).ToString(),
+                               reader.GetInt32(reader.GetOrdinal("Balance")).ToString(), id);
                             recordList.Add(record);
                         }
                         connection.Close();
@@ -383,7 +383,7 @@ namespace WpfApp
             catch (Exception ex)
             {
                 MessageBox.Show("Unable to connect to database05.");
-                return new List<InventoryRecord>();
+                return new List<Record>();
             }
         }
 
@@ -438,13 +438,25 @@ namespace WpfApp
 
             if (recordList != null)
             {
-                foreach (InventoryRecord r in recordList)
+                foreach (Record r in recordList)
                 {
-                    textBoxes[textCount].Text = r.Item;
+                   /* textBoxes[textCount].Text = r.ToFrom;
+                    textBoxes[textCount + ROW_SPACING].Text = r.Date;
+                    textBoxes[textCount + (ROW_SPACING * 2)].Text = r.Rec;
+                    textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Ship;
+                    textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance; */
+
+                    uxDescription.Text = r.ToFrom;
+                    uxDescription.Text = r.Date;
+                    uxDescription.Text = r.Ship;
+                    uxDescription.Text = r.Balance;
+
+                    textBoxes[textCount + (ROW_SPACING * 1)].Text = uxDescription.ToString();
+                    /*textBoxes[textCount].Text = r.Item;
                     textBoxes[textCount + ROW_SPACING].Text = r.Description;
                     textBoxes[textCount + (ROW_SPACING * 2)].Text = r.Qty;
                     textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Rate;
-                    textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Amount;
+                    textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Amount; */
 
                     textCount++;
 
@@ -452,7 +464,7 @@ namespace WpfApp
                         textCount += 128;
                 }
             }
-            if (morph != null)
+           /* if (morph != null)
             {
                 textBoxes[MORPH_ID].Text = morph.Date;
                 textBoxes[MORPH_ID + 1].Text = morph.Vigor;
@@ -460,7 +472,7 @@ namespace WpfApp
                 textBoxes[MORPH_ID + 3].Text = morph.Morphology;
                 textBoxes[MORPH_ID + 4].Text = morph.Code;
                 textBoxes[MORPH_ID + 5].Text = morph.Units;
-            }
+            } */
            /* if (searchResult.Units != null)
             {
                 uxMorphUnits.Text = searchResult.Units;
@@ -486,7 +498,7 @@ namespace WpfApp
         }
         private void CollectAdditionalInfo()
         {
-            if (newPage == true)
+            if (newRecord == true)
                 info = new AdditionalInfo();
             else
                 info = new AdditionalInfo(searchResult.Species, searchResult.Town, searchResult.State, searchResult.Country, Convert.ToBoolean(searchResult.INV.ToLower()));
