@@ -13,8 +13,8 @@
         </Grid.RowDefinitions>
         <Grid x:Name="uxTopGrid1" HorizontalAlignment="Left" Height="703" VerticalAlignment="Top" Width="751" Margin="10,5.167,0,0" Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="276" />
-                <ColumnDefinition Width="155.25" />
+                <ColumnDefinition Width="105" />
+                <ColumnDefinition Width="300" />
                 <ColumnDefinition Width="105" />
                 <ColumnDefinition Width="105" />
                 <ColumnDefinition Width="109.4" />
@@ -275,7 +275,7 @@
                 <TextBlock><Run Text="COLL"/><LineBreak/><Run Text="CODE"/></TextBlock>
             </Label>
             <Label Grid.Column="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="UNITS" FontSize="14"/>
-            <TextBox x:Name="uxMorphDescription" Grid.Row="2" Grid.Column="0" FontSize="14" TextChanged="MorphChanged"/>
+            <TextBox x:Name="uxMorphDate" Grid.Row="2" Grid.Column="0" FontSize="14" TextChanged="MorphChanged"/>
             <TextBox x:Name="uxVigor" Grid.Row="2" Grid.Column="1" FontSize="14" TextChanged="MorphChanged"/>
             <TextBox x:Name="uxMot" Grid.Row="2" Grid.Column="2" FontSize="14" TextChanged="MorphChanged"/>
             <TextBox x:Name="uxMorph" Grid.Row="2" Grid.Column="3" FontSize="14" TextChanged="MorphChanged"/>
