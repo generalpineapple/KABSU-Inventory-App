@@ -79,7 +79,7 @@ namespace WpfApp
 
         private void InventoryPage_Closing(object sender, CancelEventArgs e)
         {
-            CollectAdditionalInfo();
+            //CollectAdditionalInfo();
 
             this.IsEnabled = false;
 
@@ -454,15 +454,17 @@ namespace WpfApp
                      list.Add(r.Balance.ToString()); */
 
                     textBoxes[textCount + ROW_SPACING].Text = "ToFrom: " + r.ToFrom;
-                    textBoxes[textCount + ROW_SPACING].Text += " ";
-                    textBoxes[textCount + ROW_SPACING].Text += "Date" + r.Date;
-                    textBoxes[textCount + ROW_SPACING].Text += " ";
-                    textBoxes[textCount + ROW_SPACING].Text += r.Rec;
-                    textBoxes[textCount + ROW_SPACING].Text += " ";
-                    textBoxes[textCount + ROW_SPACING].Text += r.Ship;
-                    textBoxes[textCount + ROW_SPACING].Text += " ";
-                    textBoxes[textCount + ROW_SPACING].Text += r.Balance;
-                    textBoxes[textCount + ROW_SPACING].Text += " ";
+                    textBoxes[textCount + ROW_SPACING].Text += "\nDate: " + r.Date;
+                    //textBoxes[textCount + ROW_SPACING].Text += r.Rec;
+                    //textBoxes[textCount + ROW_SPACING].Text += " ";
+                    //textBoxes[textCount + ROW_SPACING].Text += r.Ship;
+                    //textBoxes[textCount + ROW_SPACING].Text += " ";
+                    textBoxes[textCount + ROW_SPACING].Text += "\nBalance: " + r.Balance;
+
+                    textBoxes[textCount + ROW_SPACING].Text += "\nAnimal Name: " + uxAnimalName.Text;
+
+                    textBoxes[textCount + ROW_SPACING].Text += "\nCane code: " + uxCanNum.Text;
+                    
 
                     if (searchResult.Units != null)
                     {
