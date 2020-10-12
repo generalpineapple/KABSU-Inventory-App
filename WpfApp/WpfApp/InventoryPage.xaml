@@ -221,7 +221,7 @@
             <TextBox x:Name="uxAmountLeft32" Grid.Row="33" Grid.Column="4" FontSize="14"/>
         </Grid>
 
-        <Grid x:Name="uxBottomGrid" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="1517" Margin="10,10,0,0">
+        <Grid Visibility="hidden"  x:Name="uxBottomGrid" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="1517" Margin="10,10,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="138" />
                 <ColumnDefinition Width="138" />
@@ -252,7 +252,7 @@
             <TextBox x:Name="uxRegNum" Grid.Row="2" Grid.Column="4" FontSize="14"/>
             <TextBox x:Name="uxOwner" Grid.Row="2" Grid.Column="5" FontSize="14"/>
         </Grid>
-        <Grid x:Name="uxMorphGrid" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="751" Margin="10,82,0,0" Grid.RowSpan="2">
+        <Grid Visibility="hidden"  x:Name="uxMorphGrid" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="751" Margin="10,82,0,0" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="276" />
                 <ColumnDefinition Width="73.5" />

@@ -79,7 +79,7 @@ namespace WpfApp
 
         private void InventoryPage_Closing(object sender, CancelEventArgs e)
         {
-            //CollectAdditionalInfo();
+            CollectAdditionalInfo();
 
             this.IsEnabled = false;
 
@@ -463,17 +463,22 @@ namespace WpfApp
 
                     textBoxes[textCount + ROW_SPACING].Text += "\nAnimal Name: " + uxAnimalName.Text;
 
-                    textBoxes[textCount + ROW_SPACING].Text += "\nCane code: " + uxCanNum.Text;
+                    textBoxes[textCount + ROW_SPACING].Text += "\nCane code: " + uxCode.Text;
                     
 
                     if (searchResult.Units != null)
                     {
                         //uxMorphUnits.Text = searchResult.Units;
-                        textBoxes[textCount + ROW_SPACING].Text += "Units: " + searchResult.Units;
+                        textBoxes[textCount + ROW_SPACING].Text += "\nUnits: " + searchResult.Units;
                         textBoxes[textCount + ROW_SPACING].Text += " ";
+
+                        //this is for the Qty column
+                        textBoxes[textCount + ROW_SPACING * 2].Text = searchResult.Units;
                     }
 
                     textCount++;
+
+                    
 
                     if (textCount == 32)
                         textCount += 128;
