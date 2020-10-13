@@ -5,25 +5,56 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="Inventory Page" Height="1200" Width="915" Loaded="InventoryPage_Load">
+        Title="Inventory Page" Height="914.6" Width="1549.6" Loaded="InventoryPage_Load">
     <Grid ShowGridLines="True" Margin="0,0,0.4,1.2">
-        <Grid x:Name="uxTopGrid1" HorizontalAlignment="Center" Height="1100" VerticalAlignment="Top" Width="800" Margin="10,50,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140*"/>
+            <RowDefinition Height="743*"/>
+        </Grid.RowDefinitions>
+        <Grid x:Name="uxTopGrid1" HorizontalAlignment="Left" Height="703" VerticalAlignment="Top" Width="751" Margin="10,5,0,0" Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="400" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="105" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="105" />
+                <ColumnDefinition Width="105" />
+                <ColumnDefinition Width="109.4" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="30" />
+                <RowDefinition Height="45" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Item</Label>
+            <Label Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">ITEM</Label>
             <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Description</Label>
             <Label Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Qty</Label>
             <Label Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Rate</Label>
@@ -189,25 +220,66 @@
             <TextBox x:Name="uxAmountLeft31" Grid.Row="32" Grid.Column="4" FontSize="14"/>
             <TextBox x:Name="uxAmountLeft32" Grid.Row="33" Grid.Column="4" FontSize="14"/>
         </Grid>
-        <Grid x:Name="uxBottomGrid" HorizontalAlignment="Right" Height="30" VerticalAlignment="Top" Width="350" Margin="10,10,0,0">
+        <Grid Visibility="Hidden" x:Name="uxBottomGrid" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="1517" Margin="10,10,0,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="138" />
+                <ColumnDefinition Width="138" />
+                <ColumnDefinition Width="155.25" />
+                <ColumnDefinition Width="408.25"/>
+                <ColumnDefinition Width="355.35"/>
+                <ColumnDefinition Width="320.85"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
+                <RowDefinition Height="45" />
+                <RowDefinition Height="21" />
             </Grid.RowDefinitions>
-            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">P.O. No.</Label>
-            <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Terms</Label>
-            <Label Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Project</Label>
-            <TextBox x:Name="uxItem" Grid.Row="2" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxDescription" Grid.Row="2" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxQty" Grid.Row="2" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRate" Grid.Row="2" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxAmount" Grid.Row="2" Grid.Column="4" FontSize="14"/>
+            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">
+                <TextBlock><Run Text="CAN"/><LineBreak/><Run Text="NO."/></TextBlock>
+            </Label>
+            <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">
+                <TextBlock><Run Text="CODE"/><LineBreak/><Run Text="NO."/></TextBlock>
+            </Label>
+            <Label Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="BREED" FontSize="14"/>
+            <Label Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="NAME OF ANIMAL" FontSize="14"/>
+            <Label Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="REG. NO." FontSize="14"/>
+            <Label Grid.Column="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="OWNER" FontSize="14"/>
+            <TextBox x:Name="uxCanNum" Grid.Row="2" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxCode" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxBreed" Grid.Row="2" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxAnimalName" Grid.Row="2" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxRegNum" Grid.Row="2" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxOwner" Grid.Row="2" Grid.Column="5" FontSize="14"/>
+        </Grid>
+        <Grid Visibility="Hidden" x:Name="uxMorphGrid" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="751" Margin="10,82,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="276" />
+                <ColumnDefinition Width="73.5" />
+                <ColumnDefinition Width="79.8" />
+                <ColumnDefinition Width="85.25"/>
+                <ColumnDefinition Width="122.4"/>
+                <ColumnDefinition Width="109.4"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="21" />
+            </Grid.RowDefinitions>
+            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">
+                <TextBlock><Run Text="   QtyEIVED"/><LineBreak/><Run Text="Description FROZEN"/></TextBlock>
+            </Label>
+            <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="VIGOR" FontSize="14"/>
+            <Label Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="MOT." FontSize="14"/>
+            <Label Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="MORPH" FontSize="14"/>
+            <Label Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">
+                <TextBlock><Run Text="COLL"/><LineBreak/><Run Text="CODE"/></TextBlock>
+            </Label>
+            <Label Grid.Column="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="UNITS" FontSize="14"/>
+            <TextBox x:Name="uxMorphDate" Grid.Row="2" Grid.Column="0" FontSize="14" TextChanged="MorphChanged"/>
+            <TextBox x:Name="uxVigor" Grid.Row="2" Grid.Column="1" FontSize="14" TextChanged="MorphChanged"/>
+            <TextBox x:Name="uxMot" Grid.Row="2" Grid.Column="2" FontSize="14" TextChanged="MorphChanged"/>
+            <TextBox x:Name="uxMorph" Grid.Row="2" Grid.Column="3" FontSize="14" TextChanged="MorphChanged"/>
+            <TextBox x:Name="uxMorphCode" Grid.Row="2" Grid.Column="4" FontSize="14" TextChanged="MorphChanged"/>
+            <TextBox x:Name="uxMorphUnits" Grid.Row="2" Grid.Column="5" FontSize="14" TextChanged="MorphChanged"/>
         </Grid>
         <Button x:Name="uxNotesButton" Content="Notes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="1416,112,0,0" Height="37" Click="UxNotesButton_Click"/>
     </Grid>
