@@ -62,11 +62,12 @@ namespace WpfApp
             oldCity = searchResult.Town;
             oldState = searchResult.State;
             InitializeComponent();
-            uxDescription.Text = searchResult.Code;
-            uxDescription.Text += searchResult.Breed;
-            uxDescription.Text += searchResult.AnimalName;
-            uxDescription.Text += searchResult.RegNum;
-            uxDescription.Text += searchResult.Owner;
+            uxCode.Text = searchResult.Code;
+            uxBreed.Text = searchResult.Breed;
+            uxAnimalName.Text = searchResult.AnimalName;
+            uxRegNum.Text = searchResult.RegNum;
+            uxOwner.Text = searchResult.Owner;
+            uxCanNum.Text = searchResult.CanNum;
             notes = "";
             isMorph = false;
             isOldMorph = false;
@@ -440,23 +441,25 @@ namespace WpfApp
             {
                 foreach (Record r in recordList)
                 {
-                   /* textBoxes[textCount].Text = r.ToFrom;
-                    textBoxes[textCount + ROW_SPACING].Text = r.Date;
-                    textBoxes[textCount + (ROW_SPACING * 2)].Text = r.Rec;
-                    textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Ship;
-                    textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance; */
+                    /* textBoxes[textCount].Text = r.ToFrom;
+                     textBoxes[textCount + ROW_SPACING].Text = r.Date;
+                     textBoxes[textCount + (ROW_SPACING * 2)].Text = r.Rec;
+                     textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Ship;
+                     textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance; */
 
-                    uxDescription.Text = r.ToFrom;
-                    uxDescription.Text = r.Date;
-                    uxDescription.Text = r.Ship;
-                    uxDescription.Text = r.Balance;
+                    textBoxes[textCount + ROW_SPACING].Text = "ToFrom: " + r.ToFrom;
+                    textBoxes[textCount + ROW_SPACING].Text += "\nDate: " + r.Date;
 
-                    textBoxes[textCount + (ROW_SPACING * 1)].Text = uxDescription.ToString();
-                    /*textBoxes[textCount].Text = r.Item;
-                    textBoxes[textCount + ROW_SPACING].Text = r.Description;
-                    textBoxes[textCount + (ROW_SPACING * 2)].Text = r.Qty;
-                    textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Rate;
-                    textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Amount; */
+                    textBoxes[textCount + ROW_SPACING].Text += "\nBalance: " + r.Balance;
+                    textBoxes[textCount + ROW_SPACING].Text += "\nAnimal Name: " + uxAnimalName.Text;
+                    textBoxes[textCount + ROW_SPACING].Text += "\nCane code: " + uxCode.Text;
+
+                    if(searchResult.Units != null)
+                    {
+                        textBoxes[textCount + ROW_SPACING].Text += "\nUnits: " + searchResult.Units;
+                        textBoxes[textCount + ROW_SPACING].Text += " ";
+                        textBoxes[textCount + ROW_SPACING * 2].Text = searchResult.Units;
+                    }
 
                     textCount++;
 
@@ -473,14 +476,14 @@ namespace WpfApp
                 textBoxes[MORPH_ID + 4].Text = morph.Code;
                 textBoxes[MORPH_ID + 5].Text = morph.Units;
             } */
-           /* if (searchResult.Units != null)
+            if (searchResult.Units != null)
             {
                 uxMorphUnits.Text = searchResult.Units;
             }
             if (searchResult.CollDate != null)
             {
                 uxMorphDate.Text = searchResult.CollDate;
-            }*/
+            }
             isOldMorph = true;
         }
 
