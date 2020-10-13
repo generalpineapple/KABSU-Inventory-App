@@ -32,6 +32,7 @@ namespace WpfApp
         private static int ID_INDEX = 321;
         private static int ROW_SPACING = 32;
         private static int MORPH_ID = 326;
+        private List<InventoryRecord> inventoryrecordList;
         private List<Record> recordList;
         private Morph morph;
         private bool isMorph;
@@ -90,20 +91,20 @@ namespace WpfApp
             foreach (TextBox tb in FindVisualChildren<TextBox>(this))
             {
                 list.Add(tb.Text);
-                if (tb.Text != "" && (tb.Parent != uxBottomGrid && tb.Parent != uxMorphGrid))
+                if (tb.Text != "" && (tb.Parent != uxBottomGrid))
                 {
                     textCount++;
                     recordCount++;
                 }
-                if (tb.Text != "" && (tb.Parent != uxBottomGrid && tb.Parent != uxTopGrid1 && tb.Parent != uxTopGrid2))
+                if (tb.Text != "" && (tb.Parent != uxBottomGrid && tb.Parent != uxTopGrid1))
                     isMorph = true;
-            }
-            recordList = new List<Record>();
+            } 
+            inventoryrecordList = new List<InventoryRecord>();
             for (int i = 0; textCount > 0; i++)
             {
                 if (list[i] != "" || list[i + ROW_SPACING] != "" || list[i + (ROW_SPACING * 2)] != "" || list[i + (ROW_SPACING * 3)] != "" || list[i + (ROW_SPACING * 4)] != "")
                 {
-                    recordList.Add(new Record(list[i], list[i + ROW_SPACING], list[i + (ROW_SPACING * 2)], list[i + (ROW_SPACING * 3)], list[i + (ROW_SPACING * 4)], list[ID_INDEX]));
+                    inventoryrecordList.Add(new InventoryRecord(list[i], list[i + ROW_SPACING], list[i + (ROW_SPACING * 2)], list[i + (ROW_SPACING * 3)], list[i + (ROW_SPACING * 4)], list[ID_INDEX]));
                     if (list[i] != "")
                         textCount--;
                     if (list[i + ROW_SPACING] != "")
@@ -160,18 +161,18 @@ namespace WpfApp
                             int k = command.ExecuteNonQuery();
                             connection.Close();
                         }
-                        foreach (Record r in recordList)
+                        foreach (InventoryRecord r in inventoryrecordList)
                         {
 
                             using (var command = new MySqlCommand("kabsu.StoreData", connection))
                             {
                                 command.CommandType = CommandType.StoredProcedure;
 
-                                command.Parameters.AddWithValue("@ToFrom", r.ToFrom);
-                                command.Parameters.AddWithValue("@Date", r.Date);
-                                command.Parameters.AddWithValue("@Received", Convert.ToInt32(r.Rec));
-                                command.Parameters.AddWithValue("@Shipped", Convert.ToInt32(r.Ship));
-                                command.Parameters.AddWithValue("@Balance", Convert.ToInt32(r.Balance));
+                                command.Parameters.AddWithValue("@Item", r.Item);
+                                command.Parameters.AddWithValue("@Description", r.Description);
+                                command.Parameters.AddWithValue("@Qty", Convert.ToInt32(r.Qty));
+                                command.Parameters.AddWithValue("@Rate", Convert.ToInt32(r.Rate));
+                                command.Parameters.AddWithValue("@Amount", Convert.ToInt32(r.Amount));
                                 command.Parameters.AddWithValue("@AnimalID", r.AnimalId);
 
                                 connection.Open();
@@ -202,7 +203,7 @@ namespace WpfApp
                             command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@Notes", morph.Notes);
-                            command.Parameters.AddWithValue("@Date", uxMorphDate.Text);
+                           // command.Parameters.AddWithValue("@Date", uxMorphDate.Text);
                             if (morph.Vigor == "")
                             {
                                 command.Parameters.AddWithValue("@Vigor", 0);
@@ -243,10 +244,10 @@ namespace WpfApp
                             {
                                 command.Parameters.AddWithValue("@Units", 0);
                             }
-                            else
+                            /*else
                             {
                                 command.Parameters.AddWithValue("@Units", Convert.ToInt32(uxMorphUnits.Text));
-                            }
+                            } */
 
                             command.Parameters.AddWithValue("@ID", morph.Id);
 
@@ -278,18 +279,18 @@ namespace WpfApp
                             command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
-                            command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
+                           /* command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
                             command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
                             command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
-                            command.Parameters.AddWithValue("@NumUnits", uxMorphUnits.Text);
+                            command.Parameters.AddWithValue("@NumUnits", uxMorphUnits.Text); */
                             command.Parameters.AddWithValue("@City", info.City);
                             command.Parameters.AddWithValue("@State", info.State);
                             command.Parameters.AddWithValue("@Country", info.Country);
-                            command.Parameters.AddWithValue("@Owner", uxOwner.Text);
-                            command.Parameters.AddWithValue("@AnimalName", uxAnimalName.Text);
-                            command.Parameters.AddWithValue("@Breed", uxBreed.Text);
+                            //command.Parameters.AddWithValue("@Owner", uxOwner.Text);
+                            //command.Parameters.AddWithValue("@AnimalName", uxAnimalName.Text);
+                           // command.Parameters.AddWithValue("@Breed", uxBreed.Text);
                             command.Parameters.AddWithValue("@Species", info.Species);
-                            command.Parameters.AddWithValue("@RegNum", uxRegNum.Text);
+                            //command.Parameters.AddWithValue("@RegNum", uxRegNum.Text);
 
                             connection.Open();
                             int k = command.ExecuteNonQuery();
@@ -315,23 +316,23 @@ namespace WpfApp
                             command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@SValid", info.Valid.ToString().ToUpper());
-                            command.Parameters.AddWithValue("@SCanNum", uxCanNum.Text);
+                           // command.Parameters.AddWithValue("@SCanNum", uxCanNum.Text);
                             command.Parameters.AddWithValue("@OldAnimalID", oldCode);
-                            command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
-                            command.Parameters.AddWithValue("@SCollDate", uxMorphDate.Text);
-                            command.Parameters.AddWithValue("@SNumUnits", uxMorphUnits.Text);
+                           // command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
+                            //command.Parameters.AddWithValue("@SCollDate", uxMorphDate.Text);
+                            //command.Parameters.AddWithValue("@SNumUnits", uxMorphUnits.Text);
                             command.Parameters.AddWithValue("@PCity", info.City);
-                            command.Parameters.AddWithValue("@OldCity", oldCity);
+                            command.Parameters.AddWithValue("@oldQty", oldCity);
                             command.Parameters.AddWithValue("@PState", info.State);
-                            command.Parameters.AddWithValue("@OldState", oldState);
+                            command.Parameters.AddWithValue("@oldRate", oldState);
                             command.Parameters.AddWithValue("@PCountry", info.Country);
-                            command.Parameters.AddWithValue("@POwner", uxOwner.Text);
-                            command.Parameters.AddWithValue("@OldOwner", oldOwner);
-                            command.Parameters.AddWithValue("@AAnimalName", uxAnimalName.Text);
-                            command.Parameters.AddWithValue("@ABreed", uxBreed.Text);
+                            //command.Parameters.AddWithValue("@POwner", uxOwner.Text);
+                            command.Parameters.AddWithValue("@oldDescription", oldOwner);
+                            //command.Parameters.AddWithValue("@AAnimalName", uxAnimalName.Text);
+                            //command.Parameters.AddWithValue("@ABreed", uxBreed.Text);
                             command.Parameters.AddWithValue("@ASpecies", info.Species);
-                            command.Parameters.AddWithValue("@ARegNum", uxRegNum.Text);
-
+                            //command.Parameters.AddWithValue("@ARegNum", uxRegNum.Text);
+                            
                             connection.Open();
                             int k = command.ExecuteNonQuery();//useful part(upload to database)
                             connection.Close();
@@ -440,11 +441,25 @@ namespace WpfApp
             {
                 foreach (Record r in recordList)
                 {
-                    textBoxes[textCount].Text = r.ToFrom;
-                    textBoxes[textCount + ROW_SPACING].Text = r.Date;
-                    textBoxes[textCount + (ROW_SPACING * 2)].Text = r.Rec;
-                    textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Ship;
-                    textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance;
+                    /* textBoxes[textCount].Text = r.ToFrom;
+                     textBoxes[textCount + ROW_SPACING].Text = r.Date;
+                     textBoxes[textCount + (ROW_SPACING * 2)].Text = r.Rec;
+                     textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Ship;
+                     textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance; */
+
+                    textBoxes[textCount + ROW_SPACING].Text = "ToFrom: " + r.ToFrom;
+                    textBoxes[textCount + ROW_SPACING].Text += "\nDate: " + r.Date;
+
+                    textBoxes[textCount + ROW_SPACING].Text += "\nBalance: " + r.Balance;
+                    textBoxes[textCount + ROW_SPACING].Text += "\nAnimal Name: " + uxAnimalName.Text;
+                    textBoxes[textCount + ROW_SPACING].Text += "\nCane code: " + uxCode.Text;
+
+                    if(searchResult.Units != null)
+                    {
+                        textBoxes[textCount + ROW_SPACING].Text += "\nUnits: " + searchResult.Units;
+                        textBoxes[textCount + ROW_SPACING].Text += " ";
+                        textBoxes[textCount + ROW_SPACING * 2].Text = searchResult.Units;
+                    }
 
                     textCount++;
 
@@ -452,7 +467,7 @@ namespace WpfApp
                         textCount += 128;
                 }
             }
-            if (morph != null)
+           /* if (morph != null)
             {
                 textBoxes[MORPH_ID].Text = morph.Date;
                 textBoxes[MORPH_ID + 1].Text = morph.Vigor;
@@ -460,7 +475,7 @@ namespace WpfApp
                 textBoxes[MORPH_ID + 3].Text = morph.Morphology;
                 textBoxes[MORPH_ID + 4].Text = morph.Code;
                 textBoxes[MORPH_ID + 5].Text = morph.Units;
-            }
+            } */
             if (searchResult.Units != null)
             {
                 uxMorphUnits.Text = searchResult.Units;
