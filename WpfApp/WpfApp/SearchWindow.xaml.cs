@@ -50,12 +50,12 @@ namespace WpfApp
             this.Close();
         }
 
-        private void UxInventoryList_Click(object sender, RoutedEventArgs e)
+        /*private void UxInventoryList_Click(object sender, RoutedEventArgs e)
         {
             inventoryPage = new InventoryPage(CalculateInventoryList());
             inventoryPage.ShowDialog();
             this.Close();
-        }
+        }*/
 
         private void UxUnitSum_Click(object sender, RoutedEventArgs e)
         {

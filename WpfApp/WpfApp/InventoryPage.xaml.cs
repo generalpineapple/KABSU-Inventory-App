@@ -74,7 +74,7 @@ namespace WpfApp
             Closing += InventoryPage_Closing;
             recordList = RetrieveRecords(searchResult.Code);
             morph = RetrieveMorph(searchResult.Code);
-        }
+        } 
 
         private void InventoryPage_Closing(object sender, CancelEventArgs e)
         {
