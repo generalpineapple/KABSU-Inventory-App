@@ -538,3 +538,4 @@ C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\WpfApp.Properties.Resource
 C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\KABSUApp.csproj.GenerateResource.cache
 C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\KABSUApp.csproj.CoreCompileInputs.cache
 C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\KABSUApp.csproj.CopyComplete
+C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\bin\Debug\xunit.abstractions.xml
