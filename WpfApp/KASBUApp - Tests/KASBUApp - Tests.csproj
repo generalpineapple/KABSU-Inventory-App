@@ -64,6 +64,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InventoryPage_Testing.cs" />
     <Compile Include="Matt_UnitTest.cs" />
     <Compile Include="Jeffrey_UnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
