@@ -275,7 +275,6 @@ namespace WpfApp
                     {
                         using (var command = new MySqlCommand("kabsu.StoreParent", connection))
                         {
-                            command.CommandType = CommandType.StoredProcedure;
 
                             if (!uxCanNum.Text.Equals("") || !uxCode.Text.Equals("") || !uxMorphDate.Text.Equals("") || !uxMorphUnits.Text.Equals("") ||
                                 !info.City.Equals("") || !info.State.Equals("") || !info.Country.Equals("") || !uxOwner.Text.Equals("") || !uxAnimalName.Text.Equals("") ||
