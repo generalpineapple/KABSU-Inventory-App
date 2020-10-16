@@ -105,6 +105,7 @@
     <Compile Include="InventoryPage.xaml.cs">
       <DependentUpon>InventoryPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="InventoryRecord.cs" />
     <Compile Include="Morph.cs" />
     <Compile Include="NoteWindow.xaml.cs">
       <DependentUpon>NoteWindow.xaml</DependentUpon>

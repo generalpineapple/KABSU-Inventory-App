@@ -275,7 +275,6 @@ namespace WpfApp
                     {
                         using (var command = new MySqlCommand("kabsu.StoreParent", connection))
                         {
-                            command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
                             command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
