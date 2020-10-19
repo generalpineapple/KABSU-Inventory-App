@@ -168,6 +168,7 @@ namespace WpfApp
                                 command.CommandType = CommandType.StoredProcedure;
 
                                 command.Parameters.AddWithValue("@ToFrom", r.ToFrom);
+                                command.Parameters.AddWithValue("@RealDate", Convert.ToDateTime(r.Date));
                                 command.Parameters.AddWithValue("@Date", r.Date);
                                 command.Parameters.AddWithValue("@Received", Convert.ToInt32(r.Rec));
                                 command.Parameters.AddWithValue("@Shipped", Convert.ToInt32(r.Ship));
