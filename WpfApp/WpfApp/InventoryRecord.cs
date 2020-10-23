@@ -44,28 +44,28 @@ namespace WpfApp
                 this.qty = value;
             }
         }
-        private string rate;
-        public string Rate
+        private string whatINeed;
+        public string WhatINeed
         {
             get
             {
-                return this.rate;
+                return this.whatINeed;
             }
             set
             {
-                this.rate = value;
+                this.whatINeed = value;
             }
         }
-        private string amount;
-        public string Amount
+        private string notes;
+        public string Notes
         {
             get
             {
-                return this.amount;
+                return this.notes;
             }
             set
             {
-                this.amount = value;
+                this.notes = value;
             }
         }
         private string animalId;
@@ -80,13 +80,13 @@ namespace WpfApp
                 this.animalId = value;
             }
         }
-        public InventoryRecord(string item, string description, string qty, string rate, string amount, string id)
+        public InventoryRecord(string item, string description, string qty, string whatINeed, string Notes, string id)
         {
             this.item = item;
             this.description = description;
             this.qty = qty;
-            this.rate = rate;
-            this.amount = amount;
+            this.whatINeed = whatINeed;
+            this.notes = notes;
             this.animalId = id;
         }
     }
