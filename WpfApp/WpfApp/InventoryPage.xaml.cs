@@ -75,7 +75,7 @@ namespace WpfApp
             Closing += InventoryPage_Closing;
             recordList = RetrieveRecords(searchResult.Code);
             morph = RetrieveMorph(searchResult.Code);
-        } 
+        }
 
         private void InventoryPage_Closing(object sender, CancelEventArgs e)
         {
@@ -145,7 +145,7 @@ namespace WpfApp
         }
         private void StoreRecords()
         {
-            if (inventoryrecordList.Count == 0)
+            if (recordList.Count == 0)
             {
                 string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
                 try
@@ -279,18 +279,18 @@ namespace WpfApp
                             command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
-                            command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
+                           /* command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
                             command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
                             command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
-                            command.Parameters.AddWithValue("@NumUnits", uxMorphUnits.Text); 
+                            command.Parameters.AddWithValue("@NumUnits", uxMorphUnits.Text); */
                             command.Parameters.AddWithValue("@City", info.City);
                             command.Parameters.AddWithValue("@State", info.State);
                             command.Parameters.AddWithValue("@Country", info.Country);
-                            command.Parameters.AddWithValue("@Owner", uxOwner.Text);
-                            command.Parameters.AddWithValue("@AnimalName", uxAnimalName.Text);
-                            command.Parameters.AddWithValue("@Breed", uxBreed.Text);
+                            //command.Parameters.AddWithValue("@Owner", uxOwner.Text);
+                            //command.Parameters.AddWithValue("@AnimalName", uxAnimalName.Text);
+                           // command.Parameters.AddWithValue("@Breed", uxBreed.Text);
                             command.Parameters.AddWithValue("@Species", info.Species);
-                            command.Parameters.AddWithValue("@RegNum", uxRegNum.Text);
+                            //command.Parameters.AddWithValue("@RegNum", uxRegNum.Text);
 
                             connection.Open();
                             int k = command.ExecuteNonQuery();
@@ -316,22 +316,22 @@ namespace WpfApp
                             command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@SValid", info.Valid.ToString().ToUpper());
-                            command.Parameters.AddWithValue("@SCanNum", uxCanNum.Text);
+                           // command.Parameters.AddWithValue("@SCanNum", uxCanNum.Text);
                             command.Parameters.AddWithValue("@OldAnimalID", oldCode);
-                            command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
-                            command.Parameters.AddWithValue("@SCollDate", uxMorphDate.Text);
-                            command.Parameters.AddWithValue("@SNumUnits", uxMorphUnits.Text);
+                           // command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
+                            //command.Parameters.AddWithValue("@SCollDate", uxMorphDate.Text);
+                            //command.Parameters.AddWithValue("@SNumUnits", uxMorphUnits.Text);
                             command.Parameters.AddWithValue("@PCity", info.City);
-                            command.Parameters.AddWithValue("@OldCity", oldCity);
+                            command.Parameters.AddWithValue("@oldQty", oldCity);
                             command.Parameters.AddWithValue("@PState", info.State);
-                            command.Parameters.AddWithValue("@OldState", oldState);
+                            command.Parameters.AddWithValue("@oldRate", oldState);
                             command.Parameters.AddWithValue("@PCountry", info.Country);
-                            command.Parameters.AddWithValue("@POwner", uxOwner.Text);
-                            command.Parameters.AddWithValue("@OldOwner", oldOwner);
-                            command.Parameters.AddWithValue("@AAnimalName", uxAnimalName.Text);
-                            command.Parameters.AddWithValue("@ABreed", uxBreed.Text);
+                            //command.Parameters.AddWithValue("@POwner", uxOwner.Text);
+                            command.Parameters.AddWithValue("@oldDescription", oldOwner);
+                            //command.Parameters.AddWithValue("@AAnimalName", uxAnimalName.Text);
+                            //command.Parameters.AddWithValue("@ABreed", uxBreed.Text);
                             command.Parameters.AddWithValue("@ASpecies", info.Species);
-                            command.Parameters.AddWithValue("@ARegNum", uxRegNum.Text);
+                            //command.Parameters.AddWithValue("@ARegNum", uxRegNum.Text);
                             
                             connection.Open();
                             int k = command.ExecuteNonQuery();//useful part(upload to database)

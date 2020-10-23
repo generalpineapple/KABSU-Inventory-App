@@ -7,11 +7,7 @@
         mc:Ignorable="d"
         Title="Record Window" Height="914.6" Width="1549.6" Loaded="RecordWindow_Load">
     <Grid ShowGridLines="True" Margin="0,0,0.4,1.2">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="140*"/>
-            <RowDefinition Height="743*"/>
-        </Grid.RowDefinitions>
-        <Grid x:Name="uxTopGrid1" HorizontalAlignment="Left" Height="703" VerticalAlignment="Top" Width="751" Margin="10,5.167,0,0" Grid.Row="1">
+        <Grid x:Name="uxTopGrid1" HorizontalAlignment="Left" Height="703" VerticalAlignment="Top" Width="751" Margin="10,145,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="276" />
                 <ColumnDefinition Width="155.25" />
@@ -224,7 +220,7 @@
             <TextBox x:Name="uxBalLeft31" Grid.Row="32" Grid.Column="4" FontSize="14"/>
             <TextBox x:Name="uxBalLeft32" Grid.Row="33" Grid.Column="4" FontSize="14"/>
         </Grid>
-        <Grid x:Name="uxTopGrid2" HorizontalAlignment="Left" Height="703" VerticalAlignment="Top" Width="751" Margin="774,5.167,0,0" Grid.Row="1">
+        <Grid x:Name="uxTopGrid2" HorizontalAlignment="Left" Height="703" VerticalAlignment="Top" Width="751" Margin="774,145,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="276" />
                 <ColumnDefinition Width="155.25" />
@@ -468,7 +464,7 @@
             <TextBox x:Name="uxRegNum" Grid.Row="2" Grid.Column="4" FontSize="14"/>
             <TextBox x:Name="uxOwner" Grid.Row="2" Grid.Column="5" FontSize="14"/>
         </Grid>
-        <Grid x:Name="uxMorphGrid" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="751" Margin="10,82,0,0" Grid.RowSpan="2">
+        <Grid x:Name="uxMorphGrid" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="751" Margin="10,82,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="276" />
                 <ColumnDefinition Width="73.5" />
@@ -498,6 +494,6 @@
             <TextBox x:Name="uxMorphCode" Grid.Row="2" Grid.Column="4" FontSize="14" TextChanged="MorphChanged"/>
             <TextBox x:Name="uxMorphUnits" Grid.Row="2" Grid.Column="5" FontSize="14" TextChanged="MorphChanged"/>
         </Grid>
-        <Button x:Name="uxNotesButton" Content="Notes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="1416,112,0,0" Height="37" Click="UxNotesButton_Click" Grid.RowSpan="2"/>
+        <Button x:Name="uxNotesButton" Content="Notes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="1416,112,0,0" Height="37" Click="UxNotesButton_Click"/>
     </Grid>
 </Window>
