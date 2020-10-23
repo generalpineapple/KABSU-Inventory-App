@@ -248,7 +248,7 @@ namespace WpfApp
                                 command.Parameters.AddWithValue("@Units", Convert.ToInt32(uxMorphUnits.Text));
                             }
 
-                            command.Parameters.AddWithValue("@ID", morph.Id);
+                            command.Parameters.AddWithValue("@AnimalID", morph.Id);
 
                             connection.Open();
                             int k = command.ExecuteNonQuery();
@@ -275,6 +275,7 @@ namespace WpfApp
                     {
                         using (var command = new MySqlCommand("kabsu.StoreParent", connection))
                         {
+                            command.CommandType = CommandType.StoredProcedure;
 
                             if (!uxCanNum.Text.Equals("") || !uxCode.Text.Equals("") || !uxMorphDate.Text.Equals("") || !uxMorphUnits.Text.Equals("") ||
                                 !info.City.Equals("") || !info.State.Equals("") || !info.Country.Equals("") || !uxOwner.Text.Equals("") || !uxAnimalName.Text.Equals("") ||
@@ -298,6 +299,10 @@ namespace WpfApp
                                 connection.Open();
                                 int k = command.ExecuteNonQuery();
                                 connection.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("All fields need to be filled in. This time info. do not save");
                             }
                         }
 
