@@ -156,9 +156,9 @@ namespace WpfApp
                             command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@ID", searchResult.Code);
-                            connection.Open();
-                            int k = command.ExecuteNonQuery();
-                            connection.Close();
+                            //connection.Open();
+                            //int k = command.ExecuteNonQuery();
+                            //connection.Close();
                         }
                         foreach (Record r in recordList)
                         {
@@ -188,7 +188,7 @@ namespace WpfApp
                 }
             }
         }
-        private void StoreMorph()
+        private void StoreMorph()// creat an blank item
         {
             if (isMorph == true && isOldMorph == false)
             {
@@ -248,7 +248,7 @@ namespace WpfApp
                                 command.Parameters.AddWithValue("@Units", Convert.ToInt32(uxMorphUnits.Text));
                             }
 
-                            command.Parameters.AddWithValue("@ID", morph.Id);
+                            command.Parameters.AddWithValue("@AnimalID", morph.Id);
 
                             connection.Open();
                             int k = command.ExecuteNonQuery();
@@ -264,7 +264,7 @@ namespace WpfApp
             }
         }
 
-        private void StoreParent()
+        private void StoreParent()//input value to blank item
         {
             if (newRecord == true)
             {
@@ -275,24 +275,35 @@ namespace WpfApp
                     {
                         using (var command = new MySqlCommand("kabsu.StoreParent", connection))
                         {
+                            command.CommandType = CommandType.StoredProcedure;
 
-                            command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
-                            command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
-                            command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
-                            command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
-                            command.Parameters.AddWithValue("@NumUnits", uxMorphUnits.Text);
-                            command.Parameters.AddWithValue("@City", info.City);
-                            command.Parameters.AddWithValue("@State", info.State);
-                            command.Parameters.AddWithValue("@Country", info.Country);
-                            command.Parameters.AddWithValue("@Owner", uxOwner.Text);
-                            command.Parameters.AddWithValue("@AnimalName", uxAnimalName.Text);
-                            command.Parameters.AddWithValue("@Breed", uxBreed.Text);
-                            command.Parameters.AddWithValue("@Species", info.Species);
-                            command.Parameters.AddWithValue("@RegNum", uxRegNum.Text);
+                            if (!uxCanNum.Text.Equals("") || !uxCode.Text.Equals("") || !uxMorphDate.Text.Equals("") || !uxMorphUnits.Text.Equals("") ||
+                                !info.City.Equals("") || !info.State.Equals("") || !info.Country.Equals("") || !uxOwner.Text.Equals("") || !uxAnimalName.Text.Equals("") ||
+                                !uxBreed.Text.Equals("") || !info.Species.Equals("") || !uxRegNum.Text.Equals(""))
+                            { 
+                                
+                                command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
+                                command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
+                                command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
+                                command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
+                                command.Parameters.AddWithValue("@NumUnits", uxMorphUnits.Text);
+                                command.Parameters.AddWithValue("@City", info.City);
+                                command.Parameters.AddWithValue("@State", info.State);
+                                command.Parameters.AddWithValue("@Country", info.Country);
+                                command.Parameters.AddWithValue("@Owner", uxOwner.Text);
+                                command.Parameters.AddWithValue("@AnimalName", uxAnimalName.Text);
+                                command.Parameters.AddWithValue("@Breed", uxBreed.Text);
+                                command.Parameters.AddWithValue("@Species", info.Species);
+                                command.Parameters.AddWithValue("@RegNum", uxRegNum.Text);
 
-                            connection.Open();
-                            int k = command.ExecuteNonQuery();
-                            connection.Close();
+                                connection.Open();
+                                int k = command.ExecuteNonQuery();
+                                connection.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("All fields need to be filled in. This time info. do not save");
+                            }
                         }
 
                     }
