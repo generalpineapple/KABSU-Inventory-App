@@ -204,7 +204,8 @@ namespace WpfApp
 
                             command.Parameters.AddWithValue("@Notes", morph.Notes);
                             command.Parameters.AddWithValue("@Date", uxMorphDate.Text);
-                            if(morph.Vigor == "")
+                            command.Parameters.AddWithValue("@RealDate", Convert.ToDateTime(uxMorphDate.Text));
+                            if (morph.Vigor == "")
                             {
                                 command.Parameters.AddWithValue("@Vigor", 0);
                             }
