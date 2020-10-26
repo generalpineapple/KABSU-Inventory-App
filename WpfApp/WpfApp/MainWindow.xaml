@@ -9,8 +9,14 @@
     <Grid>
         <Button x:Name="uxAddRecord" Content="Add New Record" HorizontalAlignment="Left" VerticalAlignment="Top" Width="239" Margin="10,10,0,0" Height="37" Click="Button_Click"/>
         <Button x:Name="uxModifyRecord" Content="Modify Record" HorizontalAlignment="Left" VerticalAlignment="Top" Width="239" Margin="254,10,0,0" Height="37" Click="UxModifyRecord_Click"/>
-        <Viewbox Margin="-40,-22,-22.6,10">
-            <Calendar HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,60,0,0"/>
+        <Viewbox Margin="130,60,130,20">
+            <Calendar x:Name="uxCalendar" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsTodayHighlighted="True">
+                <Calendar.CalendarDayButtonStyle>
+                    <Style TargetType="CalendarDayButton">
+                        <EventSetter Event="MouseDoubleClick" Handler="calendar_MouseDoubleClick"/>
+                    </Style>
+                </Calendar.CalendarDayButtonStyle>
+            </Calendar>
         </Viewbox>
     </Grid>
 </Window>
