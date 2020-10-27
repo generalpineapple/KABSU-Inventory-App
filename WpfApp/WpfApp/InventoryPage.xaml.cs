@@ -82,7 +82,6 @@ namespace WpfApp
             CollectAdditionalInfo();
 
             this.IsEnabled = false;
-
             StoreParent();
             List<string> list = new List<string>();
             List<string> morphList = new List<string>();
@@ -164,7 +163,7 @@ namespace WpfApp
                         foreach (InventoryRecord r in inventoryrecordList)
                         {
 
-                            using (var command = new MySqlCommand("kabsu.StoreData", connection))
+                            using (var command = new MySqlCommand("kabsu.StoreInventoryData", connection))
                             {
                                 command.CommandType = CommandType.StoredProcedure;
 
@@ -278,23 +277,30 @@ namespace WpfApp
                         {
                             command.CommandType = CommandType.StoredProcedure;
 
-                            command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
-                            command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
-                            command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
-                            command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
-                            command.Parameters.AddWithValue("@NumUnits", uxMorphUnits.Text); 
-                            command.Parameters.AddWithValue("@City", info.City);
-                            command.Parameters.AddWithValue("@State", info.State);
-                            command.Parameters.AddWithValue("@Country", info.Country);
-                            command.Parameters.AddWithValue("@Owner", uxOwner.Text);
-                            command.Parameters.AddWithValue("@AnimalName", uxAnimalName.Text);
-                            command.Parameters.AddWithValue("@Breed", uxBreed.Text);
-                            command.Parameters.AddWithValue("@Species", info.Species);
-                            command.Parameters.AddWithValue("@RegNum", uxRegNum.Text);
+                            if (!uxItemLeft1.Text.Equals("")) //need at least the cane code entered
+                            {
+                                command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
+                                command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
+                                command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
+                                command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
+                                command.Parameters.AddWithValue("@NumUnits", uxMorphUnits.Text);
+                                command.Parameters.AddWithValue("@City", info.City);
+                                command.Parameters.AddWithValue("@State", info.State);
+                                command.Parameters.AddWithValue("@Country", info.Country);
+                                command.Parameters.AddWithValue("@Owner", uxOwner.Text);
+                                command.Parameters.AddWithValue("@AnimalName", uxAnimalName.Text);
+                                command.Parameters.AddWithValue("@Breed", uxBreed.Text);
+                                command.Parameters.AddWithValue("@Species", info.Species);
+                                command.Parameters.AddWithValue("@RegNum", uxRegNum.Text);
 
-                            connection.Open();
-                            int k = command.ExecuteNonQuery();
-                            connection.Close();
+                                connection.Open();
+                                int k = command.ExecuteNonQuery();
+                                connection.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("All fields need to be filled in.");
+                            }
                         }
 
                     }
@@ -313,6 +319,10 @@ namespace WpfApp
                     {
                         using (var command = new MySqlCommand("kabsu.UpdateParent", connection))
                         {
+                            int qty = int.Parse(uxQtyLeft1.Text); //used temporary until I can get multiple selections for inventory page
+                            int whatINeed = int.Parse(uxWhatINeedLeft1.Text); //used temporary until I can get multiple selections for inventory page
+                            uxMorphUnits.Text = (qty - whatINeed).ToString(); //used temporary until I can get multiple selections for inventory page
+                            
                             command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@SValid", info.Valid.ToString().ToUpper());
@@ -321,18 +331,19 @@ namespace WpfApp
                             command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
                             command.Parameters.AddWithValue("@SCollDate", uxMorphDate.Text);
                             command.Parameters.AddWithValue("@SNumUnits", uxMorphUnits.Text);
+                           // command.Parameters.AddWithValue("@SNumUnits", uxQtyLeft1.Text);
                             command.Parameters.AddWithValue("@PCity", info.City);
-                            command.Parameters.AddWithValue("@oldQty", oldCity);
+                            command.Parameters.AddWithValue("@OldCity", oldCity);
                             command.Parameters.AddWithValue("@PState", info.State);
-                            command.Parameters.AddWithValue("@oldRate", oldState);
+                            command.Parameters.AddWithValue("@OldState", oldState);
                             command.Parameters.AddWithValue("@PCountry", info.Country);
                             command.Parameters.AddWithValue("@POwner", uxOwner.Text);
-                            command.Parameters.AddWithValue("@oldDescription", oldOwner);
+                            command.Parameters.AddWithValue("@OldOwner", oldOwner);
                             command.Parameters.AddWithValue("@AAnimalName", uxAnimalName.Text);
                             command.Parameters.AddWithValue("@ABreed", uxBreed.Text);
                             command.Parameters.AddWithValue("@ASpecies", info.Species);
                             command.Parameters.AddWithValue("@ARegNum", uxRegNum.Text);
-                            
+
                             connection.Open();
                             int k = command.ExecuteNonQuery();//useful part(upload to database)
                             connection.Close();
@@ -453,17 +464,12 @@ namespace WpfApp
                     textBoxes[textCount + ROW_SPACING].Text += "\nColl Date: " + uxMorphDate.Text;
                     textBoxes[textCount + ROW_SPACING].Text += "\nOwner: " + uxOwner.Text;
 
-
-                    if (searchResult.Units != null)
-                    {
-                        textBoxes[textCount + ROW_SPACING * 2].Text += "Units: " + searchResult.Units; //qty column
-                        textBoxes[textCount + ROW_SPACING].Text += " ";
-                    }
+                    textBoxes[textCount + ROW_SPACING * 2].Text = searchResult.Units; //qty column
 
                     textCount++;
 
-                    if (textCount == 32)
-                        textCount += 128;
+                    //if (textCount == 32)
+                      //  textCount += 128;
                 }
             }
             if (morph != null)
@@ -478,6 +484,7 @@ namespace WpfApp
             if (searchResult.Units != null)
             {
                 uxMorphUnits.Text = searchResult.Units;
+                //uxMorphUnits.Text = textBoxes[textCount + ROW_SPACING * 2].Text;
             }
             if (searchResult.CollDate != null)
             {

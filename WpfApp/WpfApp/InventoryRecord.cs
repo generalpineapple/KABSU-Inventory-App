@@ -80,7 +80,7 @@ namespace WpfApp
                 this.animalId = value;
             }
         }
-        public InventoryRecord(string item, string description, string qty, string whatINeed, string Notes, string id)
+        public InventoryRecord(string item, string description, string qty, string whatINeed, string notes, string id)
         {
             this.item = item;
             this.description = description;
