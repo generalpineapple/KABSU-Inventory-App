@@ -144,7 +144,7 @@ namespace WpfApp
         }
         private void StoreRecords()
         {
-            if (recordList.Count == 0)
+            if (inventoryrecordList.Count == 0)
             {
                 string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
                 try
@@ -243,10 +243,10 @@ namespace WpfApp
                             {
                                 command.Parameters.AddWithValue("@Units", 0);
                             }
-                            /*else
+                            else
                             {
                                 command.Parameters.AddWithValue("@Units", Convert.ToInt32(uxMorphUnits.Text));
-                            } */
+                            } 
 
                             command.Parameters.AddWithValue("@ID", morph.Id);
 
@@ -299,7 +299,7 @@ namespace WpfApp
                             }
                             else
                             {
-                                MessageBox.Show("All fields need to be filled in.");
+                                MessageBox.Show("Enter cane code.");
                             }
                         }
 
@@ -319,9 +319,12 @@ namespace WpfApp
                     {
                         using (var command = new MySqlCommand("kabsu.UpdateParent", connection))
                         {
-                            int qty = int.Parse(uxQtyLeft1.Text); //used temporary until I can get multiple selections for inventory page
-                            int whatINeed = int.Parse(uxWhatINeedLeft1.Text); //used temporary until I can get multiple selections for inventory page
-                            uxMorphUnits.Text = (qty - whatINeed).ToString(); //used temporary until I can get multiple selections for inventory page
+                            if (uxWhatINeedLeft1.Text != "")
+                            {
+                                int qty = int.Parse(uxQtyLeft1.Text); //used temporary until I can get multiple selections for inventory page
+                                int whatINeed = int.Parse(uxWhatINeedLeft1.Text); //used temporary until I can get multiple selections for inventory page
+                                uxMorphUnits.Text = (qty - whatINeed).ToString(); //used temporary until I can get multiple selections for inventory page
+                            }
                             
                             command.CommandType = CommandType.StoredProcedure;
 

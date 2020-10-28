@@ -490,6 +490,6 @@
             <TextBox x:Name="uxMorphCode" Grid.Row="2" Grid.Column="4" FontSize="14" TextChanged="MorphChanged"/>
             <TextBox x:Name="uxMorphUnits" Grid.Row="2" Grid.Column="5" FontSize="14" TextChanged="MorphChanged"/>
         </Grid>
-        <Button x:Name="uxNotesButton" Content="Notes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="1416,112,0,0" Height="37" Click="UxNotesButton_Click"/>
+        <Button Vis x:Name="uxNotesButton" Content="Notes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="1416,112,0,0" Height="37" Click="UxNotesButton_Click"/>
     </Grid>
 </Window>
