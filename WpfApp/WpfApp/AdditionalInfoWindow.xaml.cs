@@ -37,10 +37,10 @@ namespace WpfApp
                 info.State = uxStateText.Text;
             if (uxCountryText.Text != null)
                 info.Country = uxCountryText.Text;
-            if (uxValidBox.SelectedItem != null && uxValidBox.SelectedItem == uxValidTrue)
+           /* if (uxValidBox.SelectedItem != null && uxValidBox.SelectedItem == uxValidTrue)
                 info.Valid = true;
             else if (uxValidBox.SelectedItem != null)
-                info.Valid = false;
+                info.Valid = false; */
             if (Check != null)
                 Check(info);
         }
@@ -51,10 +51,12 @@ namespace WpfApp
             uxCityText.Text = info.City;
             uxStateText.Text = info.State;
             uxCountryText.Text = info.Country;
+            /*
             if (info.Valid)
                 uxValidBox.SelectedItem = uxValidTrue;
             else
                 uxValidBox.SelectedItem = uxValidFalse;
+            */
         }
     }
 }

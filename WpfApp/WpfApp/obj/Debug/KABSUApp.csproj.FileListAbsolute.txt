@@ -45,3 +45,4 @@ C:\Users\colde\Desktop\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\KABSUApp.cspr
 C:\Users\colde\Desktop\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\KABSUApp.csproj.CopyComplete
 C:\Users\colde\Desktop\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\WpfApp.exe
 C:\Users\colde\Desktop\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\WpfApp.pdb
+C:\Users\colde\Desktop\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\KABSUApp.csprojAssemblyReference.cache

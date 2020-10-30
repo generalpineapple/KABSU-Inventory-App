@@ -56,25 +56,12 @@ namespace WpfApp
                 this.country = value;
             }
         }
-        private bool valid;
-        public bool Valid
-        {
-            get
-            {
-                return this.valid;
-            }
-            set
-            {
-                this.valid = value;
-            }
-        }
-        public AdditionalInfo(string species, string city, string state, string country, bool valid)
+        public AdditionalInfo(string species, string city, string state, string country)
         {
             this.species = species;
             this.city = city;
             this.state = state;
             this.country = country;
-            this.valid = valid;
         }
 
         public AdditionalInfo()

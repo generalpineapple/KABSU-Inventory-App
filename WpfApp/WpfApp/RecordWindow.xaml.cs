@@ -284,7 +284,7 @@ namespace WpfApp
                                 !uxBreed.Text.Equals("") || !info.Species.Equals("") || !uxRegNum.Text.Equals(""))
                             { 
                                 
-                                command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
+                               // command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
                                 command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
                                 command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
                                 command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
@@ -326,7 +326,8 @@ namespace WpfApp
                         {
                             command.CommandType = CommandType.StoredProcedure;
 
-                            command.Parameters.AddWithValue("@SValid", info.Valid.ToString().ToUpper());
+                            //Valid has been replaced with lastModified, this is a relic of the past
+                            command.Parameters.AddWithValue("@SValid", true);
                             command.Parameters.AddWithValue("@SCanNum", uxCanNum.Text);
                             command.Parameters.AddWithValue("@OldAnimalID", oldCode);
                             command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
@@ -501,7 +502,7 @@ namespace WpfApp
             if (newRecord == true)
                 info = new AdditionalInfo();
             else
-                info = new AdditionalInfo(searchResult.Species, searchResult.Town, searchResult.State, searchResult.Country, Convert.ToBoolean(searchResult.INV.ToLower()));
+                info = new AdditionalInfo(searchResult.Species, searchResult.Town, searchResult.State, searchResult.Country);
             infoWindow = new AdditionalInfoWindow(info);
             infoWindow.Check += value => info = value;
             infoWindow.ShowDialog();
