@@ -156,9 +156,9 @@ namespace WpfApp
                             command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@ID", searchResult.Code);
-                            connection.Open();
-                            int k = command.ExecuteNonQuery();
-                            connection.Close();
+                            //connection.Open();
+                            //int k = command.ExecuteNonQuery();
+                            //connection.Close();
                         }
                         foreach (Record r in recordList)
                         {
@@ -286,7 +286,7 @@ namespace WpfApp
                             }
                             else
                             {
-                                command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
+                                command.Parameters.AddWithValue("@LastModified", info.Valid.ToString().ToUpper());
                                 command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
                                 command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
                                 command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);

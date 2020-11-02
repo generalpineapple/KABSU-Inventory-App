@@ -180,7 +180,7 @@ namespace WpfApp
         /// <summary>
         /// A constructor for SearchResult
         /// </summary>
-        /// <param name="valid">String representation of a boolean stating whether or not this entry has been verified for accuracy</param>
+        /// <param name="lastModified">String representation of a boolean stating whether or not this entry has been verified for accuracy</param>
         /// <param name="canNum">String representing the can where the sample is stored</param>
         /// <param name="code">String representing the identification code of the sample</param>
         /// <param name="collDate">String representing the date when a sample was collected (may be a string which is given to a third-party to obtain that date)</param>
@@ -193,9 +193,9 @@ namespace WpfApp
         /// <param name="state">The state where the owner resides</param>
         /// <param name="country">The country where the owner resides</param>
         /// <param name="species">The species of the animal</param>
-        public SearchResult(string valid, string canNum, string code, string collDate, string units, string animalName, string breed, string regNum, string owner, string town, string state, string country, string species)
+        public SearchResult(string lastModfied, string canNum, string code, string collDate, string units, string animalName, string breed, string regNum, string owner, string town, string state, string country, string species)
         {
-            this.INV = valid;
+            this.INV = lastModfied;
             this.CanNum = canNum;
             this.Code = code;
             this.CollDate = collDate;
