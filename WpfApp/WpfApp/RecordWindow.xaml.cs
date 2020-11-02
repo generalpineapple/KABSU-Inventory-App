@@ -156,9 +156,9 @@ namespace WpfApp
                             command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@ID", searchResult.Code);
-                            //connection.Open();
-                            //int k = command.ExecuteNonQuery();
-                            //connection.Close();
+                            connection.Open();
+                            int k = command.ExecuteNonQuery();
+                            connection.Close();
                         }
                         foreach (Record r in recordList)
                         {
