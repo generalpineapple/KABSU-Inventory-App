@@ -5,205 +5,491 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="Inventory Page" Height="1200" Width="915" Loaded="InventoryPage_Load">
+        Title="Inventory Page" Height="914.6" Width="1549.6" Loaded="InventoryPage_Load">
     <Grid ShowGridLines="True" Margin="0,0,0.4,1.2">
-        <Grid x:Name="uxTopGrid1" HorizontalAlignment="Center" Height="1100" VerticalAlignment="Top" Width="800" Margin="10,50,0,0">
+        <Grid x:Name="uxTopGrid1" HorizontalAlignment="Left" Height="703" VerticalAlignment="Top" Width="751" Margin="10,5,0,0" Grid.Row="1">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="275" />
                 <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="400" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="105" />
+                <ColumnDefinition Width="109.4" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="30" />
+                <RowDefinition Height="45" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Item</Label>
+            <Label Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">ITEM</Label>
             <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Description</Label>
             <Label Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Qty</Label>
-            <Label Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Rate</Label>
-            <Label Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Amount</Label>
-            <TextBox x:Name="uxToFromLeft1" Grid.Row="2" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft2" Grid.Row="3" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft3" Grid.Row="4" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft4" Grid.Row="5" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft5" Grid.Row="6" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft6" Grid.Row="7" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft7" Grid.Row="8" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft8" Grid.Row="9" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft9" Grid.Row="10" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft10" Grid.Row="11" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft11" Grid.Row="12" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft12" Grid.Row="13" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft13" Grid.Row="14" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft14" Grid.Row="15" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft15" Grid.Row="16" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft16" Grid.Row="17" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft17" Grid.Row="18" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft18" Grid.Row="19" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft19" Grid.Row="20" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft20" Grid.Row="21" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft21" Grid.Row="22" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft22" Grid.Row="23" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft23" Grid.Row="24" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft24" Grid.Row="25" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft25" Grid.Row="26" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft26" Grid.Row="27" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft27" Grid.Row="28" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft28" Grid.Row="29" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft29" Grid.Row="30" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft30" Grid.Row="31" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft31" Grid.Row="32" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxToFromLeft32" Grid.Row="33" Grid.Column="0" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft1" Grid.Row="2" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft2" Grid.Row="3" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft3" Grid.Row="4" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft4" Grid.Row="5" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft5" Grid.Row="6" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft6" Grid.Row="7" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft7" Grid.Row="8" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft8" Grid.Row="9" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft9" Grid.Row="10" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft10" Grid.Row="11" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft11" Grid.Row="12" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft12" Grid.Row="13" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft13" Grid.Row="14" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft14" Grid.Row="15" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft15" Grid.Row="16" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft16" Grid.Row="17" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft17" Grid.Row="18" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft18" Grid.Row="19" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft19" Grid.Row="20" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft20" Grid.Row="21" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft21" Grid.Row="22" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft22" Grid.Row="23" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft23" Grid.Row="24" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft24" Grid.Row="25" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft25" Grid.Row="26" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft26" Grid.Row="27" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft27" Grid.Row="28" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft28" Grid.Row="29" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft29" Grid.Row="30" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft30" Grid.Row="31" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft31" Grid.Row="32" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxDateLeft32" Grid.Row="33" Grid.Column="1" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft1" Grid.Row="2" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft2" Grid.Row="3" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft3" Grid.Row="4" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft4" Grid.Row="5" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft5" Grid.Row="6" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft6" Grid.Row="7" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft7" Grid.Row="8" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft8" Grid.Row="9" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft9" Grid.Row="10" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft10" Grid.Row="11" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft11" Grid.Row="12" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft12" Grid.Row="13" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft13" Grid.Row="14" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft14" Grid.Row="15" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft15" Grid.Row="16" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft16" Grid.Row="17" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft17" Grid.Row="18" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft18" Grid.Row="19" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft19" Grid.Row="20" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft20" Grid.Row="21" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft21" Grid.Row="22" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft22" Grid.Row="23" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft23" Grid.Row="24" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft24" Grid.Row="25" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft25" Grid.Row="26" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft26" Grid.Row="27" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft27" Grid.Row="28" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft28" Grid.Row="29" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft29" Grid.Row="30" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft30" Grid.Row="31" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft31" Grid.Row="32" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxRecLeft32" Grid.Row="33" Grid.Column="2" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft1" Grid.Row="2" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft2" Grid.Row="3" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft3" Grid.Row="4" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft4" Grid.Row="5" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft5" Grid.Row="6" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft6" Grid.Row="7" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft7" Grid.Row="8" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft8" Grid.Row="9" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft9" Grid.Row="10" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft10" Grid.Row="11" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft11" Grid.Row="12" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft12" Grid.Row="13" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft13" Grid.Row="14" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft14" Grid.Row="15" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft15" Grid.Row="16" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft16" Grid.Row="17" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft17" Grid.Row="18" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft18" Grid.Row="19" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft19" Grid.Row="20" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft20" Grid.Row="21" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft21" Grid.Row="22" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft22" Grid.Row="23" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft23" Grid.Row="24" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft24" Grid.Row="25" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft25" Grid.Row="26" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft26" Grid.Row="27" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft27" Grid.Row="28" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft28" Grid.Row="29" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft29" Grid.Row="30" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft30" Grid.Row="31" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft31" Grid.Row="32" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxShipLeft32" Grid.Row="33" Grid.Column="3" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft1" Grid.Row="2" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft2" Grid.Row="3" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft3" Grid.Row="4" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft4" Grid.Row="5" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft5" Grid.Row="6" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft6" Grid.Row="7" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft7" Grid.Row="8" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft8" Grid.Row="9" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft9" Grid.Row="10" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft10" Grid.Row="11" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft11" Grid.Row="12" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft12" Grid.Row="13" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft13" Grid.Row="14" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft14" Grid.Row="15" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft15" Grid.Row="16" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft16" Grid.Row="17" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft17" Grid.Row="18" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft18" Grid.Row="19" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft19" Grid.Row="20" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft20" Grid.Row="21" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft21" Grid.Row="22" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft22" Grid.Row="23" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft23" Grid.Row="24" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft24" Grid.Row="25" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft25" Grid.Row="26" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft26" Grid.Row="27" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft27" Grid.Row="28" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft28" Grid.Row="29" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft29" Grid.Row="30" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft30" Grid.Row="31" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft31" Grid.Row="32" Grid.Column="4" FontSize="14"/>
-            <TextBox x:Name="uxBalLeft32" Grid.Row="33" Grid.Column="4" FontSize="14"/>
+            <Label Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">What I Need</Label>
+            <Label Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Notes</Label>
+            <TextBox x:Name="uxItemLeft1" Grid.Row="2" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft2" Grid.Row="3" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft3" Grid.Row="4" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft4" Grid.Row="5" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft5" Grid.Row="6" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft6" Grid.Row="7" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft7" Grid.Row="8" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft8" Grid.Row="9" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft9" Grid.Row="10" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft10" Grid.Row="11" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft11" Grid.Row="12" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft12" Grid.Row="13" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft13" Grid.Row="14" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft14" Grid.Row="15" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft15" Grid.Row="16" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft16" Grid.Row="17" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft17" Grid.Row="18" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft18" Grid.Row="19" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft19" Grid.Row="20" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft20" Grid.Row="21" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft21" Grid.Row="22" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft22" Grid.Row="23" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft23" Grid.Row="24" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft24" Grid.Row="25" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft25" Grid.Row="26" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft26" Grid.Row="27" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft27" Grid.Row="28" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft28" Grid.Row="29" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft29" Grid.Row="30" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft30" Grid.Row="31" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft31" Grid.Row="32" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxItemLeft32" Grid.Row="33" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft1" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft2" Grid.Row="3" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft3" Grid.Row="4" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft4" Grid.Row="5" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft5" Grid.Row="6" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft6" Grid.Row="7" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft7" Grid.Row="8" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft8" Grid.Row="9" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft9" Grid.Row="10" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft10" Grid.Row="11" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft11" Grid.Row="12" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft12" Grid.Row="13" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft13" Grid.Row="14" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft14" Grid.Row="15" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft15" Grid.Row="16" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft16" Grid.Row="17" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft17" Grid.Row="18" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft18" Grid.Row="19" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft19" Grid.Row="20" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft20" Grid.Row="21" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft21" Grid.Row="22" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft22" Grid.Row="23" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft23" Grid.Row="24" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft24" Grid.Row="25" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft25" Grid.Row="26" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft26" Grid.Row="27" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft27" Grid.Row="28" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft28" Grid.Row="29" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft29" Grid.Row="30" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft30" Grid.Row="31" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft31" Grid.Row="32" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDescriptionLeft32" Grid.Row="33" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft1" Grid.Row="2" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft2" Grid.Row="3" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft3" Grid.Row="4" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft4" Grid.Row="5" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft5" Grid.Row="6" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft6" Grid.Row="7" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft7" Grid.Row="8" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft8" Grid.Row="9" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft9" Grid.Row="10" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft10" Grid.Row="11" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft11" Grid.Row="12" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft12" Grid.Row="13" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft13" Grid.Row="14" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft14" Grid.Row="15" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft15" Grid.Row="16" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft16" Grid.Row="17" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft17" Grid.Row="18" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft18" Grid.Row="19" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft19" Grid.Row="20" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft20" Grid.Row="21" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft21" Grid.Row="22" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft22" Grid.Row="23" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft23" Grid.Row="24" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft24" Grid.Row="25" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft25" Grid.Row="26" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft26" Grid.Row="27" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft27" Grid.Row="28" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft28" Grid.Row="29" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft29" Grid.Row="30" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft30" Grid.Row="31" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft31" Grid.Row="32" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxQtyLeft32" Grid.Row="33" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft1" Grid.Row="2" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft2" Grid.Row="3" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft3" Grid.Row="4" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft4" Grid.Row="5" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft5" Grid.Row="6" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft6" Grid.Row="7" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft7" Grid.Row="8" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft8" Grid.Row="9" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft9" Grid.Row="10" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft10" Grid.Row="11" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft11" Grid.Row="12" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft12" Grid.Row="13" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft13" Grid.Row="14" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft14" Grid.Row="15" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft15" Grid.Row="16" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft16" Grid.Row="17" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft17" Grid.Row="18" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft18" Grid.Row="19" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft19" Grid.Row="20" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft20" Grid.Row="21" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft21" Grid.Row="22" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft22" Grid.Row="23" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft23" Grid.Row="24" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft24" Grid.Row="25" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft25" Grid.Row="26" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft26" Grid.Row="27" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft27" Grid.Row="28" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft28" Grid.Row="29" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft29" Grid.Row="30" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft30" Grid.Row="31" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft31" Grid.Row="32" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxWhatINeedLeft32" Grid.Row="33" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft1" Grid.Row="2" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft2" Grid.Row="3" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft3" Grid.Row="4" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft4" Grid.Row="5" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft5" Grid.Row="6" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft6" Grid.Row="7" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft7" Grid.Row="8" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft8" Grid.Row="9" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft9" Grid.Row="10" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft10" Grid.Row="11" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft11" Grid.Row="12" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft12" Grid.Row="13" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft13" Grid.Row="14" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft14" Grid.Row="15" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft15" Grid.Row="16" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft16" Grid.Row="17" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft17" Grid.Row="18" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft18" Grid.Row="19" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft19" Grid.Row="20" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft20" Grid.Row="21" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft21" Grid.Row="22" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft22" Grid.Row="23" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft23" Grid.Row="24" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft24" Grid.Row="25" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft25" Grid.Row="26" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft26" Grid.Row="27" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft27" Grid.Row="28" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft28" Grid.Row="29" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft29" Grid.Row="30" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft30" Grid.Row="31" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft31" Grid.Row="32" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxNotesLeft32" Grid.Row="33" Grid.Column="4" FontSize="14"/>
         </Grid>
-        <Grid x:Name="uxBottomGrid" HorizontalAlignment="Right" Height="30" VerticalAlignment="Top" Width="350" Margin="10,10,0,0">
+        <Grid Visibility="Hidden" x:Name="uxTopGrid2" HorizontalAlignment="Left" Height="703" VerticalAlignment="Top" Width="751" Margin="774,145,0,0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="276" />
+                <ColumnDefinition Width="155.25" />
+                <ColumnDefinition Width="105" />
+                <ColumnDefinition Width="105" />
+                <ColumnDefinition Width="109.4" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">TO OR FROM</Label>
+            <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">DATE</Label>
+            <Label Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">
+                <TextBlock>NO.<LineBreak/>REC.</TextBlock>
+            </Label>
+            <Label Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">
+                <TextBlock>NO.<LineBreak/>SHIP</TextBlock>
+            </Label>
+            <Label Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">BAL.</Label>
+            <TextBox x:Name="uxToFromRight1" Grid.Row="2" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight2" Grid.Row="3" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight3" Grid.Row="4" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight4" Grid.Row="5" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight5" Grid.Row="6" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight6" Grid.Row="7" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight7" Grid.Row="8" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight8" Grid.Row="9" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight9" Grid.Row="10" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight10" Grid.Row="11" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight11" Grid.Row="12" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight12" Grid.Row="13" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight13" Grid.Row="14" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight14" Grid.Row="15" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight15" Grid.Row="16" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight16" Grid.Row="17" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight17" Grid.Row="18" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight18" Grid.Row="19" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight19" Grid.Row="20" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight20" Grid.Row="21" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight21" Grid.Row="22" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight22" Grid.Row="23" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight23" Grid.Row="24" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight24" Grid.Row="25" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight25" Grid.Row="26" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight26" Grid.Row="27" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight27" Grid.Row="28" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight28" Grid.Row="29" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight29" Grid.Row="30" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight30" Grid.Row="31" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight31" Grid.Row="32" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxToFromRight32" Grid.Row="33" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxDateRight1" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight2" Grid.Row="3" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight3" Grid.Row="4" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight4" Grid.Row="5" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight5" Grid.Row="6" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight6" Grid.Row="7" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight7" Grid.Row="8" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight8" Grid.Row="9" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight9" Grid.Row="10" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight10" Grid.Row="11" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight11" Grid.Row="12" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight12" Grid.Row="13" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight13" Grid.Row="14" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight14" Grid.Row="15" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight15" Grid.Row="16" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight16" Grid.Row="17" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight17" Grid.Row="18" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight18" Grid.Row="19" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight19" Grid.Row="20" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight20" Grid.Row="21" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight21" Grid.Row="22" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight22" Grid.Row="23" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight23" Grid.Row="24" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight24" Grid.Row="25" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight25" Grid.Row="26" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight26" Grid.Row="27" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight27" Grid.Row="28" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight28" Grid.Row="29" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight29" Grid.Row="30" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight30" Grid.Row="31" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight31" Grid.Row="32" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxDateRight32" Grid.Row="33" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxRecRight1" Grid.Row="2" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight2" Grid.Row="3" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight3" Grid.Row="4" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight4" Grid.Row="5" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight5" Grid.Row="6" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight6" Grid.Row="7" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight7" Grid.Row="8" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight8" Grid.Row="9" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight9" Grid.Row="10" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight10" Grid.Row="11" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight11" Grid.Row="12" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight12" Grid.Row="13" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight13" Grid.Row="14" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight14" Grid.Row="15" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight15" Grid.Row="16" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight16" Grid.Row="17" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight17" Grid.Row="18" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight18" Grid.Row="19" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight19" Grid.Row="20" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight20" Grid.Row="21" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight21" Grid.Row="22" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight22" Grid.Row="23" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight23" Grid.Row="24" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight24" Grid.Row="25" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight25" Grid.Row="26" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight26" Grid.Row="27" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight27" Grid.Row="28" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight28" Grid.Row="29" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight29" Grid.Row="30" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight30" Grid.Row="31" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight31" Grid.Row="32" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxRecRight32" Grid.Row="33" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxShipRight1" Grid.Row="2" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight2" Grid.Row="3" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight3" Grid.Row="4" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight4" Grid.Row="5" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight5" Grid.Row="6" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight6" Grid.Row="7" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight7" Grid.Row="8" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight8" Grid.Row="9" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight9" Grid.Row="10" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight10" Grid.Row="11" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight11" Grid.Row="12" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight12" Grid.Row="13" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight13" Grid.Row="14" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight14" Grid.Row="15" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight15" Grid.Row="16" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight16" Grid.Row="17" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight17" Grid.Row="18" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight18" Grid.Row="19" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight19" Grid.Row="20" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight20" Grid.Row="21" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight21" Grid.Row="22" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight22" Grid.Row="23" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight23" Grid.Row="24" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight24" Grid.Row="25" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight25" Grid.Row="26" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight26" Grid.Row="27" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight27" Grid.Row="28" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight28" Grid.Row="29" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight29" Grid.Row="30" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight30" Grid.Row="31" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight31" Grid.Row="32" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxShipRight32" Grid.Row="33" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxBalRight1" Grid.Row="2" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight2" Grid.Row="3" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight3" Grid.Row="4" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight4" Grid.Row="5" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight5" Grid.Row="6" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight6" Grid.Row="7" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight7" Grid.Row="8" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight8" Grid.Row="9" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight9" Grid.Row="10" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight10" Grid.Row="11" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight11" Grid.Row="12" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight12" Grid.Row="13" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight13" Grid.Row="14" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight14" Grid.Row="15" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight15" Grid.Row="16" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight16" Grid.Row="17" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight17" Grid.Row="18" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight18" Grid.Row="19" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight19" Grid.Row="20" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight20" Grid.Row="21" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight21" Grid.Row="22" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight22" Grid.Row="23" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight23" Grid.Row="24" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight24" Grid.Row="25" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight25" Grid.Row="26" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight26" Grid.Row="27" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight27" Grid.Row="28" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight28" Grid.Row="29" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight29" Grid.Row="30" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight30" Grid.Row="31" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight31" Grid.Row="32" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxBalRight32" Grid.Row="33" Grid.Column="4" FontSize="14"/>
+        </Grid>
+        <Grid Visibility="Hidden" x:Name="uxBottomGrid" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="1517" Margin="10,10,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="138" />
+                <ColumnDefinition Width="138" />
+                <ColumnDefinition Width="155.25" />
+                <ColumnDefinition Width="408.25"/>
+                <ColumnDefinition Width="355.35"/>
+                <ColumnDefinition Width="320.85"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="30" />
-                <RowDefinition Height="30" />
+                <RowDefinition Height="45" />
+                <RowDefinition Height="21" />
             </Grid.RowDefinitions>
-            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">P.O. No.</Label>
-            <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Terms</Label>
-            <Label Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">Project</Label>
+            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">
+                <TextBlock><Run Text="CAN"/><LineBreak/><Run Text="NO."/></TextBlock>
+            </Label>
+            <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">
+                <TextBlock><Run Text="CODE"/><LineBreak/><Run Text="NO."/></TextBlock>
+            </Label>
+            <Label Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="BREED" FontSize="14"/>
+            <Label Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="NAME OF ANIMAL" FontSize="14"/>
+            <Label Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="REG. NO." FontSize="14"/>
+            <Label Grid.Column="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="OWNER" FontSize="14"/>
+            <TextBox x:Name="uxCanNum" Grid.Row="2" Grid.Column="0" FontSize="14"/>
+            <TextBox x:Name="uxCode" Grid.Row="2" Grid.Column="1" FontSize="14"/>
+            <TextBox x:Name="uxBreed" Grid.Row="2" Grid.Column="2" FontSize="14"/>
+            <TextBox x:Name="uxAnimalName" Grid.Row="2" Grid.Column="3" FontSize="14"/>
+            <TextBox x:Name="uxRegNum" Grid.Row="2" Grid.Column="4" FontSize="14"/>
+            <TextBox x:Name="uxOwner" Grid.Row="2" Grid.Column="5" FontSize="14"/>
         </Grid>
-        <Button x:Name="uxNotesButton" Content="Notes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="1416,112,0,0" Height="37" Click="UxNotesButton_Click"/>
+        <Grid Visibility="Hidden" x:Name="uxMorphGrid" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="751" Margin="10,82,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="276" />
+                <ColumnDefinition Width="73.5" />
+                <ColumnDefinition Width="79.8" />
+                <ColumnDefinition Width="85.25"/>
+                <ColumnDefinition Width="122.4"/>
+                <ColumnDefinition Width="109.4"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="21" />
+            </Grid.RowDefinitions>
+            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">
+                <TextBlock><Run Text="   QtyEIVED"/><LineBreak/><Run Text="Description FROZEN"/></TextBlock>
+            </Label>
+            <Label Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="VIGOR" FontSize="14"/>
+            <Label Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="MOT." FontSize="14"/>
+            <Label Grid.Column="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="MORPH" FontSize="14"/>
+            <Label Grid.Column="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="14">
+                <TextBlock><Run Text="COLL"/><LineBreak/><Run Text="CODE"/></TextBlock>
+            </Label>
+            <Label Grid.Column="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="UNITS" FontSize="14"/>
+            <TextBox x:Name="uxMorphDate" Grid.Row="2" Grid.Column="0" FontSize="14" TextChanged="MorphChanged"/>
+            <TextBox x:Name="uxVigor" Grid.Row="2" Grid.Column="1" FontSize="14" TextChanged="MorphChanged"/>
+            <TextBox x:Name="uxMot" Grid.Row="2" Grid.Column="2" FontSize="14" TextChanged="MorphChanged"/>
+            <TextBox x:Name="uxMorph" Grid.Row="2" Grid.Column="3" FontSize="14" TextChanged="MorphChanged"/>
+            <TextBox x:Name="uxMorphCode" Grid.Row="2" Grid.Column="4" FontSize="14" TextChanged="MorphChanged"/>
+            <TextBox x:Name="uxMorphUnits" Grid.Row="2" Grid.Column="5" FontSize="14" TextChanged="MorphChanged"/>
+        </Grid>
+        <Button Vis x:Name="uxNotesButton" Content="Notes" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="1416,112,0,0" Height="37" Click="UxNotesButton_Click"/>
     </Grid>
 </Window>
