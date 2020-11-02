@@ -277,11 +277,15 @@ namespace WpfApp
                         {
                             command.CommandType = CommandType.StoredProcedure;
 
-                            if (!uxCanNum.Text.Equals("") || !uxCode.Text.Equals("") || !uxMorphDate.Text.Equals("") || !uxMorphUnits.Text.Equals("") ||
-                                !info.City.Equals("") || !info.State.Equals("") || !info.Country.Equals("") || !uxOwner.Text.Equals("") || !uxAnimalName.Text.Equals("") ||
-                                !uxBreed.Text.Equals("") || !info.Species.Equals("") || !uxRegNum.Text.Equals(""))
-                            { 
+                            if (uxCanNum.Text.Equals("") || uxCode.Text.Equals("") || uxMorphDate.Text.Equals("") || uxMorphUnits.Text.Equals("") ||
+                                info.City.Equals("") || info.State.Equals("") || info.Country.Equals("") || uxOwner.Text.Equals("") || uxAnimalName.Text.Equals("") ||
+                                uxBreed.Text.Equals("") || info.Species.Equals("") || uxRegNum.Text.Equals(""))
+                            {
+                                MessageBox.Show("All fields need to be filled in. This time info. do not save");
                                 
+                            }
+                            else
+                            {
                                 command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
                                 command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
                                 command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
@@ -299,10 +303,6 @@ namespace WpfApp
                                 connection.Open();
                                 int k = command.ExecuteNonQuery();
                                 connection.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("All fields need to be filled in. This time info. do not save");
                             }
                         }
 
