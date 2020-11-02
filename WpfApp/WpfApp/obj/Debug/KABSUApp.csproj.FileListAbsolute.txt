@@ -74,7 +74,6 @@ C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\SearchWindow.g.cs
 C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\SearchWindowResults.g.cs
 C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\App.g.cs
 C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\WpfApp_MarkupCompile.cache
-C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\WpfApp_MarkupCompile.lref
 C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\AdditionalInfoWindow.baml
 C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\InventoryPage.baml
 C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\MainWindow.baml

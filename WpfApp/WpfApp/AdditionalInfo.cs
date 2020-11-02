@@ -8,6 +8,20 @@ namespace WpfApp
 {
     public class AdditionalInfo
     {
+
+        private DateTime lastModified;
+        public DateTime LastModified
+        {
+            get
+            {
+                return this.lastModified;
+            }
+            set
+            {
+                this.lastModified = value;
+            }
+        }
+
         private string species;
         public string Species
         {
