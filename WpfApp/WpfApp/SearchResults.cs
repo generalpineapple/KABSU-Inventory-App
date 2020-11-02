@@ -47,7 +47,7 @@ namespace WpfApp
                         while (reader.Read())
                         {
                             searchResult= new SearchResult(
-                               reader.GetString(reader.GetOrdinal("Valid")),
+                               reader.GetString(reader.GetOrdinal("LastModified")),
                                reader.GetString(reader.GetOrdinal("CanNum")),
                                reader.GetString(reader.GetOrdinal("AnimalID")),
                                reader.GetString(reader.GetOrdinal("CollDate")),
