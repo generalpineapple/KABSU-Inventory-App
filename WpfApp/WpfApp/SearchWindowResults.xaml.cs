@@ -48,11 +48,18 @@ namespace WpfApp
         }
 
         private void Row_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            DataGridRow row = sender as DataGridRow;
-            SearchResult search = (SearchResult)row.Item;
-            inventoryPage = new InventoryPage(search);
-            inventoryPage.ShowDialog();
+        { 
+            foreach(DataGridCellInfo r in uxSearchResults.SelectedCells)
+            {
+                    DataGridRow row = sender as DataGridRow;
+                    SearchResult search = (SearchResult)row.Item;
+                    inventoryPage = new InventoryPage(search);
+                    inventoryPage.ShowDialog();
+                    break;
+            }
+           // DataGridRow row = sender as DataGridRow;
+            //Int32 selectedRows = inventoryPage.uxTopGrid1.RowDefinitions.Count();
+            
         }
     }
 }
