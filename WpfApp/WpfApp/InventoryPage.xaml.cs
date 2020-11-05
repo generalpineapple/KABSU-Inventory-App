@@ -279,7 +279,7 @@ namespace WpfApp
 
                             if (!uxItemLeft1.Text.Equals("")) //need at least the cane code entered
                             {
-                                //command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
+                                command.Parameters.AddWithValue("@LastModified", DateTime.Now);
                                 command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
                                 command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
                                 command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);

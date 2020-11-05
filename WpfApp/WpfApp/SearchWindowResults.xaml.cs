@@ -47,19 +47,24 @@ namespace WpfApp
             recordWindow.ShowDialog();
         }
 
-        private void Row_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        private void Row_RightClick(object sender, MouseButtonEventArgs e)
         { 
-            foreach(DataGridCellInfo r in uxSearchResults.SelectedCells)
+            foreach(var r in uxSearchResults.SelectedItems)
             {
+                // if (r.IsSelected)
+                //{
                     DataGridRow row = sender as DataGridRow;
                     SearchResult search = (SearchResult)row.Item;
                     inventoryPage = new InventoryPage(search);
                     inventoryPage.ShowDialog();
-                    break;
+                //  break;
+                //}
+
             }
-           // DataGridRow row = sender as DataGridRow;
-            //Int32 selectedRows = inventoryPage.uxTopGrid1.RowDefinitions.Count();
             
+            // DataGridRow row = sender as DataGridRow;
+            //Int32 selectedRows = inventoryPage.uxTopGrid1.RowDefinitions.Count();
+
         }
     }
 }

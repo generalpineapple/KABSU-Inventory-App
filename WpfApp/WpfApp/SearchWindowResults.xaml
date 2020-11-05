@@ -24,7 +24,7 @@
             <DataGrid.Resources>
                 <Style TargetType="DataGridRow">
                     <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
-                    <EventSetter Event="MouseRightButtonDown"  Handler="Row_MouseRightButtonDown"/>
+                    <EventSetter Event="MouseRightButtonDown"  Handler="Row_RightClick"/>
                 </Style>
             </DataGrid.Resources>
         </DataGrid>
