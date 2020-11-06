@@ -11,6 +11,6 @@ SET R.CanNum =  SUBSTRING_INDEX(SUBSTRING_INDEX(R.Date,'#',2), '#', -1)
 WHERE NOT SUBSTRING_INDEX(SUBSTRING_INDEX(R.Date,'#',2), '#', -1) = R.Date
                              
 --just like the other code above, this coverts the string into a datetime
---to run this, copy it into the phpmyadmin server
+--to run this, copy it into the phpmyadmin server 
 UPDATE Data D
 SET D.RealDate =  STR_TO_DATE(D.Date,'%m/%d/%Y');

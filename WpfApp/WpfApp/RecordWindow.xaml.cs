@@ -327,7 +327,8 @@ namespace WpfApp
                             command.CommandType = CommandType.StoredProcedure;
 
                             //Valid has been replaced with lastModified, this is a relic of the past
-                            command.Parameters.AddWithValue("@SValid", true);
+                            //command.Parameters.AddWithValue("@SValid", info.Valid.ToString().ToUpper());
+                            //command.Parameters.AddWithValue("@SValid", true);
                             command.Parameters.AddWithValue("@SCanNum", uxCanNum.Text);
                             command.Parameters.AddWithValue("@OldAnimalID", oldCode);
                             command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
