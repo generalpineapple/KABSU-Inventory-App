@@ -18,8 +18,9 @@ IN RegNum VARCHAR(32),
 IN PersonID INT)
 BEGIN 
 IF NOT EXISTS (SELECT * FROM kabsu.animal a
-				WHERE Name = a.Name = Name
-				AND a.RegNum = RegNum )
+				WHERE a.Name = Name
+				AND a.RegNum = RegNum
+				AND a.PersonID = PersonID)
 	BEGIN
 	INSERT kabsu.animal(AnimalID, Name, Breed, Species, RegNum, PersonID)
 	VALUES(AnimalID, Name, Breed, Species, RegNum, PersonID);

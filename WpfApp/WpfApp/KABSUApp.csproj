@@ -110,6 +110,9 @@
     <Compile Include="NoteWindow.xaml.cs">
       <DependentUpon>NoteWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PackingSlip.xaml.cs">
+      <DependentUpon>PackingSlip.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Record.cs" />
     <Compile Include="RecordWindow.xaml.cs">
       <DependentUpon>RecordWindow.xaml</DependentUpon>
@@ -147,6 +150,10 @@
     <Page Include="NoteWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PackingSlip.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="RecordWindow.xaml">
       <SubType>Designer</SubType>
