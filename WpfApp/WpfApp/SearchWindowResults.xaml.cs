@@ -48,7 +48,7 @@ namespace WpfApp
         }
 
         private void Row_RightClick(object sender, MouseButtonEventArgs e)
-        { 
+        {      
             foreach(var r in uxSearchResults.SelectedItems)
             {
                 // if (r.IsSelected)

@@ -144,22 +144,22 @@ namespace WpfApp
         }
         private void StoreRecords()
         {
-            if (recordList.Count == 0)
+            if (recordList.Count != 0)
             {
                 string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
                 try
                 {
                     using (var connection = new MySqlConnection(connectionString))
                     {
-                        using (var command = new MySqlCommand("kabsu.DeleteData", connection))
+                       /* using (var command = new MySqlCommand("kabsu.DeleteData", connection))
                         {
                             command.CommandType = CommandType.StoredProcedure;
 
-                            command.Parameters.AddWithValue("@ID", searchResult.Code);
+                            command.Parameters.AddWithValue("@ID", id);
                             connection.Open();
                             int k = command.ExecuteNonQuery();
                             connection.Close();
-                        }
+                        }*/
                         foreach (Record r in recordList)
                         {
 

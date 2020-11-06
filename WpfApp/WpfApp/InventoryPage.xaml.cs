@@ -144,7 +144,7 @@ namespace WpfApp
         }
         private void StoreRecords()
         {
-            if (inventoryrecordList.Count == 0)
+            if (inventoryrecordList.Count != 0)
             {
                 string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
                 try
