@@ -234,11 +234,11 @@ namespace WpfApp
 
                             if (morph.Vigor == "")
                             {
-                                command.Parameters.AddWithValue("@Code", 0);
+                                command.Parameters.AddWithValue("@CollCode", 0);
                             }
                             else
                             {
-                                command.Parameters.AddWithValue("@Code", Convert.ToInt32(morph.Code));
+                                command.Parameters.AddWithValue("@CollCode", Convert.ToInt32(morph.Code));
                             }
 
                             if (morph.Vigor == "")
@@ -425,7 +425,7 @@ namespace WpfApp
                                reader.GetInt32(reader.GetOrdinal("Vigor")).ToString(),
                                reader.GetInt32(reader.GetOrdinal("Mot")).ToString(),
                                reader.GetInt32(reader.GetOrdinal("Morph")).ToString(),
-                               reader.GetInt32(reader.GetOrdinal("Code")).ToString(),
+                               reader.GetInt32(reader.GetOrdinal("CollCode")).ToString(),
                                reader.GetInt32(reader.GetOrdinal("Units")).ToString(), id);
                             if (morph.Notes != null)
                                 notes = morph.Notes;
