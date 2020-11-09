@@ -47,13 +47,13 @@ namespace WpfApp
             recordWindow.ShowDialog();
         }
 
-        private void Row_RightClick(object sender, MouseButtonEventArgs e)
+        private void uxPullDataButton_Click(object sender, RoutedEventArgs e)
         {      
-            foreach(var r in uxSearchResults.SelectedItems)
+            foreach(DataGridRow r in uxSearchResults.SelectedItems)
             {
                 // if (r.IsSelected)
                 //{
-                    DataGridRow row = sender as DataGridRow;
+                    DataGridRow row = r as DataGridRow;
                     SearchResult search = (SearchResult)row.Item;
                     inventoryPage = new InventoryPage(search);
                     inventoryPage.ShowDialog();

@@ -24,10 +24,10 @@
             <DataGrid.Resources>
                 <Style TargetType="DataGridRow">
                     <EventSetter Event="MouseDoubleClick" Handler="Row_DoubleClick"/>
-                    <EventSetter Event="MouseRightButtonDown"  Handler="Row_RightClick"/>
+                    <Setter Property="IsSelected" Value="{Binding IsSelected}" />
                 </Style>
             </DataGrid.Resources>
         </DataGrid>
-
+        <Button x:Name="uxDisplayInventoryPage" Content="Pull Data" HorizontalAlignment="Left" VerticalAlignment="Top" Width="109" Margin="883,10,0,0" Height="37" Click="uxPullDataButton_Click"/>
     </Grid>
 </Window>
