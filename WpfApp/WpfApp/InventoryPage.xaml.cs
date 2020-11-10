@@ -77,6 +77,34 @@ namespace WpfApp
             morph = RetrieveMorph(searchResult.Code);
         }
 
+        public InventoryPage(List<SearchResult> search)
+        {
+            newRecord = false;
+            foreach(SearchResult list in search)
+            {
+                searchResult = list;
+                oldCode = searchResult.Code;
+                oldOwner = searchResult.Owner;
+                oldCity = searchResult.Town;
+                oldState = searchResult.State;
+                InitializeComponent();
+                uxCode.Text = searchResult.Code;
+                uxBreed.Text = searchResult.Breed;
+                uxAnimalName.Text = searchResult.AnimalName;
+                uxRegNum.Text = searchResult.RegNum;
+                uxOwner.Text = searchResult.Owner;
+                uxCanNum.Text = searchResult.CanNum;
+                notes = "";
+                isMorph = false;
+                isOldMorph = false;
+                populating = false;
+                Closing += InventoryPage_Closing;
+                recordList = RetrieveRecords(searchResult.Code);
+                morph = RetrieveMorph(searchResult.Code);
+            }
+        }
+
+
         private void InventoryPage_Closing(object sender, CancelEventArgs e)
         {
             CollectAdditionalInfo();

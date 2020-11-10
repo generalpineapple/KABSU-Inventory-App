@@ -48,23 +48,17 @@ namespace WpfApp
         }
 
         private void uxPullDataButton_Click(object sender, RoutedEventArgs e)
-        {      
-            foreach(DataGridRow r in uxSearchResults.SelectedItems)
+        {
+            List<SearchResult> list = new List<SearchResult>();
+            foreach (var r in uxSearchResults.SelectedItems)
             {
-                // if (r.IsSelected)
-                //{
-                    DataGridRow row = r as DataGridRow;
-                    SearchResult search = (SearchResult)row.Item;
-                    inventoryPage = new InventoryPage(search);
-                    inventoryPage.ShowDialog();
-                //  break;
-                //}
-
+                SearchResult search = (SearchResult)r;
+                list.Add(search);
             }
-            
+            inventoryPage = new InventoryPage(list);
+            inventoryPage.ShowDialog();
             // DataGridRow row = sender as DataGridRow;
             //Int32 selectedRows = inventoryPage.uxTopGrid1.RowDefinitions.Count();
-
         }
     }
 }
