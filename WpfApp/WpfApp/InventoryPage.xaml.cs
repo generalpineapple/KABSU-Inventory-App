@@ -80,7 +80,8 @@ namespace WpfApp
         public InventoryPage(List<SearchResult> search)
         {
             newRecord = false;
-            foreach(SearchResult list in search)
+            recordList = new List<Record>();
+            foreach (SearchResult list in search)
             {
                 searchResult = list;
                 oldCode = searchResult.Code;
@@ -406,7 +407,7 @@ namespace WpfApp
                         var reader = command.ExecuteReader();
 
 
-                        recordList = new List<Record>();
+                        //recordList = new List<Record>();
                         Record record;
                         while (reader.Read())
                         {
@@ -489,11 +490,11 @@ namespace WpfApp
                      textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Ship;
                      textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance; */
 
-                    textBoxes[textCount].Text += "Cane code: " + uxCode.Text; //Can code for the item column
+                    //textBoxes[textCount].Text += "Cane code: " + uxCode.Text; //Can code for the item column..find a way to get the cane code for each record
 
-                    textBoxes[textCount + ROW_SPACING].Text += "Animal Name: " + uxAnimalName.Text;
-                    textBoxes[textCount + ROW_SPACING].Text += "\nColl Date: " + uxMorphDate.Text;
-                    textBoxes[textCount + ROW_SPACING].Text += "\nOwner: " + uxOwner.Text;
+                    textBoxes[textCount + ROW_SPACING].Text += "Animal Name: " + r.AnimalId; //for right now, can only get id with record
+                    //textBoxes[textCount + ROW_SPACING].Text += "\nColl Date: " + uxMorphDate.Text;
+                    //textBoxes[textCount + ROW_SPACING].Text += "\nOwner: " + uxOwner.Text;
 
                     textBoxes[textCount + ROW_SPACING * 2].Text = searchResult.Units; //qty column
 
