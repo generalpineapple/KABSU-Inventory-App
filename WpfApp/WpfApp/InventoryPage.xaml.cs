@@ -42,6 +42,7 @@ namespace WpfApp
         private bool isOldRecord;
         private NoteWindow noteWindow;
         private AdditionalInfoWindow infoWindow;
+        List<SearchResult> searchList;
 
         public InventoryPage()
         {
@@ -81,27 +82,29 @@ namespace WpfApp
         {
             newRecord = false;
             recordList = new List<Record>();
+            searchList = new List<SearchResult>();
             foreach (SearchResult list in search)
             {
                 searchResult = list;
-                oldCode = searchResult.Code;
-                oldOwner = searchResult.Owner;
-                oldCity = searchResult.Town;
-                oldState = searchResult.State;
+                searchList.Add(searchResult);
+                oldCode = list.Code;
+                oldOwner = list.Owner;
+                oldCity = list.Town;
+                oldState = list.State;
                 InitializeComponent();
-                uxCode.Text = searchResult.Code;
-                uxBreed.Text = searchResult.Breed;
-                uxAnimalName.Text = searchResult.AnimalName;
-                uxRegNum.Text = searchResult.RegNum;
-                uxOwner.Text = searchResult.Owner;
-                uxCanNum.Text = searchResult.CanNum;
+                uxCode.Text = list.Code;
+                uxBreed.Text = list.Breed;
+                uxAnimalName.Text = list.AnimalName;
+                uxRegNum.Text = list.RegNum;
+                uxOwner.Text = list.Owner;
+                uxCanNum.Text = list.CanNum;
                 notes = "";
                 isMorph = false;
                 isOldMorph = false;
                 populating = false;
                 Closing += InventoryPage_Closing;
-                recordList = RetrieveRecords(searchResult.Code);
-                morph = RetrieveMorph(searchResult.Code);
+                recordList = RetrieveRecords(list.Code);
+                morph = RetrieveMorph(list.Code);
             }
         }
 
@@ -431,6 +434,50 @@ namespace WpfApp
             }
         }
 
+        /*private List<Record> RetrieveRecords(List<SearchResult> searchList)
+        {
+            string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
+            try
+            {
+                foreach (SearchResult sr in searchList)
+                {
+                    using (var connection = new MySqlConnection(connectionString))
+                    {
+                        using (var command = new MySqlCommand("kabsu.RetrieveRecords", connection))
+                        {
+                            command.CommandType = CommandType.StoredProcedure;
+
+                            command.Parameters.AddWithValue("@AnimalID", id);
+
+                            connection.Open();
+                            var reader = command.ExecuteReader();
+
+
+                            //recordList = new List<Record>();
+                            Record record;
+                            while (reader.Read())
+                            {
+                                record = new Record(
+                                   reader.GetString(reader.GetOrdinal("ToFrom")),
+                                   reader.GetString(reader.GetOrdinal("Date")),
+                                   reader.GetInt32(reader.GetOrdinal("NumReceived")).ToString(),
+                                   reader.GetInt32(reader.GetOrdinal("NumShipped")).ToString(),
+                                   reader.GetInt32(reader.GetOrdinal("Balance")).ToString(), id);
+                                recordList.Add(record);
+                            }
+                            connection.Close();
+                            return recordList;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to connect to database05.");
+                return new List<Record>();
+            }
+        }*/
+
         private Morph RetrieveMorph(string id)
         {
             string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
@@ -482,7 +529,7 @@ namespace WpfApp
 
             if (recordList != null)
             {
-                foreach (Record r in recordList)
+                foreach (SearchResult sr in searchList)
                 {
                     /* textBoxes[textCount].Text = r.ToFrom;
                      textBoxes[textCount + ROW_SPACING].Text = r.Date;
@@ -491,12 +538,16 @@ namespace WpfApp
                      textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance; */
 
                     //textBoxes[textCount].Text += "Cane code: " + uxCode.Text; //Can code for the item column..find a way to get the cane code for each record
+                    textBoxes[textCount].Text += "Cane code: " + sr.CanNum;
 
-                    textBoxes[textCount + ROW_SPACING].Text += "Animal Name: " + r.AnimalId; //for right now, can only get id with record
-                    //textBoxes[textCount + ROW_SPACING].Text += "\nColl Date: " + uxMorphDate.Text;
-                    //textBoxes[textCount + ROW_SPACING].Text += "\nOwner: " + uxOwner.Text;
+                    //textBoxes[textCount + ROW_SPACING].Text += "Animal Name: " + r.AnimalId; //for right now, can only get id with record
+                    textBoxes[textCount + ROW_SPACING].Text += "Animal Name: " + sr.AnimalName; //for right now, can only get id with record
 
-                    textBoxes[textCount + ROW_SPACING * 2].Text = searchResult.Units; //qty column
+
+                    textBoxes[textCount + ROW_SPACING].Text += "\nColl Date: " + sr.CollDate;
+                    textBoxes[textCount + ROW_SPACING].Text += "\nOwner: " + sr.Owner;
+
+                    textBoxes[textCount + ROW_SPACING * 2].Text = sr.Units; //qty column
 
                     textCount++;
 
