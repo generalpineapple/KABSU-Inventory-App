@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WpfApp
 {
+    /// <summary>
+    /// class that keeps track of all the additional info fields used
+    /// </summary>
     public class AdditionalInfo
     {
         private string species;
@@ -56,6 +59,14 @@ namespace WpfApp
                 this.country = value;
             }
         }
+
+        /// <summary>
+        /// constructor when the fields are filled out to saver
+        /// </summary>
+        /// <param name="species"></param>
+        /// <param name="city"></param>
+        /// <param name="state"></param>
+        /// <param name="country"></param>
         public AdditionalInfo(string species, string city, string state, string country)
         {
             this.species = species;
@@ -64,6 +75,9 @@ namespace WpfApp
             this.country = country;
         }
 
+        /// <summary>
+        /// constructor for empty fields
+        /// </summary>
         public AdditionalInfo()
         {
             this.species = "";

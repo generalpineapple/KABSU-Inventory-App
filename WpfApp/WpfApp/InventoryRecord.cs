@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WpfApp
 {
+    /// <summary>
+    /// class for Inventory Record
+    /// </summary>
     class InventoryRecord
     {
         private string item;
@@ -80,6 +83,16 @@ namespace WpfApp
                 this.animalId = value;
             }
         }
+
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="description"></param>
+        /// <param name="qty"></param>
+        /// <param name="whatINeed"></param>
+        /// <param name="notes"></param>
+        /// <param name="id"></param>
         public InventoryRecord(string item, string description, string qty, string whatINeed, string notes, string id)
         {
             this.item = item;

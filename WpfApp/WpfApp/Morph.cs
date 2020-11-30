@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WpfApp
 {
+    /// <summary>
+    /// class for the fields in additional window
+    /// </summary>
     class Morph
     {
         private string notes;
@@ -104,6 +107,18 @@ namespace WpfApp
                 this.id = value;
             }
         }
+
+        /// <summary>
+        /// constructor when fields aren't empty
+        /// </summary>
+        /// <param name="notes"></param>
+        /// <param name="date"></param>
+        /// <param name="vigor"></param>
+        /// <param name="mot"></param>
+        /// <param name="morph"></param>
+        /// <param name="code"></param>
+        /// <param name="units"></param>
+        /// <param name="id"></param>
         public Morph(string notes, string date, string vigor, string mot, string morph, string code, string units, string id)
         {
             this.notes = notes;
@@ -116,6 +131,9 @@ namespace WpfApp
             this.id = id;
         }
 
+        /// <summary>
+        /// construcor when fields are empty
+        /// </summary>
         public Morph()
         {
             this.notes = "";

@@ -23,8 +23,12 @@ namespace WpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        RecordWindow recordWindow;
-        SearchWindow searchWindow;
+        RecordWindow recordWindow; //object for Record Window
+        SearchWindow searchWindow; //object for Search Window
+
+        /// <summary>
+        /// constructor
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();

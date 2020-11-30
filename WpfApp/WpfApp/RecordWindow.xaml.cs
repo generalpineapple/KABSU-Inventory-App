@@ -42,6 +42,9 @@ namespace WpfApp
         private NoteWindow noteWindow;
         private AdditionalInfoWindow infoWindow;
         
+        /// <summary>
+        /// constructor
+        /// </summary>
         public RecordWindow()
         {
             newRecord = true;
@@ -52,6 +55,10 @@ namespace WpfApp
             Closing += RecordWindow_Closing;
         }
 
+        /// <summary>
+        /// constructor for a record
+        /// </summary>
+        /// <param name="search"></param>
         public RecordWindow(SearchResult search)
         {
             newRecord = false;
@@ -76,6 +83,11 @@ namespace WpfApp
             morph = RetrieveMorph(searchResult.Code);
         }
 
+        /// <summary>
+        /// event handler for closing window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RecordWindow_Closing(object sender, CancelEventArgs e)
         {
             CollectAdditionalInfo();
@@ -123,6 +135,13 @@ namespace WpfApp
             StoreRecords();
             StoreMorph();
         }
+
+        /// <summary>
+        /// method for grid
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="depObj"></param>
+        /// <returns></returns>
         public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
             if (depObj != null)
@@ -142,6 +161,10 @@ namespace WpfApp
                 }
             }
         }
+
+        /// <summary>
+        /// method to store records in database
+        /// </summary>
         private void StoreRecords()
         {
             if (recordList.Count == 0)
@@ -190,6 +213,10 @@ namespace WpfApp
                 }
             }
         }
+
+        /// <summary>
+        /// method used to store additional info window in database
+        /// </summary>
         private void StoreMorph()// creat an blank item
         {
             if (isMorph == true && isOldMorph == false)
@@ -266,6 +293,9 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// method to store records in database
+        /// </summary>
         private void StoreParent()//input value to blank item
         {
             if (newRecord == true)
@@ -358,6 +388,11 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// method to retrieve records from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private List<Record> RetrieveRecords(string id)
         {
             string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
@@ -399,6 +434,11 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// method to retrieve morph records from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private Morph RetrieveMorph(string id)
         {
             string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
@@ -441,6 +481,11 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// event handler for opening window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RecordWindow_Load(object sender, RoutedEventArgs e)
         {
             int textCount = 0;
@@ -484,11 +529,21 @@ namespace WpfApp
             isOldMorph = true;
         }
 
+        /// <summary>
+        /// method for when morph is changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MorphChanged(object sender, TextChangedEventArgs e)
         {
             isOldMorph = false;
         }
 
+        /// <summary>
+        /// event handler for opening notes button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UxNotesButton_Click(object sender, RoutedEventArgs e)
         {
             noteWindow = new NoteWindow(notes);
@@ -496,6 +551,10 @@ namespace WpfApp
             noteWindow.ShowDialog();
             isOldMorph = false;
         }
+
+        /// <summary>
+        /// method to collect additional info that loads page
+        /// </summary>
         private void CollectAdditionalInfo()
         {
             if (newRecord == true)

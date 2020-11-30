@@ -20,13 +20,24 @@ namespace WpfApp
     public partial class AdditionalInfoWindow : Window
     {
         public event Action<AdditionalInfo> Check;
-        private AdditionalInfo info;
+
+        private AdditionalInfo info; //private object
+
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="info"></param>
         public AdditionalInfoWindow(AdditionalInfo info)
         {
             this.info = info;
             InitializeComponent();
         }
 
+        /// <summary>
+        /// event handler for window closing
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InfoWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (uxSpeciesText.Text != null)
@@ -45,6 +56,11 @@ namespace WpfApp
                 Check(info);
         }
 
+        /// <summary>
+        /// event handler for opening window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UxInfoWindow_Loaded(object sender, RoutedEventArgs e)
         {
             uxSpeciesText.Text = info.Species;

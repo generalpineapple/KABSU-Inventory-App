@@ -13,6 +13,15 @@ namespace WpfApp
 {
     class InsertData
     {
+        /// <summary>
+        /// method that inserts a person object from database
+        /// </summary>
+        /// <param name="personID"></param>
+        /// <param name="name"></param>
+        /// <param name="city"></param>
+        /// <param name="state"></param>
+        /// <param name="country"></param>
+        /// <returns></returns>
         public static string InsertPerson(int personID, string name, string city, string state, string country)
         {
             string connectionString = "Server=localhost;Database=kabsu; User ID = appuser; Password = test; Integrated Security=true";

@@ -210,6 +210,9 @@ namespace WpfApp
             this.Species = species;
         }
 
+        /// <summary>
+        /// construcor for empty search result
+        /// </summary>
         public SearchResult()
         {
         }

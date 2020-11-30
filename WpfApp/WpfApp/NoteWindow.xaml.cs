@@ -21,24 +21,42 @@ namespace WpfApp
     {
         public event Action<string> Check;
         private string notes;
+
+        /// <summary>
+        /// constructor
+        /// </summary>
         public NoteWindow()
         {
             notes = "";
             InitializeComponent();
         }
 
+        /// <summary>
+        /// constructor when notes are filled out
+        /// </summary>
+        /// <param name="notes"></param>
         public NoteWindow(string notes)
         {
             this.notes = notes;
             InitializeComponent();
         }
 
+        /// <summary>
+        /// event handler when closing window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NoteWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (Check != null)
                 Check(uxNotesText.Text);
         }
 
+        /// <summary>
+        /// event handler when opening window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NoteWindow_Loaded(object sender, RoutedEventArgs e)
         {
             uxNotesText.Text = notes;
