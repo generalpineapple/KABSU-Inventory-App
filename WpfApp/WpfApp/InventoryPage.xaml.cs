@@ -18,32 +18,35 @@ using MySql.Data.MySqlClient;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for RecordWindow.xaml
+    /// Class for Inventory Page window
     /// </summary>
     public partial class InventoryPage : Window
     {
-        SearchResult searchResult;
+        SearchResult searchResult; //object for SearchResult class
         private string notes;
         private string oldCode;
         private string oldOwner;
         private string oldCity;
         private string oldState;
-        private AdditionalInfo info;
+        private AdditionalInfo info; //objecty for AdditionalInfo class
         private static int ID_INDEX = 321;
         private static int ROW_SPACING = 32;
         private static int MORPH_ID = 326;
-        private List<InventoryRecord> inventoryrecordList;
-        private List<Record> recordList;
+        private List<InventoryRecord> inventoryrecordList; //list of Inventory Records
+        private List<Record> recordList; //list of Records
         private Morph morph;
         private bool isMorph;
         private bool isOldMorph;
         private bool populating;
         private bool newRecord;
         private bool isOldRecord;
-        private NoteWindow noteWindow;
-        private AdditionalInfoWindow infoWindow;
-        List<SearchResult> searchList;
+        private NoteWindow noteWindow; //object for Note Window class
+        private AdditionalInfoWindow infoWindow; //object for Additional Info Window class
+        List<SearchResult> searchList; //listt of Search Results
 
+        /// <summary>
+        /// constructor for class
+        /// </summary>
         public InventoryPage()
         {
             newRecord = true;
@@ -54,6 +57,10 @@ namespace WpfApp
             Closing += InventoryPage_Closing;
         }
 
+        /// <summary>
+        /// constructor when one row is selected from Search Results Window
+        /// </summary>
+        /// <param name="search"></param>
         public InventoryPage(SearchResult search)
         {
             newRecord = false;
@@ -78,6 +85,10 @@ namespace WpfApp
             morph = RetrieveMorph(searchResult.Code);
         }
 
+        /// <summary>
+        /// Constructor when multiple rows are selected from Search Results Window
+        /// </summary>
+        /// <param name="search"></param>
         public InventoryPage(List<SearchResult> search)
         {
             newRecord = false;
@@ -108,7 +119,11 @@ namespace WpfApp
             }
         }
 
-
+        /// <summary>
+        /// event handler for closing window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InventoryPage_Closing(object sender, CancelEventArgs e)
         {
             CollectAdditionalInfo();
@@ -155,6 +170,13 @@ namespace WpfApp
             StoreRecords();
             StoreMorph();
         }
+
+        /// <summary>
+        /// method for the grid in the window
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="depObj"></param>
+        /// <returns></returns>
         public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
             if (depObj != null)
@@ -174,6 +196,10 @@ namespace WpfApp
                 }
             }
         }
+
+        /// <summary>
+        /// method to store all records into database.
+        /// </summary>
         private void StoreRecords()
         {
             if (inventoryrecordList.Count == 0)
@@ -220,6 +246,10 @@ namespace WpfApp
                 }
             }
         }
+
+        /// <summary>
+        /// method for the pop up window to save that information
+        /// </summary>
         private void StoreMorph()
         {
             if (isMorph == true && isOldMorph == false)
@@ -296,6 +326,9 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// method storing the information into database as a new or updated record
+        /// </summary>
         private void StoreParent()
         {
             if (newRecord == true)
@@ -393,6 +426,11 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// method to retrieve records from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private List<Record> RetrieveRecords(string id)
         {
             string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
@@ -478,6 +516,11 @@ namespace WpfApp
             }
         }*/
 
+        /// <summary>
+        /// method to pull in a record's additional information from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private Morph RetrieveMorph(string id)
         {
             string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
@@ -520,6 +563,11 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// event handler when loading the window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InventoryPage_Load(object sender, RoutedEventArgs e)
         {
             int textCount = 0;
@@ -576,11 +624,21 @@ namespace WpfApp
             isOldMorph = true;
         }
 
+        /// <summary>
+        /// event handler to update the Morph
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MorphChanged(object sender, TextChangedEventArgs e)
         {
             isOldMorph = false;
         }
 
+        /// <summary>
+        /// event handler when notes button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UxNotesButton_Click(object sender, RoutedEventArgs e)
         {
             noteWindow = new NoteWindow(notes);
@@ -588,6 +646,10 @@ namespace WpfApp
             noteWindow.ShowDialog();
             isOldMorph = false;
         }
+
+        /// <summary>
+        /// method to collect additional information uploading the new window
+        /// </summary>
         private void CollectAdditionalInfo()
         {
             if (newRecord == true)

@@ -19,9 +19,14 @@ namespace WpfApp
     /// </summary>
     public partial class SearchWindowResults : Window
     {
-        private RecordWindow recordWindow;
+        private RecordWindow recordWindow; // object for Record Window class
 
-        private InventoryPage inventoryPage;
+        private InventoryPage inventoryPage; //object for Inventory Page class
+
+        /// <summary>
+        /// constructor for class
+        /// </summary>
+        /// <param name="results"></param>
         public SearchWindowResults(List<SearchResult> results)
         {
             InitializeComponent();
@@ -39,6 +44,11 @@ namespace WpfApp
             StateColumn.Width = 42;
         }
 
+        /// <summary>
+        /// event handler when a single row is double clicked on to trigger the record window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             DataGridRow row = sender as DataGridRow;
@@ -47,6 +57,11 @@ namespace WpfApp
             recordWindow.ShowDialog();
         }
 
+        /// <summary>
+        /// event handler when multiple rows are selected to trigger the inventory page report
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uxPullDataButton_Click(object sender, RoutedEventArgs e)
         {
             List<SearchResult> list = new List<SearchResult>();

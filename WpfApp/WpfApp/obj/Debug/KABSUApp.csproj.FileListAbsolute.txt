@@ -137,6 +137,4 @@ C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\KAB
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\KABSUApp.csproj.CopyComplete
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\WpfApp.exe
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\WpfApp.pdb
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.visualstudio.testadapter.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.reporters.net452.dll
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.utility.net452.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.abstractions.xml
