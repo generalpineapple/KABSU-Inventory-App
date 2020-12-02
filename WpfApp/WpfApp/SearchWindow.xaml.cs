@@ -26,6 +26,8 @@ namespace WpfApp
         private string canNum = "*";
         private string town = "*";
         private string state = "*";
+        private int canCapacity = 300;
+        private int numOfCans;
         private SearchResults searchResults;
         private SearchTerm searchTerm;
         SearchWindowResults windowResults;
@@ -55,6 +57,23 @@ namespace WpfApp
             inventoryPage = new InventoryPage();
             inventoryPage.ShowDialog();
             this.Close();
+        }
+
+        private void uxCanCapacity_Click(object sender, RoutedEventArgs e)
+        {
+            List<SearchResult> results = CalculateCanList();
+            int totalCanCapacity = numOfCans * canCapacity;
+            int unitSum = 0;
+            foreach (SearchResult sr in results)
+            {
+                unitSum += Convert.ToInt32(sr.Units);
+            }
+            double capacityPercent = Math.Round((double)unitSum / totalCanCapacity * 100, 2);
+            MessageBox.Show("Number of Cans Entered: " + numOfCans + "\n" +
+                             "Capacity of a can: " + canCapacity + "\n" +
+                             "Sum of Units: " + unitSum + "\n" +
+                             "Total Capacity: " + totalCanCapacity + "\n" +
+                             "Percent used: " + capacityPercent + "\n");
         }
 
         private void UxUnitSum_Click(object sender, RoutedEventArgs e)
@@ -127,6 +146,66 @@ namespace WpfApp
                 description.Add(s.ToString());
             }
             return description;
+        }
+
+        /// <summary>
+        /// this finds the capacity of the cans in question
+        /// multiple can # can be entered two ways.
+        /// if they are entered with ',' seperating them, then if will take every can # entered.
+        /// if it is entered with a ':', then both can #s and every can # inbetween them will be accounted for.
+        /// if no can numbers were entered, it returns an empty list 
+        /// </summary>
+        /// <returns></returns>
+        public List<SearchResult> CalculateCanList() 
+        {
+            SetTerm(uxSearchTerm1.Text, uxSearchContents1.Text);
+            SetTerm(uxSearchTerm2.Text, uxSearchContents2.Text);
+            SetTerm(uxSearchTerm3.Text, uxSearchContents3.Text);
+            SetTerm(uxSearchTerm4.Text, uxSearchContents4.Text);
+
+            searchResults = new SearchResults();
+            List<SearchResult> results = new List<SearchResult>();
+
+            if (canNum.Equals("*"))
+            {
+                searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
+                results = searchResults.retrieveData(searchTerm);
+                numOfCans = results.GroupBy(x => x.CanNum).Count();
+                return results;
+
+            }
+
+            string[] canNumbers = canNum.Split(',');
+            if(canNumbers.Length > 1)
+            {
+                numOfCans = canNumbers.Length;
+                foreach(string can in canNumbers)
+                {
+                    searchTerm = new SearchTerm(can.Trim(), code, animalName, breed, owner, town, state);
+                    results.AddRange(searchResults.retrieveData(searchTerm));
+                }
+                return results;
+            }
+            else
+            {                
+                canNumbers = canNum.Split(':');
+                if (canNumbers.Length > 1)
+                {
+                    if (canNumbers.Length == 2) {
+                        searchTerm = new SearchTerm(canNumbers[0].Trim(), code, animalName, breed, owner, town, state);
+                        results = searchResults.retrieveDataBetween(searchTerm, canNumbers[1].Trim());
+                        numOfCans = results.GroupBy(x => x.CanNum).Count();
+                    }
+                    return results;
+                }
+                else
+                {
+                    numOfCans = 1;
+                    searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);                    
+                    results = searchResults.retrieveData(searchTerm);
+                    return results;
+                }
+            }
         }
     }
 }
