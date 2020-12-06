@@ -186,8 +186,9 @@ namespace WpfApp
                 }
                 return results;
             }
-            else
-            {                
+            /*else
+            {       
+                //This give back a bunch of weird numbers, more testing and debugging needed
                 canNumbers = canNum.Split(':');
                 if (canNumbers.Length > 1)
                 {
@@ -197,7 +198,7 @@ namespace WpfApp
                         numOfCans = results.GroupBy(x => x.CanNum).Count();
                     }
                     return results;
-                }
+                }*/
                 else
                 {
                     numOfCans = 1;
@@ -205,7 +206,7 @@ namespace WpfApp
                     results = searchResults.retrieveData(searchTerm);
                     return results;
                 }
-            }
+            //}
         }
     }
 }
