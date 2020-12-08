@@ -586,7 +586,7 @@ namespace WpfApp
                      textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance; */
 
                     //textBoxes[textCount].Text += "Cane code: " + uxCode.Text; //Can code for the item column..find a way to get the cane code for each record
-                    textBoxes[textCount].Text += "Cane code: " + sr.CanNum;
+                    textBoxes[textCount].Text += "Can Number: " + sr.CanNum;
 
                     //textBoxes[textCount + ROW_SPACING].Text += "Animal Name: " + r.AnimalId; //for right now, can only get id with record
                     textBoxes[textCount + ROW_SPACING].Text += "Animal Name: " + sr.AnimalName; //for right now, can only get id with record
