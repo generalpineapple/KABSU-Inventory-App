@@ -37,7 +37,7 @@ namespace WpfApp
                 info.State = uxStateText.Text;
             if (uxCountryText.Text != null)
                 info.Country = uxCountryText.Text;
-            /* if (uxValidBox.SelectedItem != null && uxValidBox.SelectedItem == uxValidTrue)
+           /* if (uxValidBox.SelectedItem != null && uxValidBox.SelectedItem == uxValidTrue)
                 info.Valid = true;
             else if (uxValidBox.SelectedItem != null)
                 info.Valid = false; */

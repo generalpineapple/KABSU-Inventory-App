@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="Additional Info" Height="209.773" Width="278.092" Closing="InfoWindow_Closing" Loaded="UxInfoWindow_Loaded">
+        Title="Additional Info" Height="173.67" Width="278.092" Closing="InfoWindow_Closing" Loaded="UxInfoWindow_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="201*"/>
@@ -19,10 +19,6 @@
         <Label Content="Country" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,103,0,0"/>
         <TextBox x:Name="uxStateText" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="132,72,0,0" Grid.ColumnSpan="2"/>
         <TextBox x:Name="uxCountryText" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="132,103,0,0" Grid.ColumnSpan="2"/>
-        <ComboBox x:Name="uxValidBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" Margin="132,134,0,0">
-            <ComboBoxItem Name ="uxValidTrue" Content="TRUE"/>
-            <ComboBoxItem Name ="uxValidFalse" Content="FALSE"/>
-        </ComboBox>
 
 
     </Grid>

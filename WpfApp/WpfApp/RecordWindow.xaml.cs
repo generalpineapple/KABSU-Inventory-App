@@ -167,12 +167,14 @@ namespace WpfApp
                         }*/
                         foreach (Record r in recordList)
                         {
+                            string[] dateAndCollCode = r.Date.Split('#');
 
                             using (var command = new MySqlCommand("kabsu.StoreData", connection))
                             {
                                 command.CommandType = CommandType.StoredProcedure;
 
                                 command.Parameters.AddWithValue("@ToFrom", r.ToFrom);
+                                command.Parameters.AddWithValue("@RealDate", Convert.ToDateTime(dateAndCollCode[0]));
                                 command.Parameters.AddWithValue("@Date", r.Date);
                                 command.Parameters.AddWithValue("@Received", Convert.ToInt32(r.Rec));
                                 command.Parameters.AddWithValue("@Shipped", Convert.ToInt32(r.Ship));
@@ -204,11 +206,15 @@ namespace WpfApp
                     {
                         using (var command = new MySqlCommand("kabsu.StoreMorph", connection))
                         {
+
+                            string[] dateAndCollCode = uxMorphDate.Text.Split('#');
+
                             command.CommandType = CommandType.StoredProcedure;
 
                             command.Parameters.AddWithValue("@Notes", morph.Notes);
                             command.Parameters.AddWithValue("@Date", uxMorphDate.Text);
-                            if(morph.Vigor == "")
+                            command.Parameters.AddWithValue("@RealDate", Convert.ToDateTime(dateAndCollCode[0]));
+                            if (morph.Vigor == "")
                             {
                                 command.Parameters.AddWithValue("@Vigor", 0);
                             }
@@ -217,7 +223,7 @@ namespace WpfApp
                                 command.Parameters.AddWithValue("@Vigor", Convert.ToInt32(morph.Vigor));
                             }
 
-                            if (morph.Vigor == "")
+                            if (morph.Mot == "")
                             {
                                 command.Parameters.AddWithValue("@Mot", 0);
                             }
@@ -226,7 +232,7 @@ namespace WpfApp
                                 command.Parameters.AddWithValue("@Mot", Convert.ToInt32(morph.Mot));
                             }
 
-                            if (morph.Vigor == "")
+                            if (morph.Morphology == "")
                             {
                                 command.Parameters.AddWithValue("@Morph", 0);
                             }
@@ -235,16 +241,16 @@ namespace WpfApp
                                 command.Parameters.AddWithValue("@Morph", Convert.ToInt32(morph.Morphology));
                             }
 
-                            if (morph.Vigor == "")
+                            if (morph.Code == "")
                             {
-                                command.Parameters.AddWithValue("@CollCode", 0);
+                                command.Parameters.AddWithValue("@Code", 0);
                             }
                             else
                             {
                                 command.Parameters.AddWithValue("@CollCode", Convert.ToInt32(morph.Code));
                             }
 
-                            if (morph.Vigor == "")
+                            if (morph.Units == "")
                             {
                                 command.Parameters.AddWithValue("@Units", 0);
                             }
@@ -287,7 +293,7 @@ namespace WpfApp
                                 !uxBreed.Text.Equals("") || !info.Species.Equals("") || !uxRegNum.Text.Equals(""))
                             { 
                                 
-                                command.Parameters.AddWithValue("@LastModified", info.LastModified);
+                                //command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
                                 command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
                                 command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
                                 command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
@@ -329,7 +335,8 @@ namespace WpfApp
                         {
                             command.CommandType = CommandType.StoredProcedure;
 
-                            command.Parameters.AddWithValue("@LastModified", info.LastModified);
+                            //command.Parameters.AddWithValue("@SValid", info.Valid.ToString().ToUpper());
+                            //command.Parameters.AddWithValue("@SValid", true);
                             command.Parameters.AddWithValue("@SCanNum", uxCanNum.Text);
                             command.Parameters.AddWithValue("@OldAnimalID", oldCode);
                             command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);

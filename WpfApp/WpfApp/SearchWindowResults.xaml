@@ -9,7 +9,7 @@
     <Grid>
         <DataGrid x:Name="uxSearchResults" ItemsSource="{Binding SearchResult}" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Height="537" VerticalAlignment="Top" Width="982" MaxWidth="982" Margin="10,10,0,0" SelectionMode="Extended">
             <DataGrid.Columns>
-                <DataGridTextColumn x:Name="ValidColumn" Header="INV" Binding="{Binding INV}"></DataGridTextColumn>
+                <DataGridTextColumn x:Name="ValidColumn" Header="LastModified" Binding="{Binding INV}"></DataGridTextColumn>
                 <DataGridTextColumn x:Name="CanNumColumn" Header="Can Num" Binding="{Binding CanNum}"></DataGridTextColumn>
                 <DataGridTextColumn x:Name="CodeColumn" Header="Code #" Binding="{Binding Code}"></DataGridTextColumn>
                 <DataGridTextColumn x:Name="CollDateColumn" Header="Coll. Date" Binding="{Binding CollDate}"></DataGridTextColumn>
