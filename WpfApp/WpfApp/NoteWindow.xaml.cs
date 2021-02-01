@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for NoteWindow.xaml
+    /// class for the Note Window form
     /// </summary>
     public partial class NoteWindow : Window
     {

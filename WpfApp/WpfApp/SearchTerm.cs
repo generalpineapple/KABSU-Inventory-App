@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace WpfApp
 {
+    /// <summary>
+    /// class that pulls in field data from a user's search.
+    /// </summary>
     public class SearchTerm
     {
-        /// <summary>
-        /// Various getters and setters
-        /// </summary>
         private string owner;
+        /// <summary>
+        /// Property for owner
+        /// </summary>
         public string Owner
         {
             get
@@ -24,6 +27,9 @@ namespace WpfApp
             }
         }
         private string breed;
+        /// <summary>
+        /// Property for breed
+        /// </summary>
         public string Breed
         {
             get
@@ -36,6 +42,9 @@ namespace WpfApp
             }
         }
         private string animalName;
+        /// <summary>
+        /// Property for animalName
+        /// </summary>
         public string AnimalName
         {
             get
@@ -48,6 +57,9 @@ namespace WpfApp
             }
         }
         private string code;
+        /// <summary>
+        /// Property for code
+        /// </summary>
         public string Code
         {
             get
@@ -60,6 +72,9 @@ namespace WpfApp
             }
         }
         private string canNum;
+        /// <summary>
+        /// Property for canNum
+        /// </summary>
         public string CanNum
         {
             get
@@ -72,6 +87,9 @@ namespace WpfApp
             }
         }
         private string town;
+        /// <summary>
+        /// Property for town
+        /// </summary>
         public string Town
         {
             get
@@ -84,6 +102,9 @@ namespace WpfApp
             }
         }
         private string state;
+        /// <summary>
+        /// Property for state
+        /// </summary>
         public string State
         {
             get

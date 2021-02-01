@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for SearchWindow.xaml
+    /// class for Search Window form
     /// </summary>
     public partial class SearchWindow : Window
     {
@@ -33,6 +33,10 @@ namespace WpfApp
         SearchWindowResults windowResults;
 
         InventoryPage inventoryPage;
+
+        /// <summary>
+        /// constructor
+        /// </summary>
         public SearchWindow()
         {
             InitializeComponent();
@@ -52,6 +56,11 @@ namespace WpfApp
             this.Close();
         }
 
+        /// <summary>
+        /// event handler when user clicks the Inventory List button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UxInventoryList_Click(object sender, RoutedEventArgs e)
         {
             inventoryPage = new InventoryPage();
@@ -59,6 +68,11 @@ namespace WpfApp
             this.Close();
         }
 
+        /// <summary>
+        /// event handler when user clicks the Can Capacity button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void uxCanCapacity_Click(object sender, RoutedEventArgs e)
         {
             List<SearchResult> results = CalculateCanList();
@@ -76,6 +90,11 @@ namespace WpfApp
                              "Percent used: " + capacityPercent + "\n");
         }
 
+        /// <summary>
+        /// event handler when the user clicks the Unit Sum button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UxUnitSum_Click(object sender, RoutedEventArgs e)
         {
             List<SearchResult> results = CalculateResultList();
@@ -87,6 +106,11 @@ namespace WpfApp
             MessageBox.Show("Sum of Units: " + unitSum);
         }
 
+        /// <summary>
+        /// method to string together the term and contents
+        /// </summary>
+        /// <param name="term"></param>
+        /// <param name="contents"></param>
         void SetTerm(string term, string contents)
         {
             switch (term)
@@ -115,6 +139,10 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// method to create a new search term and retrieve its data
+        /// </summary>
+        /// <returns></returns>
         public List<SearchResult> CalculateResultList()
         {
             SetTerm(uxSearchTerm1.Text, uxSearchContents1.Text);
@@ -129,6 +157,10 @@ namespace WpfApp
             return results;
         }
 
+        /// <summary>
+        /// method to create a new search term and retrieve its data by a list of strings
+        /// </summary>
+        /// <returns></returns>
         public List<string> CalculateInventoryList()
         {
             SetTerm(uxSearchTerm1.Text, uxSearchContents1.Text);

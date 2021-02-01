@@ -18,7 +18,7 @@ using MySql.Data.MySqlClient;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for RecordWindow.xaml
+    /// class for Record Window form
     /// </summary>
     public partial class RecordWindow : Window
     {

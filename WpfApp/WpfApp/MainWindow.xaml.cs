@@ -19,7 +19,7 @@ using System.Data;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Class for the Main Window form.
     /// </summary>
     public partial class MainWindow : Window
     {

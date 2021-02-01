@@ -12,6 +12,9 @@ namespace WpfApp
     class Record
     {
         private string toFrom;
+        /// <summary>
+        /// Property for toFrom
+        /// </summary>
         public string ToFrom
         {
             get
@@ -24,6 +27,9 @@ namespace WpfApp
             }
         }
         private string date;
+        /// <summary>
+        /// Property for date
+        /// </summary>
         public string Date
         {
             get
@@ -36,6 +42,9 @@ namespace WpfApp
             }
         }
         private string rec;
+        /// <summary>
+        /// Property for rec
+        /// </summary>
         public string Rec
         {
             get
@@ -48,6 +57,9 @@ namespace WpfApp
             }
         }
         private string ship;
+        /// <summary>
+        /// Property for ship
+        /// </summary>
         public string Ship
         {
             get
@@ -60,6 +72,9 @@ namespace WpfApp
             }
         }
         private string balance;
+        /// <summary>
+        /// Property for balance
+        /// </summary>
         public string Balance
         {
             get
@@ -72,6 +87,9 @@ namespace WpfApp
             }
         }
         private string animalId;
+        /// <summary>
+        /// Property for animalID
+        /// </summary>
         public string AnimalId
         {
             get

@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for AdditionalInfoWindow.xaml
+    /// Class for the Additional Info Window form that pops up when a record has been finished filling out.
     /// </summary>
     public partial class AdditionalInfoWindow : Window
     {
@@ -24,7 +24,7 @@ namespace WpfApp
         private AdditionalInfo info; //private object
 
         /// <summary>
-        /// constructor
+        /// constructor that takes in any info given.
         /// </summary>
         /// <param name="info"></param>
         public AdditionalInfoWindow(AdditionalInfo info)

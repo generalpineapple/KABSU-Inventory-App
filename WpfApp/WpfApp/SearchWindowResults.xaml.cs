@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for SearchWindowResults.xaml
+    /// class for the Search Window results form
     /// </summary>
     public partial class SearchWindowResults : Window
     {

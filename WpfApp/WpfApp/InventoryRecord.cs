@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 namespace WpfApp
 {
     /// <summary>
-    /// class for Inventory Record
+    /// class for Inventory Record that is being called by the Inventory Page window.
     /// </summary>
     class InventoryRecord
     {
         private string item;
+        /// <summary>
+        /// Property for item 
+        /// </summary>
         public string Item
         {
             get
@@ -24,6 +27,9 @@ namespace WpfApp
             }
         }
         private string description;
+        /// <summary>
+        /// property for description
+        /// </summary>
         public string Description
         {
             get
@@ -36,6 +42,9 @@ namespace WpfApp
             }
         }
         private string qty;
+        /// <summary>
+        /// Property for qty
+        /// </summary>
         public string Qty
         {
             get
@@ -48,6 +57,9 @@ namespace WpfApp
             }
         }
         private string whatINeed;
+        /// <summary>
+        /// Property for whatINeed
+        /// </summary>
         public string WhatINeed
         {
             get
@@ -60,6 +72,9 @@ namespace WpfApp
             }
         }
         private string notes;
+        /// <summary>
+        /// Property for notes
+        /// </summary>
         public string Notes
         {
             get
@@ -72,6 +87,9 @@ namespace WpfApp
             }
         }
         private string animalId;
+        /// <summary>
+        /// Property for animalID
+        /// </summary>
         public string AnimalId
         {
             get
@@ -85,7 +103,7 @@ namespace WpfApp
         }
 
         /// <summary>
-        /// constructor
+        /// constructor when the fields are filled out.
         /// </summary>
         /// <param name="item"></param>
         /// <param name="description"></param>

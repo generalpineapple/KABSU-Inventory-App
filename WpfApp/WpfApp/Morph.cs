@@ -12,6 +12,9 @@ namespace WpfApp
     class Morph
     {
         private string notes;
+        /// <summary>
+        /// Property for notes
+        /// </summary>
         public string Notes
         {
             get
@@ -24,6 +27,9 @@ namespace WpfApp
             }
         }
         private string date;
+        /// <summary>
+        /// Property for date
+        /// </summary>
         public string Date
         {
             get
@@ -36,6 +42,9 @@ namespace WpfApp
             }
         }
         private string vigor;
+        /// <summary>
+        /// Property for vigor
+        /// </summary>
         public string Vigor
         {
             get
@@ -48,6 +57,9 @@ namespace WpfApp
             }
         }
         private string mot;
+        /// <summary>
+        /// Property for mot
+        /// </summary>
         public string Mot
         {
             get
@@ -60,6 +72,9 @@ namespace WpfApp
             }
         }
         private string morph;
+        /// <summary>
+        /// Property for morph
+        /// </summary>
         public string Morphology
         {
             get
@@ -72,6 +87,9 @@ namespace WpfApp
             }
         }
         private string code;
+        /// <summary>
+        /// Property for code.
+        /// </summary>
         public string Code
         {
             get
@@ -84,6 +102,9 @@ namespace WpfApp
             }
         }
         private string units;
+        /// <summary>
+        /// Property for units
+        /// </summary>
         public string Units
         {
             get
@@ -96,6 +117,9 @@ namespace WpfApp
             }
         }
         private string id;
+        /// <summary>
+        /// Property for id
+        /// </summary>
         public string Id
         {
             get
