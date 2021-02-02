@@ -28,6 +28,8 @@ namespace WpfApp
         private string state = "*";
         private int canCapacity = 300;
         private int numOfCans;
+        private SearchResults searchResults;
+        private SearchTerm searchTerm;
         SearchWindowResults windowResults;
 
         InventoryPage inventoryPage;
@@ -38,22 +40,6 @@ namespace WpfApp
         public SearchWindow()
         {
             InitializeComponent();
-        }
-
-        public SearchResults searchResults
-        {
-            get => default;
-            set
-            {
-            }
-        }
-
-        public SearchTerm searchTerm
-        {
-            get => default;
-            set
-            {
-            }
         }
 
         private void UxSearchTerm1_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -165,8 +151,8 @@ namespace WpfApp
 
             //searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
             searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
-            jj = new SearchResults();
-            List<SearchResult> results = jj.retrieveData(searchTerm);
+            searchResults = new SearchResults();
+            List<SearchResult> results = searchResults.retrieveData(searchTerm);
             return results;
         }
 
@@ -183,8 +169,8 @@ namespace WpfApp
 
             searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
             searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
-            jj = new SearchResults();
-            List<SearchResult> results = jj.retrieveData(searchTerm);
+            searchResults = new SearchResults();
+            List<SearchResult> results = searchResults.retrieveData(searchTerm);
             List<string> description = new List<string>();
             foreach(SearchResult s in results)
             {
@@ -208,13 +194,13 @@ namespace WpfApp
             SetTerm(uxSearchTerm3.Text, uxSearchContents3.Text);
             SetTerm(uxSearchTerm4.Text, uxSearchContents4.Text);
 
-            jj = new SearchResults();
+            searchResults = new SearchResults();
             List<SearchResult> results = new List<SearchResult>();
 
             if (canNum.Equals("*"))
             {
                 searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
-                results = jj.retrieveData(searchTerm);
+                results = searchResults.retrieveData(searchTerm);
                 numOfCans = results.GroupBy(x => x.CanNum).Count();
                 return results;
 
@@ -227,7 +213,7 @@ namespace WpfApp
                 foreach(string can in canNumbers)
                 {
                     searchTerm = new SearchTerm(can.Trim(), code, animalName, breed, owner, town, state);
-                    results.AddRange(jj.retrieveData(searchTerm));
+                    results.AddRange(searchResults.retrieveData(searchTerm));
                 }
                 return results;
             }
@@ -248,7 +234,7 @@ namespace WpfApp
                 {
                     numOfCans = 1;
                     searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);                    
-                    results = jj.retrieveData(searchTerm);
+                    results = searchResults.retrieveData(searchTerm);
                     return results;
                 }
             //}
