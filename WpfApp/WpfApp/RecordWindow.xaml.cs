@@ -18,7 +18,7 @@ using MySql.Data.MySqlClient;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for RecordWindow.xaml
+    /// class for Record Window form
     /// </summary>
     public partial class RecordWindow : Window
     {
@@ -42,6 +42,9 @@ namespace WpfApp
         private NoteWindow noteWindow;
         private AdditionalInfoWindow infoWindow;
         
+        /// <summary>
+        /// constructor
+        /// </summary>
         public RecordWindow()
         {
             newRecord = true;
@@ -52,6 +55,10 @@ namespace WpfApp
             Closing += RecordWindow_Closing;
         }
 
+        /// <summary>
+        /// constructor for a record
+        /// </summary>
+        /// <param name="search"></param>
         public RecordWindow(SearchResult search)
         {
             newRecord = false;
@@ -76,6 +83,11 @@ namespace WpfApp
             morph = RetrieveMorph(searchResult.Code);
         }
 
+        /// <summary>
+        /// event handler for closing window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RecordWindow_Closing(object sender, CancelEventArgs e)
         {
             CollectAdditionalInfo();
@@ -123,6 +135,13 @@ namespace WpfApp
             StoreRecords();
             StoreMorph();
         }
+
+        /// <summary>
+        /// method for grid
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="depObj"></param>
+        /// <returns></returns>
         public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
             if (depObj != null)
@@ -142,6 +161,10 @@ namespace WpfApp
                 }
             }
         }
+
+        /// <summary>
+        /// method to store records in database
+        /// </summary>
         private void StoreRecords()
         {
             if (recordList.Count == 0)
@@ -151,15 +174,15 @@ namespace WpfApp
                 {
                     using (var connection = new MySqlConnection(connectionString))
                     {
-                        using (var command = new MySqlCommand("kabsu.DeleteData", connection))
+                        /*using (var command = new MySqlCommand("kabsu.DeleteData", connection))
                         {
                             command.CommandType = CommandType.StoredProcedure;
 
-                            command.Parameters.AddWithValue("@ID", searchResult.Code);
+                            command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
                             connection.Open();
                             int k = command.ExecuteNonQuery();
                             connection.Close();
-                        }
+                        }*/
                         foreach (Record r in recordList)
                         {
                             string[] dateAndCollCode = r.Date.Split('#');
@@ -169,12 +192,14 @@ namespace WpfApp
                                 command.CommandType = CommandType.StoredProcedure;
 
                                 command.Parameters.AddWithValue("@ToFrom", r.ToFrom);
-                                command.Parameters.AddWithValue("@RealDate", Convert.ToDateTime(dateAndCollCode[0]));
+                                command.Parameters.AddWithValue("@RealDate", Convert.ToDateTime(r.Date));
                                 command.Parameters.AddWithValue("@Date", r.Date);
                                 command.Parameters.AddWithValue("@Received", Convert.ToInt32(r.Rec));
                                 command.Parameters.AddWithValue("@Shipped", Convert.ToInt32(r.Ship));
                                 command.Parameters.AddWithValue("@Balance", Convert.ToInt32(r.Balance));
                                 command.Parameters.AddWithValue("@AnimalID", r.AnimalId);
+                                command.Parameters.AddWithValue("@Can", uxCanNum.Text);
+                                command.Parameters.AddWithValue("@CollDate", uxMorphCode.Text);
 
                                 connection.Open();
                                 int k = command.ExecuteNonQuery();
@@ -190,6 +215,10 @@ namespace WpfApp
                 }
             }
         }
+
+        /// <summary>
+        /// method used to store additional info window in database
+        /// </summary>
         private void StoreMorph()// creat an blank item
         {
             if (isMorph == true && isOldMorph == false)
@@ -208,7 +237,7 @@ namespace WpfApp
 
                             command.Parameters.AddWithValue("@Notes", morph.Notes);
                             command.Parameters.AddWithValue("@Date", uxMorphDate.Text);
-                            command.Parameters.AddWithValue("@RealDate", Convert.ToDateTime(dateAndCollCode[0]));
+                            command.Parameters.AddWithValue("@RealDate", Convert.ToDateTime(uxMorphDate.Text));
                             if (morph.Vigor == "")
                             {
                                 command.Parameters.AddWithValue("@Vigor", 0);
@@ -273,6 +302,9 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// method to store records in database
+        /// </summary>
         private void StoreParent()//input value to blank item
         {
             if (newRecord == true)
@@ -289,10 +321,9 @@ namespace WpfApp
                             if (!uxCanNum.Text.Equals("") || !uxCode.Text.Equals("") || !uxMorphDate.Text.Equals("") || !uxMorphUnits.Text.Equals("") ||
                                 !info.City.Equals("") || !info.State.Equals("") || !info.Country.Equals("") || !uxOwner.Text.Equals("") || !uxAnimalName.Text.Equals("") ||
                                 !uxBreed.Text.Equals("") || !info.Species.Equals("") || !uxRegNum.Text.Equals(""))
-                            {
-
-                                // command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
-                                command.Parameters.AddWithValue("@LastModified", DateTime.Now);
+                            { 
+                                
+                               // command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
                                 command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
                                 command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
                                 command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
@@ -334,9 +365,7 @@ namespace WpfApp
                         {
                             command.CommandType = CommandType.StoredProcedure;
 
-                            //Valid has been replaced with lastModified, this is a relic of the past
                             //command.Parameters.AddWithValue("@SValid", info.Valid.ToString().ToUpper());
-                            //command.Parameters.AddWithValue("@SValid", true);
                             command.Parameters.AddWithValue("@SCanNum", uxCanNum.Text);
                             command.Parameters.AddWithValue("@OldAnimalID", oldCode);
                             command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
@@ -368,6 +397,11 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// method to retrieve records from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private List<Record> RetrieveRecords(string id)
         {
             string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
@@ -409,6 +443,11 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// method to retrieve morph records from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private Morph RetrieveMorph(string id)
         {
             string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
@@ -451,6 +490,11 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// event handler for opening window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RecordWindow_Load(object sender, RoutedEventArgs e)
         {
             int textCount = 0;
@@ -494,11 +538,21 @@ namespace WpfApp
             isOldMorph = true;
         }
 
+        /// <summary>
+        /// method for when morph is changed
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MorphChanged(object sender, TextChangedEventArgs e)
         {
             isOldMorph = false;
         }
 
+        /// <summary>
+        /// event handler for opening notes button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UxNotesButton_Click(object sender, RoutedEventArgs e)
         {
             noteWindow = new NoteWindow(notes);
@@ -506,6 +560,10 @@ namespace WpfApp
             noteWindow.ShowDialog();
             isOldMorph = false;
         }
+
+        /// <summary>
+        /// method to collect additional info that loads page
+        /// </summary>
         private void CollectAdditionalInfo()
         {
             if (newRecord == true)

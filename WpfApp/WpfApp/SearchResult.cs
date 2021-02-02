@@ -19,9 +19,15 @@ namespace WpfApp
                 <DataGridTextColumn x:Name="Town" Header ="Town"/>
                 <DataGridTextColumn x:Name="ST" Header ="ST"/>
             </DataGrid.Columns>*/
+    /// <summary>
+    /// class that holds or updates data based off of one search result
+    /// </summary>
     public class SearchResult
     {
         private string inv;
+        /// <summary>
+        /// property for inv
+        /// </summary>
         public string INV
         {
             get
@@ -34,6 +40,9 @@ namespace WpfApp
             }
         }
         private string canNum;
+        /// <summary>
+        /// Property for canNum
+        /// </summary>
         public string CanNum
         {
             get
@@ -46,6 +55,9 @@ namespace WpfApp
             }
         }
         private string code;
+        /// <summary>
+        /// Property for code
+        /// </summary>
         public string Code
         {
             get
@@ -58,6 +70,9 @@ namespace WpfApp
             }
         }
         private string collDate;
+        /// <summary>
+        /// Property for collDate
+        /// </summary>
         public string CollDate
         {
             get
@@ -70,6 +85,9 @@ namespace WpfApp
             }
         }
         private string units;
+        /// <summary>
+        /// Property for units
+        /// </summary>
         public string Units
         {
             get
@@ -82,6 +100,9 @@ namespace WpfApp
             }
         }
         private string animalName;
+        /// <summary>
+        /// Property for animalName
+        /// </summary>
         public string AnimalName
         {
             get
@@ -94,6 +115,9 @@ namespace WpfApp
             }
         }
         private string breed;
+        /// <summary>
+        /// Property for breed
+        /// </summary>
         public string Breed
         {
             get
@@ -106,6 +130,9 @@ namespace WpfApp
             }
         }
         private string regNum;
+        /// <summary>
+        /// Property for regNum
+        /// </summary>
         public string RegNum
         {
             get
@@ -118,6 +145,9 @@ namespace WpfApp
             }
         }
         private string owner;
+        /// <summary>
+        /// Property for owner
+        /// </summary>
         public string Owner
         {
             get
@@ -130,6 +160,9 @@ namespace WpfApp
             }
         }
         private string town;
+        /// <summary>
+        /// Property for town
+        /// </summary>
         public string Town
         {
             get
@@ -142,6 +175,9 @@ namespace WpfApp
             }
         }
         private string state;
+        /// <summary>
+        /// Property for state
+        /// </summary>
         public string State
         {
             get
@@ -154,6 +190,9 @@ namespace WpfApp
             }
         }
         private string country;
+        /// <summary>
+        /// Property for country
+        /// </summary>
         public string Country
         {
             get
@@ -166,6 +205,9 @@ namespace WpfApp
             }
         }
         private string species;
+        /// <summary>
+        /// Property for species
+        /// </summary>
         public string Species
         {
             get
@@ -210,6 +252,9 @@ namespace WpfApp
             this.Species = species;
         }
 
+        /// <summary>
+        /// construcor for empty search result
+        /// </summary>
         public SearchResult()
         {
         }

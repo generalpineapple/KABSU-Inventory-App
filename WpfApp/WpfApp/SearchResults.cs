@@ -10,6 +10,9 @@ using System.Windows;
 
 namespace WpfApp
 {
+    /// <summary>
+    /// class that adds or edits records from multiple search results
+    /// </summary>
     public class SearchResults
     {
         private SearchResult searchResult;

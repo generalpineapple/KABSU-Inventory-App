@@ -11,8 +11,20 @@ using System.Windows;
 
 namespace WpfApp
 {
+    /// <summary>
+    /// Class that is used to insert any data connected to our MySQL database.
+    /// </summary>
     class InsertData
     {
+        /// <summary>
+        /// method that inserts a person object from database
+        /// </summary>
+        /// <param name="personID"></param>
+        /// <param name="name"></param>
+        /// <param name="city"></param>
+        /// <param name="state"></param>
+        /// <param name="country"></param>
+        /// <returns></returns>
         public static string InsertPerson(int personID, string name, string city, string state, string country)
         {
             string connectionString = "Server=localhost;Database=kabsu; User ID = appuser; Password = test; Integrated Security=true";
@@ -79,6 +91,15 @@ namespace WpfApp
             }
         }
         
+        /// <summary>
+        /// method to insert an animal's characteristics. 
+        /// </summary>
+        /// <param name="animalID"></param>
+        /// <param name="name"></param>
+        /// <param name="breed"></param>
+        /// <param name="species"></param>
+        /// <param name="regNum"></param>
+        /// <returns></returns>
         public static string InsertAnimal(string animalID, string name, string breed, string species, string regNum)
         {
             string connectionString = "Server=localhost;Database=kabsu; User ID = appuser; Password = test; Integrated Security=true";
@@ -111,6 +132,19 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// method to insert some sample data for testing inside the GUI.
+        /// </summary>
+        /// <param name="valid"></param>
+        /// <param name="canNum"></param>
+        /// <param name="code"></param>
+        /// <param name="collectionDate"></param>
+        /// <param name="numUnits"></param>
+        /// <param name="notes"></param>
+        /// <param name="personName"></param>
+        /// <param name="city"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
         public static string InsertSample(string valid, string canNum, string code, string collectionDate, int numUnits, string notes, string personName, string city, string state)
         {
             string connectionString = "Server=localhost;Database=kabsu; User ID = appuser; Password = test; Integrated Security=true";

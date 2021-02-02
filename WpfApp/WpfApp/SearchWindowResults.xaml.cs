@@ -15,13 +15,18 @@ using System.Windows.Shapes;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for SearchWindowResults.xaml
+    /// class for the Search Window results form
     /// </summary>
     public partial class SearchWindowResults : Window
     {
-        private RecordWindow recordWindow;
+        private RecordWindow recordWindow; // object for Record Window class
 
-        private InventoryPage inventoryPage;
+        private InventoryPage inventoryPage; //object for Inventory Page class
+
+        /// <summary>
+        /// constructor for class
+        /// </summary>
+        /// <param name="results"></param>
         public SearchWindowResults(List<SearchResult> results)
         {
             InitializeComponent();
@@ -39,6 +44,11 @@ namespace WpfApp
             StateColumn.Width = 42;
         }
 
+        /// <summary>
+        /// event handler when a single row is double clicked on to trigger the record window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Row_DoubleClick(object sender, MouseButtonEventArgs e)
         {
             DataGridRow row = sender as DataGridRow;
@@ -47,12 +57,23 @@ namespace WpfApp
             recordWindow.ShowDialog();
         }
 
-        private void Row_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        /// <summary>
+        /// event handler when multiple rows are selected to trigger the inventory page report
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void uxPullDataButton_Click(object sender, RoutedEventArgs e)
         {
-            DataGridRow row = sender as DataGridRow;
-            SearchResult search = (SearchResult)row.Item;
-            inventoryPage = new InventoryPage(search);
+            List<SearchResult> list = new List<SearchResult>();
+            foreach (var r in uxSearchResults.SelectedItems)
+            {
+                SearchResult search = (SearchResult)r;
+                list.Add(search);
+            }
+            inventoryPage = new InventoryPage(list);
             inventoryPage.ShowDialog();
+            // DataGridRow row = sender as DataGridRow;
+            //Int32 selectedRows = inventoryPage.uxTopGrid1.RowDefinitions.Count();
         }
     }
 }

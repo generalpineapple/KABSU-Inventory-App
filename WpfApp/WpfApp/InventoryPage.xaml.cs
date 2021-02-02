@@ -18,31 +18,35 @@ using MySql.Data.MySqlClient;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for RecordWindow.xaml
+    /// Class for Inventory Page window
     /// </summary>
     public partial class InventoryPage : Window
     {
-        SearchResult searchResult;
+        SearchResult searchResult; //object for SearchResult class
         private string notes;
         private string oldCode;
         private string oldOwner;
         private string oldCity;
         private string oldState;
-        private AdditionalInfo info;
+        private AdditionalInfo info; //objecty for AdditionalInfo class
         private static int ID_INDEX = 321;
         private static int ROW_SPACING = 32;
         private static int MORPH_ID = 326;
-        private List<InventoryRecord> inventoryrecordList;
-        private List<Record> recordList;
+        private List<InventoryRecord> inventoryrecordList; //list of Inventory Records
+        private List<Record> recordList; //list of Records
         private Morph morph;
         private bool isMorph;
         private bool isOldMorph;
         private bool populating;
         private bool newRecord;
         private bool isOldRecord;
-        private NoteWindow noteWindow;
-        private AdditionalInfoWindow infoWindow;
+        private NoteWindow noteWindow; //object for Note Window class
+        private AdditionalInfoWindow infoWindow; //object for Additional Info Window class
+        List<SearchResult> searchList; //listt of Search Results
 
+        /// <summary>
+        /// constructor for class
+        /// </summary>
         public InventoryPage()
         {
             newRecord = true;
@@ -53,6 +57,10 @@ namespace WpfApp
             Closing += InventoryPage_Closing;
         }
 
+        /// <summary>
+        /// constructor when one row is selected from Search Results Window
+        /// </summary>
+        /// <param name="search"></param>
         public InventoryPage(SearchResult search)
         {
             newRecord = false;
@@ -77,6 +85,45 @@ namespace WpfApp
             morph = RetrieveMorph(searchResult.Code);
         }
 
+        /// <summary>
+        /// Constructor when multiple rows are selected from Search Results Window
+        /// </summary>
+        /// <param name="search"></param>
+        public InventoryPage(List<SearchResult> search)
+        {
+            newRecord = false;
+            recordList = new List<Record>();
+            searchList = new List<SearchResult>();
+            foreach (SearchResult list in search)
+            {
+                searchResult = list;
+                searchList.Add(searchResult);
+                oldCode = list.Code;
+                oldOwner = list.Owner;
+                oldCity = list.Town;
+                oldState = list.State;
+                InitializeComponent();
+                uxCode.Text = list.Code;
+                uxBreed.Text = list.Breed;
+                uxAnimalName.Text = list.AnimalName;
+                uxRegNum.Text = list.RegNum;
+                uxOwner.Text = list.Owner;
+                uxCanNum.Text = list.CanNum;
+                notes = "";
+                isMorph = false;
+                isOldMorph = false;
+                populating = false;
+                Closing += InventoryPage_Closing;
+                recordList = RetrieveRecords(list.Code);
+                morph = RetrieveMorph(list.Code);
+            }
+        }
+
+        /// <summary>
+        /// event handler for closing window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InventoryPage_Closing(object sender, CancelEventArgs e)
         {
             CollectAdditionalInfo();
@@ -123,6 +170,13 @@ namespace WpfApp
             StoreRecords();
             StoreMorph();
         }
+
+        /// <summary>
+        /// method for the grid in the window
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="depObj"></param>
+        /// <returns></returns>
         public static IEnumerable<T> FindVisualChildren<T>(DependencyObject depObj) where T : DependencyObject
         {
             if (depObj != null)
@@ -142,6 +196,10 @@ namespace WpfApp
                 }
             }
         }
+
+        /// <summary>
+        /// method to store all records into database.
+        /// </summary>
         private void StoreRecords()
         {
             if (inventoryrecordList.Count == 0)
@@ -151,15 +209,15 @@ namespace WpfApp
                 {
                     using (var connection = new MySqlConnection(connectionString))
                     {
-                        using (var command = new MySqlCommand("kabsu.DeleteData", connection))
+                        /*using (var command = new MySqlCommand("kabsu.DeleteData", connection))
                         {
                             command.CommandType = CommandType.StoredProcedure;
 
-                            command.Parameters.AddWithValue("@ID", searchResult.Code);
+                            command.Parameters.AddWithValue("@AnimalID", searchResult.Code);
                             connection.Open();
                             int k = command.ExecuteNonQuery();
                             connection.Close();
-                        }
+                        }*/
                         foreach (InventoryRecord r in inventoryrecordList)
                         {
 
@@ -188,6 +246,10 @@ namespace WpfApp
                 }
             }
         }
+
+        /// <summary>
+        /// method for the pop up window to save that information
+        /// </summary>
         private void StoreMorph()
         {
             if (isMorph == true && isOldMorph == false)
@@ -232,11 +294,11 @@ namespace WpfApp
 
                             if (morph.Vigor == "")
                             {
-                                command.Parameters.AddWithValue("@Code", 0);
+                                command.Parameters.AddWithValue("@CollCode", 0);
                             }
                             else
                             {
-                                command.Parameters.AddWithValue("@Code", Convert.ToInt32(morph.Code));
+                                command.Parameters.AddWithValue("@CollCode", Convert.ToInt32(morph.Code));
                             }
 
                             if (morph.Vigor == "")
@@ -264,6 +326,9 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// method storing the information into database as a new or updated record
+        /// </summary>
         private void StoreParent()
         {
             if (newRecord == true)
@@ -279,7 +344,7 @@ namespace WpfApp
 
                             if (!uxItemLeft1.Text.Equals("")) //need at least the cane code entered
                             {
-                                //command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
+                                command.Parameters.AddWithValue("@LastModified", DateTime.Now);
                                 command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
                                 command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
                                 command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
@@ -361,6 +426,11 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// method to retrieve records from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private List<Record> RetrieveRecords(string id)
         {
             string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
@@ -378,7 +448,7 @@ namespace WpfApp
                         var reader = command.ExecuteReader();
 
 
-                        recordList = new List<Record>();
+                        //recordList = new List<Record>();
                         Record record;
                         while (reader.Read())
                         {
@@ -402,6 +472,55 @@ namespace WpfApp
             }
         }
 
+        /*private List<Record> RetrieveRecords(List<SearchResult> searchList)
+        {
+            string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
+            try
+            {
+                foreach (SearchResult sr in searchList)
+                {
+                    using (var connection = new MySqlConnection(connectionString))
+                    {
+                        using (var command = new MySqlCommand("kabsu.RetrieveRecords", connection))
+                        {
+                            command.CommandType = CommandType.StoredProcedure;
+
+                            command.Parameters.AddWithValue("@AnimalID", id);
+
+                            connection.Open();
+                            var reader = command.ExecuteReader();
+
+
+                            //recordList = new List<Record>();
+                            Record record;
+                            while (reader.Read())
+                            {
+                                record = new Record(
+                                   reader.GetString(reader.GetOrdinal("ToFrom")),
+                                   reader.GetString(reader.GetOrdinal("Date")),
+                                   reader.GetInt32(reader.GetOrdinal("NumReceived")).ToString(),
+                                   reader.GetInt32(reader.GetOrdinal("NumShipped")).ToString(),
+                                   reader.GetInt32(reader.GetOrdinal("Balance")).ToString(), id);
+                                recordList.Add(record);
+                            }
+                            connection.Close();
+                            return recordList;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to connect to database05.");
+                return new List<Record>();
+            }
+        }*/
+
+        /// <summary>
+        /// method to pull in a record's additional information from database
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         private Morph RetrieveMorph(string id)
         {
             string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
@@ -426,7 +545,7 @@ namespace WpfApp
                                reader.GetInt32(reader.GetOrdinal("Vigor")).ToString(),
                                reader.GetInt32(reader.GetOrdinal("Mot")).ToString(),
                                reader.GetInt32(reader.GetOrdinal("Morph")).ToString(),
-                               reader.GetInt32(reader.GetOrdinal("Code")).ToString(),
+                               reader.GetInt32(reader.GetOrdinal("CollCode")).ToString(),
                                reader.GetInt32(reader.GetOrdinal("Units")).ToString(), id);
                             if (morph.Notes != null)
                                 notes = morph.Notes;
@@ -444,6 +563,11 @@ namespace WpfApp
             }
         }
 
+        /// <summary>
+        /// event handler when loading the window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void InventoryPage_Load(object sender, RoutedEventArgs e)
         {
             int textCount = 0;
@@ -453,7 +577,7 @@ namespace WpfApp
 
             if (recordList != null)
             {
-                foreach (Record r in recordList)
+                foreach (SearchResult sr in searchList)
                 {
                     /* textBoxes[textCount].Text = r.ToFrom;
                      textBoxes[textCount + ROW_SPACING].Text = r.Date;
@@ -461,13 +585,17 @@ namespace WpfApp
                      textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Ship;
                      textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance; */
 
-                    textBoxes[textCount].Text += "Cane code: " + uxCode.Text; //Can code for the item column
+                    //textBoxes[textCount].Text += "Cane code: " + uxCode.Text; //Can code for the item column..find a way to get the cane code for each record
+                    textBoxes[textCount].Text += "Can Number: " + sr.CanNum;
 
-                    textBoxes[textCount + ROW_SPACING].Text += "Animal Name: " + uxAnimalName.Text;
-                    textBoxes[textCount + ROW_SPACING].Text += "\nColl Date: " + uxMorphDate.Text;
-                    textBoxes[textCount + ROW_SPACING].Text += "\nOwner: " + uxOwner.Text;
+                    //textBoxes[textCount + ROW_SPACING].Text += "Animal Name: " + r.AnimalId; //for right now, can only get id with record
+                    textBoxes[textCount + ROW_SPACING].Text += "Animal Name: " + sr.AnimalName; //for right now, can only get id with record
 
-                    textBoxes[textCount + ROW_SPACING * 2].Text = searchResult.Units; //qty column
+
+                    textBoxes[textCount + ROW_SPACING].Text += "\nColl Date: " + sr.CollDate;
+                    textBoxes[textCount + ROW_SPACING].Text += "\nOwner: " + sr.Owner;
+
+                    textBoxes[textCount + ROW_SPACING * 2].Text = sr.Units; //qty column
 
                     textCount++;
 
@@ -496,11 +624,21 @@ namespace WpfApp
             isOldMorph = true;
         }
 
+        /// <summary>
+        /// event handler to update the Morph
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MorphChanged(object sender, TextChangedEventArgs e)
         {
             isOldMorph = false;
         }
 
+        /// <summary>
+        /// event handler when notes button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UxNotesButton_Click(object sender, RoutedEventArgs e)
         {
             noteWindow = new NoteWindow(notes);
@@ -508,6 +646,10 @@ namespace WpfApp
             noteWindow.ShowDialog();
             isOldMorph = false;
         }
+
+        /// <summary>
+        /// method to collect additional information uploading the new window
+        /// </summary>
         private void CollectAdditionalInfo()
         {
             if (newRecord == true)

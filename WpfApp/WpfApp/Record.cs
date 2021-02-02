@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace WpfApp
 {
+    /// <summary>
+    /// class to hold information for each record
+    /// </summary>
     class Record
     {
         private string toFrom;
+        /// <summary>
+        /// Property for toFrom
+        /// </summary>
         public string ToFrom
         {
             get
@@ -21,6 +27,9 @@ namespace WpfApp
             }
         }
         private string date;
+        /// <summary>
+        /// Property for date
+        /// </summary>
         public string Date
         {
             get
@@ -33,6 +42,9 @@ namespace WpfApp
             }
         }
         private string rec;
+        /// <summary>
+        /// Property for rec
+        /// </summary>
         public string Rec
         {
             get
@@ -45,6 +57,9 @@ namespace WpfApp
             }
         }
         private string ship;
+        /// <summary>
+        /// Property for ship
+        /// </summary>
         public string Ship
         {
             get
@@ -57,6 +72,9 @@ namespace WpfApp
             }
         }
         private string balance;
+        /// <summary>
+        /// Property for balance
+        /// </summary>
         public string Balance
         {
             get
@@ -69,6 +87,9 @@ namespace WpfApp
             }
         }
         private string animalId;
+        /// <summary>
+        /// Property for animalID
+        /// </summary>
         public string AnimalId
         {
             get
@@ -80,6 +101,16 @@ namespace WpfApp
                 this.animalId = value;
             }
         }
+
+        /// <summary>
+        /// constructor
+        /// </summary>
+        /// <param name="toFrom"></param>
+        /// <param name="date"></param>
+        /// <param name="rec"></param>
+        /// <param name="ship"></param>
+        /// <param name="balance"></param>
+        /// <param name="id"></param>
         public Record(string toFrom, string date, string rec, string ship, string balance, string id)
         {
             this.toFrom = toFrom;
