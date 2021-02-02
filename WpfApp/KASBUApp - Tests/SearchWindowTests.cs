@@ -8,12 +8,14 @@ using WpfApp;
 
 namespace KASBUApp___Tests
 {
-    class SearchWindowTests
+    [TestFixture, Apartment(System.Threading.ApartmentState.STA)]
+    public class SearchWindowTests
     {
+        public static SearchWindow searchWindow;
         [Test]
         public void ShowSearchWindowTest()
         {
-            SearchWindow searchWindow = new SearchWindow();
+            searchWindow = new SearchWindow();
             searchWindow.Show();
             if (searchWindow.IsVisible == false)
             {
@@ -29,7 +31,7 @@ namespace KASBUApp___Tests
         [Test]
         public void ShowSearchWindowResults()
         {
-            SearchWindow searchWindow = new SearchWindow();
+            searchWindow = new SearchWindow();
             SearchWindowResults searchWindowResults = new SearchWindowResults(searchWindow.CalculateResultList());
             searchWindowResults.Show();
             if (searchWindowResults.IsVisible == false)
@@ -46,7 +48,8 @@ namespace KASBUApp___Tests
         [Test]
         public void CanCapacityTest()
         {
-            SearchWindow search = new SearchWindow();
+            searchWindow = new SearchWindow();
+            searchWindow.Show();
             
         }
 

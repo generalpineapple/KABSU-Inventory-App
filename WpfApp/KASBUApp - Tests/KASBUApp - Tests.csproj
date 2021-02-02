@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdditionalInfoWindowTests.cs" />
+    <Compile Include="InventoryPageTests.cs" />
     <Compile Include="MainWindowTests.cs" />
     <Compile Include="Matt_UnitTest.cs" />
     <Compile Include="Jeffrey_UnitTest.cs" />

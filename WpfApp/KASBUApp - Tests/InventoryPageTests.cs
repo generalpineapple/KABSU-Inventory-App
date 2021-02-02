@@ -9,14 +9,7 @@ using WpfApp;
 namespace KASBUApp___Tests
 {
     [TestFixture, Apartment(System.Threading.ApartmentState.STA)]
-    public class MainWindowTests
+    public class InventoryPageTests
     {
-        MainWindow mainWindow;
-
-        [Test]
-        public void RecordWindowOpensProperly()
-        {
-            mainWindow = new MainWindow();
-        }
     }
 }

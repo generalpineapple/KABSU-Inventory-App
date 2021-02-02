@@ -8,13 +8,16 @@ using WpfApp;
 
 namespace KASBUApp___Tests
 {
-    class AdditionalInfoWindowTests
+    [TestFixture, Apartment(System.Threading.ApartmentState.STA)]
+    public class AdditionalInfoWindowTests
     {
+        AdditionalInfoWindow additionalInfoWindow;
+
         [Test]
         public void ShowAdditionalInfoWindow()
         {
             AdditionalInfo additionalInfo = new AdditionalInfo();
-            AdditionalInfoWindow additionalInfoWindow = new AdditionalInfoWindow(additionalInfo);
+            additionalInfoWindow = new AdditionalInfoWindow(additionalInfo);
             additionalInfoWindow.Show();
             if (additionalInfoWindow.IsVisible == false)
             {
