@@ -15,7 +15,13 @@ namespace WpfApp
     /// </summary>
     public class SearchResults
     {
-        private SearchResult searchResult;
+        public SearchResult searchResult
+        {
+            get => default;
+            set
+            {
+            }
+        }
 
         /// <summary>
         /// Connects to the SQL Database and searches for the SearchTerm st and returns a list of results

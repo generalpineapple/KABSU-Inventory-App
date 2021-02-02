@@ -22,7 +22,6 @@ namespace WpfApp
     /// </summary>
     public partial class RecordWindow : Window
     {
-        SearchResult searchResult;
         private string notes;
         private string oldCode;
         private string oldOwner;
@@ -81,6 +80,14 @@ namespace WpfApp
             Closing += RecordWindow_Closing;
             recordList = RetrieveRecords(searchResult.Code);
             morph = RetrieveMorph(searchResult.Code);
+        }
+
+        public SearchResult searchResult
+        {
+            get => default;
+            set
+            {
+            }
         }
 
         /// <summary>

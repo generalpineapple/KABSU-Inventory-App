@@ -258,5 +258,10 @@ namespace WpfApp
         public SearchResult()
         {
         }
+
+        public SearchResult()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
