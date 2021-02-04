@@ -26,7 +26,7 @@ namespace WpfApp
         /// <summary>
         /// constructor that takes in any info given.
         /// </summary>
-        /// <param name="info"></param>
+        /// <param name="info">an additionalInfo object that may or may not contain the four fields Species, City, State, and Country</param>
         public AdditionalInfoWindow(AdditionalInfo info)
         {
             this.info = info;
@@ -35,6 +35,7 @@ namespace WpfApp
 
         /// <summary>
         /// event handler for window closing
+        /// Will save all fields that are not null
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -58,6 +59,7 @@ namespace WpfApp
 
         /// <summary>
         /// event handler for opening window
+        /// Will load in any existing info from the additionInfo class if availiable
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
