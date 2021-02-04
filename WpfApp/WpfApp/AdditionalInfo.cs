@@ -1,5 +1,10 @@
 ﻿/*
- Insert Copyright and Licensing Information
+ * Visual Studio 2019
+ --------------------------------------------------------
+-<<copyright file-"AdditionalInfo.cs"-company=KABSU>"
+------Copyright-statement.-All-right-reserved
+-</copyright>
+ --------------------------------------------------------
  */
 
 using System;
@@ -32,7 +37,7 @@ namespace WpfApp
         }
         private string city;
         /// <summary>
-        /// Property for City related to the Owner field.
+        /// Property for city related to the Owner field.
         /// </summary>
         public string City
         {

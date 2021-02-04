@@ -1,7 +1,11 @@
 ﻿/*
- Insert Copyright and Licensing Information
+ * Visual Studio 2019
+ --------------------------------------------------------
+-<<copyright file-"AdditionalInfo.cs"-company=KABSU>"
+------Copyright-statement.-All-right-reserved
+-</copyright>
+ --------------------------------------------------------
  */
-
 using System;
 using System.Collections.Generic;
 using System.Linq;

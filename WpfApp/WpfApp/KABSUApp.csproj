@@ -213,7 +213,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="CIS643 User Document.docx" />
     <None Include="KABSUClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
