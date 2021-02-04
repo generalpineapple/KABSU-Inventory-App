@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ Insert Copyright and Licensing Information
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -116,6 +120,46 @@ namespace WpfApp
                 Closing += InventoryPage_Closing;
                 recordList = RetrieveRecords(list.Code);
                 morph = RetrieveMorph(list.Code);
+            }
+        }
+
+        internal InventoryRecord InventoryRecord
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public NoteWindow NoteWindow
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public SearchResult SearchResult
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        internal Record Record
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        public AdditionalInfoWindow AdditionalInfoWindow
+        {
+            get => default;
+            set
+            {
             }
         }
 

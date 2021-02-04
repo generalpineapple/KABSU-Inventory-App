@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ Insert Copyright and Licensing Information
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +35,14 @@ namespace WpfApp
         {
             this.info = info;
             InitializeComponent();
+        }
+
+        public AdditionalInfo AdditionalInfo
+        {
+            get => default;
+            set
+            {
+            }
         }
 
         /// <summary>

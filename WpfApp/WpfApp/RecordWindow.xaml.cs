@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ Insert Copyright and Licensing Information
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -81,6 +85,22 @@ namespace WpfApp
             Closing += RecordWindow_Closing;
             recordList = RetrieveRecords(searchResult.Code);
             morph = RetrieveMorph(searchResult.Code);
+        }
+
+        public AdditionalInfoWindow AdditionalInfoWindow
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        internal Record Record
+        {
+            get => default;
+            set
+            {
+            }
         }
 
         /// <summary>

@@ -1,4 +1,8 @@
-﻿using MySql.Data.MySqlClient;
+﻿/*
+ Insert Copyright and Licensing Information
+ */
+
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;

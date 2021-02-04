@@ -19,7 +19,9 @@
       <FileName>RecordWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="searchResult" />
+      <Field Name="searchResult" />
+      <Property Name="AdditionalInfoWindow" />
+      <Property Name="Record" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -30,14 +32,14 @@
       <FileName>SearchWindow.xaml.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
+      <Field Name="searchResults" />
+      <Field Name="searchTerm" />
       <Field Name="windowResults" />
-      <Property Name="searchResults" />
-      <Property Name="searchTerm" />
     </ShowAsAssociation>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="WpfApp.SearchWindowResults" BaseTypeListCollapsed="true">
-    <Position X="11.5" Y="6.75" Width="1.5" />
+    <Position X="10.5" Y="7" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAgAAIAAAACAAAAAAAAA=</HashCode>
       <FileName>SearchWindowResults.xaml.cs</FileName>
@@ -45,7 +47,7 @@
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
   <Class Name="WpfApp.SearchResult">
-    <Position X="17.5" Y="4.25" Width="1.5" />
+    <Position X="14.75" Y="6.75" Width="1.5" />
     <Compartments>
       <Compartment Name="Properties" Collapsed="true" />
     </Compartments>
@@ -61,7 +63,7 @@
       <FileName>SearchResults.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="searchResult" />
+      <Field Name="searchResult" />
     </ShowAsAssociation>
   </Class>
   <Class Name="WpfApp.SearchTerm">
@@ -72,6 +74,61 @@
     <TypeIdentifier>
       <HashCode>AgAAIACAAiIAgAIAAAAgAAAAIAAAAAAEAAAABgIAAAA=</HashCode>
       <FileName>SearchTerm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApp.AdditionalInfoWindow">
+    <Position X="8.5" Y="12.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAQAAAIAAAAAA=</HashCode>
+      <FileName>AdditionalInfoWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AdditionalInfo" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfApp.AdditionalInfo">
+    <Position X="12.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAIAAAACAAAAAIAAAAGAAAABAAABAA=</HashCode>
+      <FileName>AdditionalInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApp.InventoryPage">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAEBMEIQgEAJIQAAAYQoAAAUAgQSBAQAAkgAAEJAA=</HashCode>
+      <FileName>InventoryPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="InventoryRecord" />
+      <Property Name="NoteWindow" />
+      <Property Name="SearchResult" />
+      <Property Name="Record" />
+      <Property Name="AdditionalInfoWindow" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfApp.InventoryRecord">
+    <Position X="2.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAABgAAAAIAQAAQAEgAEAAIAAAAAAAEAAIAA=</HashCode>
+      <FileName>InventoryRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WpfApp.NoteWindow">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAACAAABAAAAAAIAA=</HashCode>
+      <FileName>NoteWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="WpfApp.Record">
+    <Position X="2.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAgAAAAoAAAAIAACQAAABkAAAAUAAAAA=</HashCode>
+      <FileName>Record.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
