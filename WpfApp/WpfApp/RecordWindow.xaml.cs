@@ -368,7 +368,7 @@ namespace WpfApp
                             }
                             else
                             {
-                                MessageBox.Show("All fields need to be filled in. This time info. do not save");
+                                MessageBox.Show("Can num, Code num, Breed, Name of Animal, Reg num, Owner must all be filled out.");
                             }
                         }
 

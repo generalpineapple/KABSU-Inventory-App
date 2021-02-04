@@ -34,6 +34,7 @@ namespace WpfApp
     {
         RecordWindow recordWindow; //object for Record Window
         SearchWindow searchWindow; //object for Search Window
+        InventoryPage inventoryPage; //object for Inventory Page
 
         /// <summary>
         /// constructor
@@ -63,6 +64,18 @@ namespace WpfApp
         {
             searchWindow = new SearchWindow();
             searchWindow.Show();
+        }
+
+        /// <summary>
+        /// event handler when user clicks the Inventory List button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UxInventoryList_Click(object sender, RoutedEventArgs e)
+        {
+            inventoryPage = new InventoryPage();
+            inventoryPage.ShowDialog();
+            this.Close();
         }
 
         /// <summary>
