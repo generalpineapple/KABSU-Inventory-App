@@ -7,8 +7,9 @@
         mc:Ignorable="d"
         Title="Database App" Height="329.689" Width="517.194" ResizeMode="CanMinimize">
     <Grid>
-        <Button x:Name="uxAddRecord" Content="Add New Record" HorizontalAlignment="Left" VerticalAlignment="Top" Width="239" Margin="10,10,0,0" Height="37" Click="Button_Click"/>
-        <Button x:Name="uxModifyRecord" Content="Modify Record" HorizontalAlignment="Left" VerticalAlignment="Top" Width="239" Margin="254,10,0,0" Height="37" Click="UxModifyRecord_Click"/>
+        <Button x:Name="uxAddRecord" Content="Add New Record" HorizontalAlignment="Left" VerticalAlignment="Top" Width="144" Margin="10,10,0,0" Height="37" Click="Button_Click"/>
+        <Button x:Name="uxModifyRecord" Content="Modify Record" HorizontalAlignment="Left" VerticalAlignment="Top" Width="179" Margin="171,10,0,0" Height="37" Click="UxModifyRecord_Click"/>
+        <Button x:Name="uxInventoryList" Content="Inventory List" HorizontalAlignment="Left" VerticalAlignment="Top" Width="133" Margin="367,10,0,0" Height="37" Click="UxInventoryList_Click"/>
         <Viewbox Margin="130,60,130,20">
             <Calendar x:Name="uxCalendar" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" IsTodayHighlighted="True">
                 <Calendar.CalendarDayButtonStyle>

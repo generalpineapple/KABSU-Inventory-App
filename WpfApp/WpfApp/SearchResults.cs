@@ -1,4 +1,13 @@
-﻿using MySql.Data.MySqlClient;
+﻿/*
+ * Visual Studio 2019
+ --------------------------------------------------------
+-<<copyright file-"AdditionalInfo.cs"-company=KABSU>"
+------Copyright-statement.-All-right-reserved
+-</copyright>
+ --------------------------------------------------------
+ */
+
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;

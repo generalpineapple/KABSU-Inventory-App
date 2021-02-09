@@ -8,12 +8,15 @@ using WpfApp;
 
 namespace KASBUApp___Tests
 {
-    class RecordWindowTests
+    [TestFixture, Apartment(System.Threading.ApartmentState.STA)]
+    public class RecordWindowTests
     {
+        public static RecordWindow recordWindow;
+
         [Test]
         public void ShowRecordWindowTest()
         {
-            RecordWindow recordWindow = new RecordWindow();
+            recordWindow = new RecordWindow();
             recordWindow.Show();
             if (recordWindow.IsVisible == false)
             {

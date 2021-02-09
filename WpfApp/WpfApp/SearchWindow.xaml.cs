@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Visual Studio 2019
+ --------------------------------------------------------
+-<<copyright file-"AdditionalInfo.cs"-company=KABSU>"
+------Copyright-statement.-All-right-reserved
+-</copyright>
+ --------------------------------------------------------
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,7 +41,7 @@ namespace WpfApp
         private SearchTerm searchTerm;
         SearchWindowResults windowResults;
 
-        InventoryPage inventoryPage;
+        
 
         /// <summary>
         /// constructor
@@ -52,18 +61,6 @@ namespace WpfApp
         {
             windowResults = new SearchWindowResults(CalculateResultList());
             windowResults.ShowDialog();
-            this.Close();
-        }
-
-        /// <summary>
-        /// event handler when user clicks the Inventory List button
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void UxInventoryList_Click(object sender, RoutedEventArgs e)
-        {
-            inventoryPage = new InventoryPage();
-            inventoryPage.ShowDialog();
             this.Close();
         }
 

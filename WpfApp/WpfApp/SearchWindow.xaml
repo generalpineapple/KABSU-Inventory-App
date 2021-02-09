@@ -58,6 +58,6 @@
         <Button x:Name="uxSearch" Content="Search" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="284,95,0,0" Click="UxSearch_Click"  FontSize="14" Grid.ColumnSpan="2" Height="25"/>
         <Button x:Name="uxCanCapacity" Content="Can Capacity" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="284,67,0,0" Click="uxCanCapacity_Click"  FontSize="14" Height="25" Grid.ColumnSpan="2"/>
         <Button x:Name="uxUnitSum" Content="Sum of Units" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="284,39,0,0" Click="UxUnitSum_Click"  FontSize="14" Height="25" Grid.ColumnSpan="2"/>
-        <Button x:Name="uxInventoryList" Content="Inventory List" HorizontalAlignment="Left" VerticalAlignment="Top" Width="122" Margin="284,11,0,0" Click="UxInventoryList_Click"  FontSize="14" Height="25" Grid.ColumnSpan="2"/>
+        
     </Grid>
 </Window>

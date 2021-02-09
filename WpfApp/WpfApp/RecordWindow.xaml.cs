@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+ * Visual Studio 2019
+ --------------------------------------------------------
+-<<copyright file-"AdditionalInfo.cs"-company=KABSU>"
+------Copyright-statement.-All-right-reserved
+-</copyright>
+ --------------------------------------------------------
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -81,6 +90,22 @@ namespace WpfApp
             Closing += RecordWindow_Closing;
             recordList = RetrieveRecords(searchResult.Code);
             morph = RetrieveMorph(searchResult.Code);
+        }
+
+        public AdditionalInfoWindow AdditionalInfoWindow
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        internal Record Record
+        {
+            get => default;
+            set
+            {
+            }
         }
 
         /// <summary>
@@ -343,7 +368,7 @@ namespace WpfApp
                             }
                             else
                             {
-                                MessageBox.Show("All fields need to be filled in. This time info. do not save");
+                                MessageBox.Show("Can num, Code num, Breed, Name of Animal, Reg num, Owner must all be filled out.");
                             }
                         }
 
