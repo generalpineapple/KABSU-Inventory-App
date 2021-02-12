@@ -447,8 +447,8 @@ namespace WpfApp
                             command.Parameters.AddWithValue("@OldAnimalID", oldCode);
                             command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
                             command.Parameters.AddWithValue("@SCollDate", uxMorphDate.Text);
-                            command.Parameters.AddWithValue("@SNumUnits", uxMorphUnits.Text);
-                           // command.Parameters.AddWithValue("@SNumUnits", uxQtyLeft1.Text);
+                            //command.Parameters.AddWithValue("@SNumUnits", uxMorphUnits.Text);
+                            command.Parameters.AddWithValue("@SNumUnits", uxQtyLeft1.Text);
                             command.Parameters.AddWithValue("@PCity", info.City);
                             command.Parameters.AddWithValue("@OldCity", oldCity);
                             command.Parameters.AddWithValue("@PState", info.State);

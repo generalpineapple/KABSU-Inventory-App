@@ -11,5 +11,13 @@ namespace KASBUApp___Tests
     [TestFixture, Apartment(System.Threading.ApartmentState.STA)]
     public class InventoryPageTests
     {
+        //Make test for error pop up when user doesn't enter can code.
+        [Test]
+        private void EmptyRecordError()
+        {
+
+        }
+
+
     }
 }

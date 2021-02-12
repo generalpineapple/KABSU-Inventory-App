@@ -20,10 +20,11 @@ namespace KASBUApp___Tests
             mainWindow = new MainWindow();
         }
 
-        /*[Test]
-        public void AddNewRecordWindowOpensProperly()
+        //Make test for pop up when user clicks on calendar
+        [Test]
+        private void CalendarPopUp()
         {
 
-        } */
+        }
     }
 }

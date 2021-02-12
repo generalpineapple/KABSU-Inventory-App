@@ -28,5 +28,12 @@ namespace KASBUApp___Tests
                 Assert.Pass();
             }
         }
+
+        //Make test for error pop up when user doesn't enter can code.
+        [Test]
+        private void EmptyRecordError()
+        {
+
+        }
     }
 }
