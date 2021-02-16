@@ -23,28 +23,28 @@ namespace KASBUApp___Testing
             mainWindow = new MainWindow();
         }
 
-        [Test]
+        /*[Test]
         public void ViewTotalSampleTest()
         {
             mainWindow = new MainWindow();
             mainWindow.Show();
             ContentControl windowContent = mainWindow;
             Assert.Fail();
-        }
+        } */
 
-        [Test]
+        /*[Test]
         public void AddNewSampleRecordTest()
         {
             mainWindow = new MainWindow();
             Assert.Fail();
-        }
+        } */
 
-        [Test]
+       /* [Test]
         public void SearchForSampleRecord()
         {
             mainWindow = new MainWindow();
             Assert.Fail();
-        }
+        }*/
 
     }
 }

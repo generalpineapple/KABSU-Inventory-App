@@ -12,11 +12,18 @@ namespace KASBUApp___Tests
     public class MainWindowTests
     {
         MainWindow mainWindow;
+        RecordWindow recordWindow;
 
         [Test]
-        public void RecordWindowOpensProperly()
+        public void MainWindowOpensProperly()
         {
             mainWindow = new MainWindow();
         }
+
+        /*[Test]
+        public void AddNewRecordWindowOpensProperly()
+        {
+
+        } */
     }
 }
