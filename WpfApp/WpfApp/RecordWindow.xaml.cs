@@ -155,7 +155,7 @@ namespace WpfApp
             }
             if (isMorph)
             {
-                morph = new Morph(notes, list[MORPH_ID], list[MORPH_ID + 1], list[MORPH_ID + 2], list[MORPH_ID + 3], list[MORPH_ID + 4], list[MORPH_ID + 5], list[ID_INDEX]);
+                morph = new Morph(notes, list[MORPH_ID], list[MORPH_ID + 1], list[MORPH_ID + 2], list[MORPH_ID + 3], list[MORPH_ID + 4], Convert.ToInt32(list[MORPH_ID + 5]), list[ID_INDEX]);
             }
             StoreRecords();
             StoreMorph();
@@ -302,7 +302,7 @@ namespace WpfApp
                                 command.Parameters.AddWithValue("@CollCode", Convert.ToInt32(morph.Code));
                             }
 
-                            if (morph.Units == "")
+                            if (morph.Units == 0)
                             {
                                 command.Parameters.AddWithValue("@Units", 0);
                             }
@@ -498,7 +498,7 @@ namespace WpfApp
                                reader.GetInt32(reader.GetOrdinal("Mot")).ToString(),
                                reader.GetInt32(reader.GetOrdinal("Morph")).ToString(),
                                reader.GetInt32(reader.GetOrdinal("CollCode")).ToString(),
-                               reader.GetInt32(reader.GetOrdinal("Units")).ToString(), id);
+                               reader.GetInt32(reader.GetOrdinal("Units")), id);
                             if (morph.Notes != null)
                                 notes = morph.Notes;
                             isMorph = true;
@@ -550,11 +550,11 @@ namespace WpfApp
                 textBoxes[MORPH_ID + 2].Text = morph.Mot;
                 textBoxes[MORPH_ID + 3].Text = morph.Morphology;
                 textBoxes[MORPH_ID + 4].Text = morph.Code;
-                textBoxes[MORPH_ID + 5].Text = morph.Units;
+                textBoxes[MORPH_ID + 5].Text = morph.Units.ToString();
             }
             if (searchResult.Units != null)
             {
-                uxMorphUnits.Text = searchResult.Units;
+                uxMorphUnits.Text = searchResult.Units.ToString();
             }
             if (searchResult.CollDate != null)
             {

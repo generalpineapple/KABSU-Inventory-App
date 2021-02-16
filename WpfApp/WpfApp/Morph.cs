@@ -101,11 +101,11 @@ namespace WpfApp
                 this.code = value;
             }
         }
-        private string units;
+        private int units;
         /// <summary>
         /// Property for units
         /// </summary>
-        public string Units
+        public int Units
         {
             get
             {
@@ -143,7 +143,7 @@ namespace WpfApp
         /// <param name="code"></param>
         /// <param name="units"></param>
         /// <param name="id"></param>
-        public Morph(string notes, string date, string vigor, string mot, string morph, string code, string units, string id)
+        public Morph(string notes, string date, string vigor, string mot, string morph, string code, int units, string id)
         {
             this.notes = notes;
             this.date = date;
@@ -166,7 +166,7 @@ namespace WpfApp
             this.mot = "";
             this.morph = "";
             this.code = "";
-            this.units = "";
+            this.units = 0;
             this.id = "";
         }
     }

@@ -116,7 +116,7 @@ namespace WpfApp
                                    reader.GetString(reader.GetOrdinal("CanNum")),
                                    reader.GetString(reader.GetOrdinal("AnimalID")),
                                    reader.GetString(reader.GetOrdinal("CollDate")),
-                                   reader.GetString(reader.GetOrdinal("NumUnits")),
+                                   reader.GetInt32(reader.GetOrdinal("NumUnits")),
                                    reader.GetString(reader.GetOrdinal("AnimalName")),
                                    reader.GetString(reader.GetOrdinal("Breed")),
                                    reader.GetString(reader.GetOrdinal("RegNum")),

@@ -251,6 +251,4 @@ C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\Sys
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Memory.xml
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\bhartman24\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.visualstudio.testadapter.dll
-C:\Users\bhartman24\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.reporters.net452.dll
-C:\Users\bhartman24\source\repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.utility.net452.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.abstractions.xml

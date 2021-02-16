@@ -92,11 +92,11 @@ namespace WpfApp
                 this.collDate = value;
             }
         }
-        private string units;
+        private int units;
         /// <summary>
         /// Property for units
         /// </summary>
-        public string Units
+        public int Units
         {
             get
             {
@@ -243,7 +243,7 @@ namespace WpfApp
         /// <param name="state">The state where the owner resides</param>
         /// <param name="country">The country where the owner resides</param>
         /// <param name="species">The species of the animal</param>
-        public SearchResult(string lastModfied, string canNum, string code, string collDate, string units, string animalName, string breed, string regNum, string owner, string town, string state, string country, string species)
+        public SearchResult(string lastModfied, string canNum, string code, string collDate, int units, string animalName, string breed, string regNum, string owner, string town, string state, string country, string species)
         {
             this.INV = lastModfied;
             this.CanNum = canNum;
