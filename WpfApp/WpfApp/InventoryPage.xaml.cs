@@ -173,7 +173,7 @@ namespace WpfApp
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void InventoryPage_Closing(object sender, CancelEventArgs e)
+        public void InventoryPage_Closing(object sender, CancelEventArgs e)
         {
             CollectAdditionalInfo();
 
@@ -378,7 +378,7 @@ namespace WpfApp
         /// <summary>
         /// method storing the information into database as a new or updated record
         /// </summary>
-        private void StoreParent()
+        public void StoreParent()
         {
             if (newRecord == true)
             {

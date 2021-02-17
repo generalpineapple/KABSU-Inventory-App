@@ -83,7 +83,7 @@ namespace WpfApp
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void calendar_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        public void calendar_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             System.Windows.Controls.Primitives.CalendarDayButton button = sender as System.Windows.Controls.Primitives.CalendarDayButton;
             DateTime clickedDate = (DateTime)button.DataContext;
