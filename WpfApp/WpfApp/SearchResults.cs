@@ -87,7 +87,8 @@ namespace WpfApp
         }
 
         /// <summary>
-        /// this does exactly the same as above, but the canNum has a range. 
+        /// Accepts a range of canNum
+        /// Connects to the SQL Database and searches for the SearchTerm st and returns a list of results
         /// </summary>
         /// <param name="st"></param>
         /// <returns></returns>

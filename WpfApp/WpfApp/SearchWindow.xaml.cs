@@ -66,6 +66,8 @@ namespace WpfApp
 
         /// <summary>
         /// event handler when user clicks the Can Capacity button
+        /// this will open up a windows display how full the cans entered are
+        /// the cans are entered in teh search bar
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -178,9 +180,7 @@ namespace WpfApp
 
         /// <summary>
         /// this finds the capacity of the cans in question
-        /// multiple can # can be entered two ways.
         /// if they are entered with ',' seperating them, then if will take every can # entered.
-        /// if it is entered with a ':', then both can #s and every can # inbetween them will be accounted for.
         /// if no can numbers were entered, it returns an empty list 
         /// </summary>
         /// <returns></returns>
@@ -214,27 +214,13 @@ namespace WpfApp
                 }
                 return results;
             }
-            /*else
-            {       
-                //This give back a bunch of weird numbers, more testing and debugging needed
-                canNumbers = canNum.Split(':');
-                if (canNumbers.Length > 1)
-                {
-                    if (canNumbers.Length == 2) {
-                        searchTerm = new SearchTerm(canNumbers[0].Trim(), code, animalName, breed, owner, town, state);
-                        results = searchResults.retrieveDataBetween(searchTerm, canNumbers[1].Trim());
-                        numOfCans = results.GroupBy(x => x.CanNum).Count();
-                    }
-                    return results;
-                }*/
-                else
-                {
-                    numOfCans = 1;
-                    searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);                    
-                    results = searchResults.retrieveData(searchTerm);
-                    return results;
-                }
-            //}
+            else
+            {
+                numOfCans = 1;
+                searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);                    
+                results = searchResults.retrieveData(searchTerm);
+                return results;
+            }
         }
     }
 }

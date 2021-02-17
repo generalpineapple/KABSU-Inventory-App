@@ -54,7 +54,7 @@ namespace WpfApp
         }
 
         /// <summary>
-        /// event handler when a single row is double clicked on to trigger the record window
+        /// event handler when a single row is double clicked on to trigger opening the record window for selected row
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
