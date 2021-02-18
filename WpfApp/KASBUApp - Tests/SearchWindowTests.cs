@@ -45,18 +45,34 @@ namespace KASBUApp___Tests
             }
         }
 
+        /// <summary>
+        /// can #1706 has 28 canes in it
+        /// </summary>
         [Test]
         public void CanCapacityTest()
         {
             searchWindow = new SearchWindow();
-            searchWindow.Show();
-            
+            SearchResults searchResults = new SearchResults();
+            List<SearchResult> sr = new List<SearchResult>();
+            SearchTerm st = new SearchTerm("1706", "*", "*", "*", "*", "*", "*");
+            sr = searchResults.retrieveData(st);
+            int numOfCanes = searchWindow.CalculateCanList(sr);
+            Assert.AreEqual(28, numOfCanes);
         }
 
+        /// <summary>
+        /// can #1850 has 132 units in it
+        /// </summary>
         [Test]
         public void SumUnitTest()
         {
-
+            searchWindow = new SearchWindow();
+            SearchResults searchResults = new SearchResults();
+            List<SearchResult> sr = new List<SearchResult>();
+            SearchTerm st = new SearchTerm("1850", "*", "*", "*", "*", "*", "*");
+            sr = searchResults.retrieveData(st);
+            int numOfUnits = searchWindow.UnitSum(sr);
+            Assert.AreEqual(132, numOfUnits);
         }
     }
 }
