@@ -74,5 +74,35 @@ namespace KASBUApp___Tests
             int numOfUnits = searchWindow.UnitSum(sr);
             Assert.AreEqual(132, numOfUnits);
         }
+
+        [Test]
+        public void FilterOnAnimalName()
+        {
+
+        }
+
+        [Test]
+        public void FilterOnOwner()
+        {
+
+        }
+
+        [Test]
+        public void FilterOnBreed()
+        {
+
+        }
+
+        [Test]
+        public void FilterOnTown()
+        {
+
+        }
+
+        [Test]
+        public void FilterOnState()
+        {
+
+        }
     }
 }

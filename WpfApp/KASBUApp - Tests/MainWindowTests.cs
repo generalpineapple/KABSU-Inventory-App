@@ -26,6 +26,6 @@ namespace KASBUApp___Tests
         private void CalendarPopUp()
         {
             mainWindow = new MainWindow();
-        }
+        } 
     }
 }
