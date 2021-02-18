@@ -73,19 +73,65 @@ namespace WpfApp
         /// <param name="e"></param>
         private void uxCanCapacity_Click(object sender, RoutedEventArgs e)
         {
-            List<SearchResult> results = CalculateCanList();
+            List<SearchResult> results = RetrieveCanList();
             int totalCanCapacity = numOfCans * canCapacity;
-            int unitSum = 0;
-            foreach (SearchResult sr in results)
-            {
-                unitSum += Convert.ToInt32(sr.Units);
-            }
+            int unitSum = CalculateCanList(results);
             double capacityPercent = Math.Round((double)unitSum / totalCanCapacity * 100, 2);
             MessageBox.Show("Number of Cans Entered: " + numOfCans + "\n" +
                              "Capacity of a can: " + canCapacity + "\n" +
                              "Sum of Units: " + unitSum + "\n" +
                              "Total Capacity: " + totalCanCapacity + "\n" +
                              "Percent used: " + capacityPercent + "\n");
+        }
+
+        /// <summary>
+        /// this finds the capacity of the cans in question
+        /// if they are entered with ',' seperating them, then if will take every can # entered.
+        /// if no can numbers were entered, it returns an empty list 
+        /// </summary>
+        /// <returns></returns>
+        public List<SearchResult> RetrieveCanList()
+        {
+            SetTerm(uxSearchTerm1.Text, uxSearchContents1.Text);
+            SetTerm(uxSearchTerm2.Text, uxSearchContents2.Text);
+            SetTerm(uxSearchTerm3.Text, uxSearchContents3.Text);
+            SetTerm(uxSearchTerm4.Text, uxSearchContents4.Text);
+
+            searchResults = new SearchResults();
+            List<SearchResult> results = new List<SearchResult>();
+
+            if (canNum.Equals("*"))
+            {
+                searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
+                results = searchResults.retrieveData(searchTerm);
+                numOfCans = results.GroupBy(x => x.CanNum).Count();
+                return results;
+
+            }
+
+            string[] canNumbers = canNum.Split(',');
+            if (canNumbers.Length > 1)
+            {
+                numOfCans = canNumbers.Length;
+                foreach (string can in canNumbers)
+                {
+                    searchTerm = new SearchTerm(can.Trim(), code, animalName, breed, owner, town, state);
+                    results.AddRange(searchResults.retrieveData(searchTerm));
+                }
+                return results;
+            }
+            else
+            {
+                numOfCans = 1;
+                searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
+                results = searchResults.retrieveData(searchTerm);
+                return results;
+            }
+        }
+
+        public int CalculateCanList(List<SearchResult> sr)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -96,12 +142,18 @@ namespace WpfApp
         private void UxUnitSum_Click(object sender, RoutedEventArgs e)
         {
             List<SearchResult> results = CalculateResultList();
+            int unitSum = UnitSum(results);
+            MessageBox.Show("Sum of Units: " + unitSum);
+        }
+
+        public int UnitSum(List<SearchResult> searchResults)
+        {
             int unitSum = 0;
-            foreach (SearchResult sr in results)
+            foreach (SearchResult sr in searchResults)
             {
                 unitSum += Convert.ToInt32(sr.Units);
             }
-            MessageBox.Show("Sum of Units: " + unitSum);
+            return unitSum;
         }
 
         /// <summary>
@@ -176,51 +228,6 @@ namespace WpfApp
                 description.Add(s.ToString());
             }
             return description;
-        }
-
-        /// <summary>
-        /// this finds the capacity of the cans in question
-        /// if they are entered with ',' seperating them, then if will take every can # entered.
-        /// if no can numbers were entered, it returns an empty list 
-        /// </summary>
-        /// <returns></returns>
-        public List<SearchResult> CalculateCanList() 
-        {
-            SetTerm(uxSearchTerm1.Text, uxSearchContents1.Text);
-            SetTerm(uxSearchTerm2.Text, uxSearchContents2.Text);
-            SetTerm(uxSearchTerm3.Text, uxSearchContents3.Text);
-            SetTerm(uxSearchTerm4.Text, uxSearchContents4.Text);
-
-            searchResults = new SearchResults();
-            List<SearchResult> results = new List<SearchResult>();
-
-            if (canNum.Equals("*"))
-            {
-                searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);
-                results = searchResults.retrieveData(searchTerm);
-                numOfCans = results.GroupBy(x => x.CanNum).Count();
-                return results;
-
-            }
-
-            string[] canNumbers = canNum.Split(',');
-            if(canNumbers.Length > 1)
-            {
-                numOfCans = canNumbers.Length;
-                foreach(string can in canNumbers)
-                {
-                    searchTerm = new SearchTerm(can.Trim(), code, animalName, breed, owner, town, state);
-                    results.AddRange(searchResults.retrieveData(searchTerm));
-                }
-                return results;
-            }
-            else
-            {
-                numOfCans = 1;
-                searchTerm = new SearchTerm(canNum, code, animalName, breed, owner, town, state);                    
-                results = searchResults.retrieveData(searchTerm);
-                return results;
-            }
         }
     }
 }

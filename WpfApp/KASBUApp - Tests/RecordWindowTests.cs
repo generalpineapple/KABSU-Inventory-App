@@ -29,31 +29,15 @@ namespace KASBUApp___Tests
             }
         }
 
-        //Make test for error pop up when user doesn't enter can code.
-        [Test]
-        public void EmptyRecordError()
-        {
-            recordWindow = new RecordWindow();
-            recordWindow.Close();
-            Assert.True(true, message: "Enter Cane Code.", recordWindow);
-        }
-
         /// <summary>
-        /// Make sure when a user changes the units for a record, it changes in the database.
+        /// make sure no cane can go below zero
         /// </summary>
         [Test]
-        public void NumUnitsChangeInDatabase()
+        public void MinUnitsForEachCane()
         {
 
         }
 
-        /// <summary>
-        /// Make sure our additional info window displays if we click the x.
-        /// </summary>
-        [Test]
-        public void AdditionalInfoWindowDisplaysWhenClosingWindow()
-        {
 
-        }
     }
 }
