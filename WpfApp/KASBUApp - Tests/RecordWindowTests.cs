@@ -28,16 +28,5 @@ namespace KASBUApp___Tests
                 Assert.Pass();
             }
         }
-
-        /// <summary>
-        /// make sure no cane can go below zero
-        /// </summary>
-        [Test]
-        public void MinUnitsForEachCane()
-        {
-
-        }
-
-
     }
 }
