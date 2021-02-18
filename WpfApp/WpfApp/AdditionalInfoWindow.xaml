@@ -11,10 +11,10 @@
             <ColumnDefinition Width="201*"/>
             <ColumnDefinition Width="122*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="uxCityText" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="132,41,0,0" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="uxTownText" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="132,41,0,0" Grid.ColumnSpan="2"/>
         <TextBox x:Name="uxSpeciesText" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="132,10,0,0" Grid.ColumnSpan="2"/>
         <Label Content="Species" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,0"/>
-        <Label Content="City" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
+        <Label Content="Town" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,41,0,0"/>
         <Label Content="State" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,72,0,0"/>
         <Label Content="Country" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,103,0,0"/>
         <TextBox x:Name="uxStateText" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="132,72,0,0" Grid.ColumnSpan="2"/>

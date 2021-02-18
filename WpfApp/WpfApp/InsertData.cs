@@ -21,11 +21,11 @@ namespace WpfApp
         /// </summary>
         /// <param name="personID"></param>
         /// <param name="name"></param>
-        /// <param name="city"></param>
+        /// <param name="town"></param>
         /// <param name="state"></param>
         /// <param name="country"></param>
         /// <returns></returns>
-        public static string InsertPerson(int personID, string name, string city, string state, string country)
+        public static string InsertPerson(int personID, string name, string town, string state, string country)
         {
             string connectionString = "Server=localhost;Database=kabsu; User ID = appuser; Password = test; Integrated Security=true";
             try
@@ -38,7 +38,7 @@ namespace WpfApp
 
                         insertCommand.Parameters.AddWithValue("@PersonID", personID);
                         insertCommand.Parameters.AddWithValue("@Name", name);
-                        insertCommand.Parameters.AddWithValue("@City", city);
+                        insertCommand.Parameters.AddWithValue("@Town", town);
                         insertCommand.Parameters.AddWithValue("@State", state);
                         insertCommand.Parameters.AddWithValue("@Country", country);
 
@@ -57,7 +57,7 @@ namespace WpfApp
             }
         }
 
-        public void InsertPerson(string name, string city, string state, string country)
+        public void InsertPerson(string name, string town, string state, string country)
         {
             string connectionString = "Server=localhost;Database=kabsu; User ID = appuser; Password = test; Integrated Security=true";
             try
@@ -69,7 +69,7 @@ namespace WpfApp
                         insertCommand.CommandType = CommandType.StoredProcedure;
 
                         insertCommand.Parameters.AddWithValue("@Name", name);
-                        insertCommand.Parameters.AddWithValue("@City", city);
+                        insertCommand.Parameters.AddWithValue("@Town", town);
                         insertCommand.Parameters.AddWithValue("@State", state);
                         insertCommand.Parameters.AddWithValue("@Country", country);
 
@@ -142,10 +142,10 @@ namespace WpfApp
         /// <param name="numUnits"></param>
         /// <param name="notes"></param>
         /// <param name="personName"></param>
-        /// <param name="city"></param>
+        /// <param name="town"></param>
         /// <param name="state"></param>
         /// <returns></returns>
-        public static string InsertSample(string valid, string canNum, string code, string collectionDate, int numUnits, string notes, string personName, string city, string state)
+        public static string InsertSample(string valid, string canNum, string code, string collectionDate, int numUnits, string notes, string personName, string town, string state)
         {
             string connectionString = "Server=localhost;Database=kabsu; User ID = appuser; Password = test; Integrated Security=true";
             try
@@ -163,7 +163,7 @@ namespace WpfApp
                         command.Parameters.AddWithValue("@NumUnits", numUnits);
                         command.Parameters.AddWithValue("@Notes", notes);
                         command.Parameters.AddWithValue("@PersonName", personName);
-                        command.Parameters.AddWithValue("@City", city);
+                        command.Parameters.AddWithValue("@Town", town);
                         command.Parameters.AddWithValue("@State", state);
 
                         connection.Open();

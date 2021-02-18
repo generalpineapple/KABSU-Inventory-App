@@ -35,7 +35,7 @@ namespace WpfApp
         private string notes;
         private string oldCode;
         private string oldOwner;
-        private string oldCity;
+        private string oldTown;
         private string oldState;
         private AdditionalInfo info;
         private static int ID_INDEX = 321;
@@ -74,7 +74,7 @@ namespace WpfApp
             searchResult = search;
             oldCode = searchResult.Code;
             oldOwner = searchResult.Owner;
-            oldCity = searchResult.Town;
+            oldTown = searchResult.Town;
             oldState = searchResult.State;
             InitializeComponent();
             uxCode.Text = searchResult.Code;
@@ -262,7 +262,7 @@ namespace WpfApp
 
                             command.Parameters.AddWithValue("@Notes", morph.Notes);
                             command.Parameters.AddWithValue("@Date", uxMorphDate.Text);
-                            command.Parameters.AddWithValue("@RealDate", Convert.ToDateTime(uxMorphDate.Text));
+                            //command.Parameters.AddWithValue("@RealDate", Convert.ToDateTime(uxMorphDate.Text));
                             if (morph.Vigor == "")
                             {
                                 command.Parameters.AddWithValue("@Vigor", 0);
@@ -343,17 +343,17 @@ namespace WpfApp
                         {
                             command.CommandType = CommandType.StoredProcedure;
 
-                            if (!uxCanNum.Text.Equals("") || !uxCode.Text.Equals("") || !uxMorphDate.Text.Equals("") || !uxMorphUnits.Text.Equals("") ||
-                                !info.City.Equals("") || !info.State.Equals("") || !info.Country.Equals("") || !uxOwner.Text.Equals("") || !uxAnimalName.Text.Equals("") ||
+                            if (!uxCanNum.Text.Equals("") || !uxCode.Text.Equals("") || !uxMorphDate.Text.Equals("") || 
+                                !info.Town.Equals("") || !info.State.Equals("") || !info.Country.Equals("") || !uxOwner.Text.Equals("") || !uxAnimalName.Text.Equals("") ||
                                 !uxBreed.Text.Equals("") || !info.Species.Equals("") || !uxRegNum.Text.Equals(""))
                             { 
                                 
-                               // command.Parameters.AddWithValue("@Valid", info.Valid.ToString().ToUpper());
+                                command.Parameters.AddWithValue("@LastModified", DateTime.Now);
                                 command.Parameters.AddWithValue("@CanNum", uxCanNum.Text);
                                 command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
                                 command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
                                 command.Parameters.AddWithValue("@NumUnits", uxMorphUnits.Text);
-                                command.Parameters.AddWithValue("@City", info.City);
+                                command.Parameters.AddWithValue("@Town", info.Town);
                                 command.Parameters.AddWithValue("@State", info.State);
                                 command.Parameters.AddWithValue("@Country", info.Country);
                                 command.Parameters.AddWithValue("@Owner", uxOwner.Text);
@@ -396,8 +396,8 @@ namespace WpfApp
                             command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
                             command.Parameters.AddWithValue("@SCollDate", uxMorphDate.Text);
                             command.Parameters.AddWithValue("@SNumUnits", uxMorphUnits.Text);
-                            command.Parameters.AddWithValue("@PCity", info.City);
-                            command.Parameters.AddWithValue("@OldCity", oldCity);
+                            command.Parameters.AddWithValue("@PTown", info.Town);
+                            command.Parameters.AddWithValue("@OldTown", oldTown);
                             command.Parameters.AddWithValue("@PState", info.State);
                             command.Parameters.AddWithValue("@OldState", oldState);
                             command.Parameters.AddWithValue("@PCountry", info.Country);

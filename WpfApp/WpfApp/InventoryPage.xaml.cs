@@ -23,6 +23,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
+using System.Windows.Documents;
 
 namespace WpfApp
 {
@@ -35,7 +36,7 @@ namespace WpfApp
         private string notes;
         private string oldCode;
         private string oldOwner;
-        private string oldCity;
+        private string oldTown;
         private string oldState;
         private AdditionalInfo info; //objecty for AdditionalInfo class
         private static int ID_INDEX = 321;
@@ -76,7 +77,7 @@ namespace WpfApp
             searchResult = search;
             oldCode = searchResult.Code;
             oldOwner = searchResult.Owner;
-            oldCity = searchResult.Town;
+            oldTown = searchResult.Town;
             oldState = searchResult.State;
             InitializeComponent();
             uxCode.Text = searchResult.Code;
@@ -109,7 +110,7 @@ namespace WpfApp
                 searchList.Add(searchResult);
                 oldCode = list.Code;
                 oldOwner = list.Owner;
-                oldCity = list.Town;
+                oldTown = list.Town;
                 oldState = list.State;
                 InitializeComponent();
                 uxCode.Text = list.Code;
@@ -398,7 +399,7 @@ namespace WpfApp
                                 command.Parameters.AddWithValue("@AnimalID", uxCode.Text);
                                 command.Parameters.AddWithValue("@CollDate", uxMorphDate.Text);
                                 command.Parameters.AddWithValue("@NumUnits", uxMorphUnits.Text);
-                                command.Parameters.AddWithValue("@City", info.City);
+                                command.Parameters.AddWithValue("@Town", info.Town);
                                 command.Parameters.AddWithValue("@State", info.State);
                                 command.Parameters.AddWithValue("@Country", info.Country);
                                 command.Parameters.AddWithValue("@Owner", uxOwner.Text);
@@ -447,10 +448,10 @@ namespace WpfApp
                             command.Parameters.AddWithValue("@OldAnimalID", oldCode);
                             command.Parameters.AddWithValue("@AAnimalID", uxCode.Text);
                             command.Parameters.AddWithValue("@SCollDate", uxMorphDate.Text);
-                            //command.Parameters.AddWithValue("@SNumUnits", uxMorphUnits.Text);
-                            command.Parameters.AddWithValue("@SNumUnits", uxQtyLeft1.Text);
-                            command.Parameters.AddWithValue("@PCity", info.City);
-                            command.Parameters.AddWithValue("@OldCity", oldCity);
+                            command.Parameters.AddWithValue("@SNumUnits", uxMorphUnits.Text);
+                            //command.Parameters.AddWithValue("@SNumUnits", uxQtyLeft1.Text);
+                            command.Parameters.AddWithValue("@PTown", info.Town);
+                            command.Parameters.AddWithValue("@OldTown", oldTown);
                             command.Parameters.AddWithValue("@PState", info.State);
                             command.Parameters.AddWithValue("@OldState", oldState);
                             command.Parameters.AddWithValue("@PCountry", info.Country);
@@ -694,6 +695,12 @@ namespace WpfApp
             noteWindow.Check += value => notes = value;
             noteWindow.ShowDialog();
             isOldMorph = false;
+        }
+
+        private void UxPrintButton_Click(object sender, RoutedEventArgs e)
+        {
+            PrintDialog dialog = new PrintDialog();
+            dialog.PrintVisual(this, "Window Printing");
         }
 
         /// <summary>

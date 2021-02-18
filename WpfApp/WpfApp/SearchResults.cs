@@ -59,7 +59,7 @@ namespace WpfApp
                         while (reader.Read())
                         {
                             searchResult= new SearchResult(
-                               reader.GetString(reader.GetOrdinal("LastModified")),
+                               //reader.GetDateTime(reader.GetOrdinal("LastModified")),
                                reader.GetString(reader.GetOrdinal("CanNum")),
                                reader.GetString(reader.GetOrdinal("AnimalID")),
                                reader.GetString(reader.GetOrdinal("CollDate")),
@@ -68,7 +68,7 @@ namespace WpfApp
                                reader.GetString(reader.GetOrdinal("Breed")),
                                reader.GetString(reader.GetOrdinal("RegNum")),
                                reader.GetString(reader.GetOrdinal("PersonName")),
-                               reader.GetString(reader.GetOrdinal("City")),
+                               reader.GetString(reader.GetOrdinal("Town")),
                                reader.GetString(reader.GetOrdinal("State")),
                                reader.GetString(reader.GetOrdinal("Country")),
                                reader.GetString(reader.GetOrdinal("Species")));
@@ -122,7 +122,7 @@ namespace WpfApp
                         while (reader.Read())
                         {
                             searchResult = new SearchResult(
-                               reader.GetString(reader.GetOrdinal("LastModified")),
+                               //reader.GetDateTime(reader.GetOrdinal("LastModified")),
                                reader.GetString(reader.GetOrdinal("CanNum")),
                                reader.GetString(reader.GetOrdinal("AnimalID")),
                                reader.GetString(reader.GetOrdinal("CollDate")),
@@ -131,7 +131,7 @@ namespace WpfApp
                                reader.GetString(reader.GetOrdinal("Breed")),
                                reader.GetString(reader.GetOrdinal("RegNum")),
                                reader.GetString(reader.GetOrdinal("PersonName")),
-                               reader.GetString(reader.GetOrdinal("City")),
+                               reader.GetString(reader.GetOrdinal("Town")),
                                reader.GetString(reader.GetOrdinal("State")),
                                reader.GetString(reader.GetOrdinal("Country")),
                                reader.GetString(reader.GetOrdinal("Species")));

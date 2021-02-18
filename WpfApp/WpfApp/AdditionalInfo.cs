@@ -35,19 +35,19 @@ namespace WpfApp
                 this.species = value;
             }
         }
-        private string city;
+        private string town;
         /// <summary>
         /// Property for city related to the Owner field.
         /// </summary>
-        public string City
+        public string Town
         {
             get
             {
-                return this.city;
+                return this.town;
             }
             set
             {
-                this.city = value;
+                this.town = value;
             }
         }
         private string state;
@@ -88,10 +88,10 @@ namespace WpfApp
         /// <param name="city"></param>
         /// <param name="state"></param>
         /// <param name="country"></param>
-        public AdditionalInfo(string species, string city, string state, string country)
+        public AdditionalInfo(string species, string town, string state, string country)
         {
             this.species = species;
-            this.city = city;
+            this.town = town;
             this.state = state;
             this.country = country;
         }
@@ -102,7 +102,7 @@ namespace WpfApp
         public AdditionalInfo()
         {
             this.species = "";
-            this.city = "";
+            this.town = "";
             this.state = "";
             this.country = "";
         }

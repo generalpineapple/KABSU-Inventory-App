@@ -32,19 +32,19 @@ namespace WpfApp
     /// </summary>
     public class SearchResult
     {
-        private string inv;
+        private DateTime lastModified;
         /// <summary>
         /// property for inv
         /// </summary>
-        public string INV
+        public DateTime LastModified
         {
             get
             {
-                return this.inv;
+                return this.lastModified;
             }
             set
             {
-                this.inv = value;
+                this.lastModified = value;
             }
         }
         private string canNum;
@@ -243,9 +243,8 @@ namespace WpfApp
         /// <param name="state">The state where the owner resides</param>
         /// <param name="country">The country where the owner resides</param>
         /// <param name="species">The species of the animal</param>
-        public SearchResult(string lastModfied, string canNum, string code, string collDate, int units, string animalName, string breed, string regNum, string owner, string town, string state, string country, string species)
+        public SearchResult(string canNum, string code, string collDate, int units, string animalName, string breed, string regNum, string owner, string town, string state, string country, string species)
         {
-            this.INV = lastModfied;
             this.CanNum = canNum;
             this.Code = code;
             this.CollDate = collDate;

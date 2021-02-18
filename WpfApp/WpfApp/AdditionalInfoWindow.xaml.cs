@@ -60,8 +60,8 @@ namespace WpfApp
         {
             if (uxSpeciesText.Text != null)
                 info.Species = uxSpeciesText.Text;
-            if (uxCityText.Text != null)
-                info.City = uxCityText.Text;
+            if (uxTownText.Text != null)
+                info.Town = uxTownText.Text;
             if (uxStateText.Text != null)
                 info.State = uxStateText.Text;
             if (uxCountryText.Text != null)
@@ -83,7 +83,7 @@ namespace WpfApp
         private void UxInfoWindow_Loaded(object sender, RoutedEventArgs e)
         {
             uxSpeciesText.Text = info.Species;
-            uxCityText.Text = info.City;
+            uxTownText.Text = info.Town;
             uxStateText.Text = info.State;
             uxCountryText.Text = info.Country;
             /*
