@@ -91,3 +91,6 @@ C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\WpfApp.pdb
 C:\Users\colde\Desktop\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\KABSUApp.csprojAssemblyReference.cache
 C:\Users\colde\Desktop\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\PackingSlip.g.cs
 C:\Users\colde\Desktop\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\PackingSlip.baml
+C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\PackingSlip.g.cs
+C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\WpfApp_MarkupCompile.lref
+C:\Users\Yijun\Desktop\CIS642\WpfApp\WpfApp\obj\Debug\PackingSlip.baml

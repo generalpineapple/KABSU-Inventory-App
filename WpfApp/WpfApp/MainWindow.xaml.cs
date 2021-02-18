@@ -75,7 +75,12 @@ namespace WpfApp
 
                             command.CommandType = CommandType.StoredProcedure;
 
-                            command.Parameters.AddWithValue("@Date", clickedDate);
+                            string dateString = clickedDate.ToString("MM/dd/yyyy");
+                            string[] dateSringArr = dateString.Split('/');
+                            dateString = dateSringArr[2] + "-" + dateSringArr[0] + "-" + dateSringArr[1];
+
+                            //command.Parameters.AddWithValue("@Date", clickedDate);
+                            command.Parameters.AddWithValue("@Date", dateString);
 
                             connection.Open();
 
