@@ -35,7 +35,8 @@ namespace WpfApp
         private string canNum = "*";
         private string town = "*";
         private string state = "*";
-        private int canCapacity = 300;
+        private int canCapacity = 30;
+        private int unitsPerCane = 10;
         private int numOfCans;
         private SearchResults searchResults;
         private SearchTerm searchTerm;
@@ -129,9 +130,16 @@ namespace WpfApp
             }
         }
 
-        public int CalculateCanList(List<SearchResult> sr)
+        public int CalculateCanList(List<SearchResult> searchResults)
         {
-            throw new NotImplementedException();
+            int totalCanes = 0;
+            foreach(SearchResult sr in searchResults)
+            {
+                double units = (double)sr.Units / unitsPerCane;
+                int i = (int)Math.Ceiling(units);
+                totalCanes += i;
+            }
+            return totalCanes;
         }
 
         /// <summary>
