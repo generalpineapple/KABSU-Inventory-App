@@ -365,4 +365,6 @@ C:\Users\colde\Desktop\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Numeri
 C:\Users\colde\Desktop\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\colde\Desktop\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\WpfApp.exe.config
 C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\obj\Debug\KABSUApp.csprojAssemblyReference.cache
-C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.abstractions.xml
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.reporters.net452.dll
+C:\Users\bhartman24\Source\Repos\KABSU-Inventory-App\WpfApp\WpfApp\bin\Debug\xunit.runner.utility.net452.dll

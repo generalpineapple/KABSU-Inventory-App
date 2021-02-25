@@ -84,8 +84,8 @@ namespace KASBUApp___Tests
             SearchTerm st = new SearchTerm("*", "*", "1 Oak", "*", "*", "*", "*");
             sr = searchResults.retrieveData(st);
             string AnimalName = "1 Oak";
-            List<SearchResult> results = searchWindow.CalculateResultList();
-            foreach(SearchResult s in results)
+            //List<SearchResult> results = searchWindow.CalculateResultList();
+            foreach(SearchResult s in sr)
             {
                 if (s.AnimalName.Equals(AnimalName))
                 {
@@ -103,8 +103,8 @@ namespace KASBUApp___Tests
             SearchTerm st = new SearchTerm("*", "*", "*", "*", "KSU ASI", "*", "*");
             sr = searchResults.retrieveData(st);
             string owner = "KSU ASI";
-            List<SearchResult> results = searchWindow.CalculateResultList();
-            foreach (SearchResult s in results)
+           // List<SearchResult> results = searchWindow.CalculateResultList();
+            foreach (SearchResult s in sr)
             {
                 if (s.Owner.Equals(st.Owner))
                 {
@@ -122,8 +122,8 @@ namespace KASBUApp___Tests
             SearchTerm st = new SearchTerm("*", "*", "*", "Maine Anjou", "*", "*", "*");
             sr = searchResults.retrieveData(st);
             string breed = "Maine Anjou";
-            List<SearchResult> results = searchWindow.CalculateResultList();
-            foreach (SearchResult s in results)
+            //List<SearchResult> results = searchWindow.CalculateResultList();
+            foreach (SearchResult s in sr)
             {
                 if (s.Breed.Equals(st.Breed))
                 {
@@ -141,8 +141,8 @@ namespace KASBUApp___Tests
             SearchTerm st = new SearchTerm("*", "*", "*", "*", "*", "Manhattan", "*");
             sr = searchResults.retrieveData(st);
             string town = "Manhatten";
-            List<SearchResult> results = searchWindow.CalculateResultList();
-            foreach (SearchResult s in results)
+            //List<SearchResult> results = searchWindow.CalculateResultList();
+            foreach (SearchResult s in sr)
             {
                 if (s.Town.Equals(st.Town))
                 {
@@ -160,10 +160,48 @@ namespace KASBUApp___Tests
             SearchTerm st = new SearchTerm("*", "*", "*", "*", "*", "*", "CO");
             sr = searchResults.retrieveData(st);
             //string town = "Manhatten";
-            List<SearchResult> results = searchWindow.CalculateResultList();
-            foreach (SearchResult s in results)
+            //List<SearchResult> results = searchWindow.CalculateResultList();
+            foreach (SearchResult s in sr)
             {
                 Assert.True(!s.State.Equals(st.State));
+            }
+        }
+
+        [Test]
+        public void FilterOnCanNumber()
+        {
+            searchWindow = new SearchWindow();
+            SearchResults searchResults = new SearchResults();
+            List<SearchResult> sr = new List<SearchResult>();
+            SearchTerm st = new SearchTerm("658", "*", "*", "*", "*", "*", "*");
+            sr = searchResults.retrieveData(st);
+            int canNum = 658;
+            //List<SearchResult> results = searchWindow.CalculateResultList();
+            foreach (SearchResult s in sr)
+            {
+                if (s.CanNum == st.CanNum)
+                {
+                    Assert.True(s.CanNum ==  canNum.ToString());
+                }
+            }
+        }
+
+        [Test]
+        public void FilterOnCode()
+        {
+            searchWindow = new SearchWindow();
+            SearchResults searchResults = new SearchResults();
+            List<SearchResult> sr = new List<SearchResult>();
+            SearchTerm st = new SearchTerm("*", "5677", "*", "*", "*", "*", "*");
+            sr = searchResults.retrieveData(st);
+            string code = "5677";
+            //List<SearchResult> results = searchWindow.CalculateResultList();
+            foreach (SearchResult s in sr)
+            {
+                if (s.Code == st.Code)
+                {
+                    Assert.True(s.Code.Equals(code));
+                }
             }
         }
     }
