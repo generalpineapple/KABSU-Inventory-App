@@ -24,6 +24,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
 using System.Windows.Documents;
+using System.IO;
+using System.Windows.Xps.Packaging;
 
 namespace WpfApp
 {
@@ -440,6 +442,8 @@ namespace WpfApp
                                 int whatINeed = int.Parse(uxWhatINeedLeft1.Text); //used temporary until I can get multiple selections for inventory page
                                 uxMorphUnits.Text = (qty - whatINeed).ToString(); //used temporary until I can get multiple selections for inventory page
                             }
+
+                            //foreach(Grid.GetColumn tb in uxTopGrid1)
                             
                             command.CommandType = CommandType.StoredProcedure;
 
@@ -699,8 +703,21 @@ namespace WpfApp
 
         private void UxPrintButton_Click(object sender, RoutedEventArgs e)
         {
-            PrintDialog dialog = new PrintDialog();
-            dialog.PrintVisual(this, "Window Printing");
+            //PrintDialog dialog = new PrintDialog();
+            //dialog.PrintVisual(this, "Window Printing");
+            // Create the print dialog object and set options
+            PrintDialog pDialog = new PrintDialog();
+            pDialog.PageRangeSelection = PageRangeSelection.AllPages;
+            pDialog.UserPageRangeEnabled = true;
+
+            // Display the dialog. This returns true if the user presses the Print button.
+            Nullable<Boolean> print = pDialog.ShowDialog();
+            if (print == true)
+            {
+                XpsDocument xpsDocument = new XpsDocument("C:\\FixedDocumentSequence.xps", FileAccess.ReadWrite);
+                FixedDocumentSequence fixedDocSeq = xpsDocument.GetFixedDocumentSequence();
+                pDialog.PrintDocument(fixedDocSeq.DocumentPaginator, "Test print job");
+            }
         }
 
         /// <summary>
