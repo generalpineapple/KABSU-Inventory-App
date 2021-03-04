@@ -239,6 +239,45 @@ namespace WpfApp
                     MessageBox.Show("Unable to connect to database01.");
                 }
             }
+            else
+            {
+                string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
+                try
+                {
+                    using (var connection = new MySqlConnection(connectionString))
+                    {
+                        foreach (Record r in recordList)
+                        {
+                            string[] dateAndCollCode = r.Date.Split('#');
+
+                            using (var command = new MySqlCommand("kabsu.UpdateData", connection))
+                            {
+                                command.CommandType = CommandType.StoredProcedure;
+
+                                command.Parameters.AddWithValue("@ToFrom", r.ToFrom);
+                                command.Parameters.AddWithValue("@RealDate", Convert.ToDateTime(r.Date));
+                                command.Parameters.AddWithValue("@Date", r.Date);
+                                command.Parameters.AddWithValue("@Received", Convert.ToInt32(r.Rec));
+                                command.Parameters.AddWithValue("@Shipped", Convert.ToInt32(r.Ship));
+                                command.Parameters.AddWithValue("@Balance", Convert.ToInt32(r.Balance));
+                                command.Parameters.AddWithValue("@AnimalID", r.AnimalId);
+                                command.Parameters.AddWithValue("@Can", uxCanNum.Text);
+                                command.Parameters.AddWithValue("@CollDate", uxMorphCode.Text);
+
+                                connection.Open();
+                                int k = command.ExecuteNonQuery();
+                                connection.Close();
+                            }
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unable to connect to database01pt2.");
+                }
+
+            }
         }
 
         /// <summary>
