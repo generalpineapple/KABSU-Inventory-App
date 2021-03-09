@@ -192,7 +192,7 @@ namespace WpfApp
         /// </summary>
         private void StoreRecords()
         {
-            if (recordList.Count == 0)
+            if (newRecord == true)
             {
                 string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
                 try
@@ -211,6 +211,15 @@ namespace WpfApp
                         foreach (Record r in recordList)
                         {
                             string[] dateAndCollCode = r.Date.Split('#');
+                            if(r.Rec.Equals(""))
+                            {
+                                r.Rec = "0";
+                            }
+                            if(r.Ship.Equals(""))
+                            {
+                                r.Ship = "0";
+                            }
+                               r.Balance = (Convert.ToInt32(r.Rec) - Convert.ToInt32(r.Ship) + Convert.ToInt32(uxMorphUnits.Text)).ToString();
 
                             using (var command = new MySqlCommand("kabsu.StoreData", connection))
                             {
@@ -249,7 +258,15 @@ namespace WpfApp
                         foreach (Record r in recordList)
                         {
                             string[] dateAndCollCode = r.Date.Split('#');
-
+                            if (r.Rec.Equals(""))
+                            {
+                                r.Rec = "0";
+                            }
+                            if (r.Ship.Equals(""))
+                            {
+                                r.Ship = "0";
+                            }
+                            r.Balance = (Convert.ToInt32(r.Rec) - Convert.ToInt32(r.Ship) + Convert.ToInt32(uxMorphUnits.Text)).ToString();
                             using (var command = new MySqlCommand("kabsu.UpdateData", connection))
                             {
                                 command.CommandType = CommandType.StoredProcedure;
@@ -277,7 +294,7 @@ namespace WpfApp
                     MessageBox.Show("Unable to connect to database01pt2.");
                 }
 
-            }
+            } 
         }
 
         /// <summary>
@@ -572,9 +589,9 @@ namespace WpfApp
                 {
                     textBoxes[textCount].Text = r.ToFrom;
                     textBoxes[textCount + ROW_SPACING].Text = r.Date;
-                    textBoxes[textCount + (ROW_SPACING * 2)].Text = r.Rec;
-                    textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Ship;
-                    textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance;
+                   textBoxes[textCount + (ROW_SPACING * 2)].Text = r.Rec.ToString();
+                    textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Ship.ToString();
+                    textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance.ToString();
 
                     textCount++;
 
