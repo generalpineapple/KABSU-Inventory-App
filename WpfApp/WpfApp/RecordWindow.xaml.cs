@@ -248,7 +248,7 @@ namespace WpfApp
                     MessageBox.Show("Unable to connect to database01.");
                 }
             }
-            else
+            /*else
             {
                 string connectionString = "Server=mysql.cs.ksu.edu;Database=kabsu; User ID = kabsu; Password = insecurepassword; Integrated Security=true";
                 try
@@ -278,8 +278,8 @@ namespace WpfApp
                                 command.Parameters.AddWithValue("@Shipped", Convert.ToInt32(r.Ship));
                                 command.Parameters.AddWithValue("@Balance", Convert.ToInt32(r.Balance));
                                 command.Parameters.AddWithValue("@AnimalID", r.AnimalId);
-                                command.Parameters.AddWithValue("@Can", uxCanNum.Text);
-                                command.Parameters.AddWithValue("@CollDate", uxMorphCode.Text);
+                                //command.Parameters.AddWithValue("@Can", uxCanNum.Text);
+                                //command.Parameters.AddWithValue("@CollDate", uxMorphCode.Text);
 
                                 connection.Open();
                                 int k = command.ExecuteNonQuery();
@@ -294,7 +294,7 @@ namespace WpfApp
                     MessageBox.Show("Unable to connect to database01pt2.");
                 }
 
-            } 
+            } */
         }
 
         /// <summary>
@@ -418,6 +418,13 @@ namespace WpfApp
                                 command.Parameters.AddWithValue("@Species", info.Species);
                                 command.Parameters.AddWithValue("@RegNum", uxRegNum.Text);
 
+                                command.Parameters.AddWithValue("@ToFrom", uxToFromLeft1.Text);
+                                command.Parameters.AddWithValue("@Date", uxDateLeft1.Text);
+                                command.Parameters.AddWithValue("@NumReceived", uxRecLeft1.Text);
+                                command.Parameters.AddWithValue("@NumShipped", uxShipLeft1.Text);
+                                command.Parameters.AddWithValue("@Balance", uxBalLeft1.Text);
+                                command.Parameters.AddWithValue("@RealDate", uxDateLeft1.Text);
+
                                 connection.Open();
                                 int k = command.ExecuteNonQuery();
                                 connection.Close();
@@ -444,6 +451,15 @@ namespace WpfApp
                     {
                         using (var command = new MySqlCommand("kabsu.UpdateParent", connection))
                         {
+                            if (uxRecLeft1.Text.Equals(""))
+                            {
+                                uxRecLeft1.Text = "0";
+                            }
+                            if (uxShipLeft1.Text.Equals(""))
+                            {
+                                uxShipLeft1.Text = "0";
+                            }
+                            uxBalLeft1.Text = (Convert.ToInt32(uxRecLeft1.Text) - Convert.ToInt32(uxShipLeft1.Text) + Convert.ToInt32(uxMorphUnits.Text)).ToString();
                             command.CommandType = CommandType.StoredProcedure;
 
                             //command.Parameters.AddWithValue("@SValid", info.Valid.ToString().ToUpper());
@@ -463,6 +479,13 @@ namespace WpfApp
                             command.Parameters.AddWithValue("@ABreed", uxBreed.Text);
                             command.Parameters.AddWithValue("@ASpecies", info.Species);
                             command.Parameters.AddWithValue("@ARegNum", uxRegNum.Text);
+
+                            command.Parameters.AddWithValue("@RToFrom", uxToFromLeft1.Text);
+                            command.Parameters.AddWithValue("@RDate", uxDateLeft1.Text);
+                            command.Parameters.AddWithValue("@RNumReceived", uxRecLeft1.Text);
+                            command.Parameters.AddWithValue("@RNumShipped", uxShipLeft1.Text);
+                            command.Parameters.AddWithValue("@RBalance", uxBalLeft1.Text);
+                            command.Parameters.AddWithValue("@RealDate", uxDateLeft1.Text);
 
                             connection.Open();
                             int k = command.ExecuteNonQuery();//useful part(upload to database)
