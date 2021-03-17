@@ -1,7 +1,7 @@
 ﻿/*
  * Visual Studio 2019
  --------------------------------------------------------
--<<copyright file-"AdditionalInfo.cs"-company=KABSU>"
+-<<copyright file-"RecordWindow.xaml.cs"-company=KABSU>"
 ------Copyright-statement.-All-right-reserved
 -</copyright>
  --------------------------------------------------------
@@ -211,15 +211,15 @@ namespace WpfApp
                         foreach (Record r in recordList)
                         {
                             string[] dateAndCollCode = r.Date.Split('#');
-                            if(r.Rec.Equals(""))
+                            if(r.NumReceived.Equals(""))
                             {
-                                r.Rec = "0";
+                                r.NumReceived = "0";
                             }
-                            if(r.Ship.Equals(""))
+                            if(r.NumShipped.Equals(""))
                             {
-                                r.Ship = "0";
+                                r.NumShipped = "0";
                             }
-                               r.Balance = (Convert.ToInt32(r.Rec) - Convert.ToInt32(r.Ship) + Convert.ToInt32(uxMorphUnits.Text)).ToString();
+                               r.Balance = (Convert.ToInt32(r.NumReceived) - Convert.ToInt32(r.NumShipped) + Convert.ToInt32(uxMorphUnits.Text)).ToString();
 
                             using (var command = new MySqlCommand("kabsu.StoreData", connection))
                             {
@@ -228,8 +228,8 @@ namespace WpfApp
                                 command.Parameters.AddWithValue("@ToFrom", r.ToFrom);
                                 command.Parameters.AddWithValue("@RealDate", Convert.ToDateTime(r.Date));
                                 command.Parameters.AddWithValue("@Date", r.Date);
-                                command.Parameters.AddWithValue("@Received", Convert.ToInt32(r.Rec));
-                                command.Parameters.AddWithValue("@Shipped", Convert.ToInt32(r.Ship));
+                                command.Parameters.AddWithValue("@Received", Convert.ToInt32(r.NumReceived));
+                                command.Parameters.AddWithValue("@Shipped", Convert.ToInt32(r.NumShipped));
                                 command.Parameters.AddWithValue("@Balance", Convert.ToInt32(r.Balance));
                                 command.Parameters.AddWithValue("@AnimalID", r.AnimalId);
                                 command.Parameters.AddWithValue("@Can", uxCanNum.Text);
@@ -418,12 +418,12 @@ namespace WpfApp
                                 command.Parameters.AddWithValue("@Species", info.Species);
                                 command.Parameters.AddWithValue("@RegNum", uxRegNum.Text);
 
-                                command.Parameters.AddWithValue("@ToFrom", uxToFromLeft1.Text);
+                                /*command.Parameters.AddWithValue("@ToFrom", uxToFromLeft1.Text);
                                 command.Parameters.AddWithValue("@Date", uxDateLeft1.Text);
                                 command.Parameters.AddWithValue("@NumReceived", uxRecLeft1.Text);
                                 command.Parameters.AddWithValue("@NumShipped", uxShipLeft1.Text);
                                 command.Parameters.AddWithValue("@Balance", uxBalLeft1.Text);
-                                command.Parameters.AddWithValue("@RealDate", uxDateLeft1.Text);
+                                command.Parameters.AddWithValue("@RealDate", uxDateLeft1.Text); */
 
                                 connection.Open();
                                 int k = command.ExecuteNonQuery();
@@ -480,12 +480,12 @@ namespace WpfApp
                             command.Parameters.AddWithValue("@ASpecies", info.Species);
                             command.Parameters.AddWithValue("@ARegNum", uxRegNum.Text);
 
-                            command.Parameters.AddWithValue("@RToFrom", uxToFromLeft1.Text);
+                           /* command.Parameters.AddWithValue("@RToFrom", uxToFromLeft1.Text);
                             command.Parameters.AddWithValue("@RDate", uxDateLeft1.Text);
                             command.Parameters.AddWithValue("@RNumReceived", uxRecLeft1.Text);
                             command.Parameters.AddWithValue("@RNumShipped", uxShipLeft1.Text);
                             command.Parameters.AddWithValue("@RBalance", uxBalLeft1.Text);
-                            command.Parameters.AddWithValue("@RealDate", uxDateLeft1.Text);
+                            command.Parameters.AddWithValue("@RealDate", uxDateLeft1.Text); */
 
                             connection.Open();
                             int k = command.ExecuteNonQuery();//useful part(upload to database)
@@ -612,8 +612,8 @@ namespace WpfApp
                 {
                     textBoxes[textCount].Text = r.ToFrom;
                     textBoxes[textCount + ROW_SPACING].Text = r.Date;
-                   textBoxes[textCount + (ROW_SPACING * 2)].Text = r.Rec.ToString();
-                    textBoxes[textCount + (ROW_SPACING * 3)].Text = r.Ship.ToString();
+                   textBoxes[textCount + (ROW_SPACING * 2)].Text = r.NumReceived.ToString();
+                    textBoxes[textCount + (ROW_SPACING * 3)].Text = r.NumShipped.ToString();
                     textBoxes[textCount + (ROW_SPACING * 4)].Text = r.Balance.ToString();
 
                     textCount++;

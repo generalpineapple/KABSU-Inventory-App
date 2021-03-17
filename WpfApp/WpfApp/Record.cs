@@ -50,34 +50,34 @@ namespace WpfApp
                 this.date = value;
             }
         }
-        private string rec;
+        private string numReceived;
         /// <summary>
         /// Property for rec
         /// </summary>
-        public string Rec
+        public string NumReceived
         {
             get
             {
-                return this.rec;
+                return this.numReceived;
             }
             set
             {
-                this.rec = value;
+                this.numReceived = value;
             }
         }
-        private string ship;
+        private string numShipped;
         /// <summary>
         /// Property for ship
         /// </summary>
-        public string Ship
+        public string NumShipped
         {
             get
             {
-                return this.ship;
+                return this.numShipped;
             }
             set
             {
-                this.ship = value;
+                this.numShipped = value;
             }
         }
         private string balance;
@@ -120,12 +120,12 @@ namespace WpfApp
         /// <param name="ship"></param>
         /// <param name="balance"></param>
         /// <param name="id"></param>
-        public Record(string toFrom, string date, string rec, string ship, string balance, string id)
+        public Record(string toFrom, string date, string numReceived, string numShipped, string balance, string id)
         {
             this.toFrom = toFrom;
             this.date = date;
-            this.rec = rec;
-            this.ship = ship;
+            this.numReceived = numReceived;
+            this.numShipped = numShipped;
             this.balance = balance;
             this.animalId = id;
         }
